@@ -11,9 +11,9 @@ Please check back regually for updates and more details on the evolution of the 
 
 # In This Section
 
-[Sounds Overview](Audio_XNA.md)
+[What Is articles](whatis\index.md)
 
-Provides a high-level overview about the capabilities of the Audio API in MonoGame in addition to general audio terminology.
+Provides simple definitions for most of the central concepts maintained by the MonoGame Framework.
 
 
 # Online Resources
