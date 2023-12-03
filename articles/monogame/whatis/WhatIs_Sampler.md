@@ -13,7 +13,7 @@ When texture coordinates are below 0 or above 1, the texture address mode define
 
 If the texture is too large or too small for the polygon, the texture is filtered to fit the space. A magnification filter enlarges a texture, a minification filter reduces the texture to fit into a smaller area. Texture magnification repeats the sample texel for one or more addresses which yields a blurrier image. Texture minification is more complicated because it requires combining more than one texel value into a single value. This can cause aliasing or jagged edges depending on the texture data. The most popular approach for minification is to use a mipmap. A mipmap is a multi-level texture. The size of each level is a power-of-two smaller than the previous level down to a 1x1 texture. When minification is used, a game chooses the mipmap level closest to the size that is needed at render time.
 
-Use the [SamplerState](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html) class to create a sampler state object. Set the sampler state to the graphics device using the [GraphicsDevice.SamplerStates Property](/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html#Microsoft_Xna_Framework_Graphics_GraphicsDevice_SamplerStates) property.
+Use the [SamplerState](xref:Microsoft.Xna.Framework.Graphics.SamplerState) class to create a sampler state object. Set the sampler state to the graphics device using the [GraphicsDevice.SamplerStates Property](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice.SamplerStates) property.
 
 This is the default state for sampling:
 
@@ -24,10 +24,10 @@ This is the default state for sampling:
 
 These are the corresponding API states:
 
-*   Set [Filter](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html) to **TextureFilter.Linear**.    
-*   Set [AddressU](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html), [AddressV](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html), and [AddressW](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html) to **TextureAddressMode.Wrap**.    
-*   Set [MaxAnisotropy](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html) to 4.    
-*   Set [MaxMipLevel](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html) and [MipMapLevelOfDetailBias](/api/Microsoft.Xna.Framework.Graphics.SamplerState.html) to 0.    
+*   Set [Filter](xref:Microsoft.Xna.Framework.Graphics.SamplerState.Filter) to **TextureFilter.Linear**.    
+*   Set [AddressU](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressU), [AddressV](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressV), and [AddressW](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressW) to **TextureAddressMode.Wrap**.    
+*   Set [MaxAnisotropy](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MaxAnisotropy) to 4.    
+*   Set [MaxMipLevel](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MaxMipLevel) and [MipMapLevelOfDetailBias](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MipMapLevelOfDetailBias) to 0.
 
 Built-in state objects make it easy to create objects with the most common sampler state settings. The most common settings are **LinearClamp**, **LinearWrap**, **PointClamp**, **PointWrap**, **AnisotropicClamp**, and **AnisotropicWrap**. For an example of creating a state object, see [Creating a State Object](StateObject1.md).
 

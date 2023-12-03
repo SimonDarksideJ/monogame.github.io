@@ -27,11 +27,11 @@ Use the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) configu
 
 ## Character Animation
 
-Use the [SkinnedEffect](/api/Microsoft.Xna.Framework.Graphics.BasicEffect.html) configurable effect to animate a character. This effect uses bones and weights to transform a mesh (an object is made up of several meshes). Simply set up a set of bones for a model when you create content, and then transform the bones during the render loop. You can also use this class for hardware instancing by setting **WeightsPerVertex** to one, and replicating the geometry data with an additional bone index channel. This is similar to the way the shader instancing technique works in the instancing sample.
+Use the [SkinnedEffect](xref:Microsoft.Xna.Framework.Graphics.SkinnedEffect) configurable effect to animate a character. This effect uses bones and weights to transform a mesh (an object is made up of several meshes). Simply set up a set of bones for a model when you create content, and then transform the bones during the render loop. You can also use this class for hardware instancing by setting **WeightsPerVertex** to one, and replicating the geometry data with an additional bone index channel. This is similar to the way the shader instancing technique works in the instancing sample.
 
 ## More Sophisticated Lighting with a Light Map
 
-Use the [DualTextureEffect](/api/Microsoft.Xna.Framework.Graphics.DualTextureEffect.html) configurable effect with a prebaked radiosity lightmap to add more sophisticated lighting to a scene. This effect uses two textures, the base texture with the texture detail and an overlay texture with the prebaked lighting.
+Use the [DualTextureEffect](xref:Microsoft.Xna.Framework.Graphics.DualTextureEffect) configurable effect with a prebaked radiosity lightmap to add more sophisticated lighting to a scene. This effect uses two textures, the base texture with the texture detail and an overlay texture with the prebaked lighting.
 
 The two textures are combined using a fixed modulate2X blend formula as shown here:
 
@@ -42,11 +42,11 @@ The two textures are combined using a fixed modulate2X blend formula as shown he
 
 ## Billboards and Imposters
 
-Use the [AlphaTestEffect](/api/Microsoft.Xna.Framework.Graphics.AlphaTestEffect.html) configurable effect to use alpha data to test whether to draw a pixel. The effect uses a **CompareFunction** to compare the alpha value for a pixel against the **ReferenceAlpha** value to determine whether to draw the pixel. This functionality is used for drawing a billboard (a 2D sprite that faces the camera) and an imposter (a 2D sprite that is integrated into a larger scene).
+Use the [AlphaTestEffect](xref:Microsoft.Xna.Framework.Graphics.AlphaTestEffect) configurable effect to use alpha data to test whether to draw a pixel. The effect uses a **CompareFunction** to compare the alpha value for a pixel against the **ReferenceAlpha** value to determine whether to draw the pixel. This functionality is used for drawing a billboard (a 2D sprite that faces the camera) and an imposter (a 2D sprite that is integrated into a larger scene).
 
 ## Lighting Highlights Using an Environment Map
 
-Use the [EnvironmentMapEffect](/api/Microsoft.Xna.Framework.Graphics.EnvironmentMapEffect.html) configurable effect to generate fast, specular highlights that add shininess to an object. The effect uses two textures, a base texture with the texture detail and a cubemap whose six sides reflect the environment onto the object. Use **EnvironmentMapAmount** to control the amount of the environment map to add to the object. Also, use **FresnelFactor** to control how much the edge of an object reflects specular lighting.
+Use the [EnvironmentMapEffect](xref:Microsoft.Xna.Framework.Graphics.EnvironmentMapEffect) configurable effect to generate fast, specular highlights that add shininess to an object. The effect uses two textures, a base texture with the texture detail and a cubemap whose six sides reflect the environment onto the object. Use **EnvironmentMapAmount** to control the amount of the environment map to add to the object. Also, use **FresnelFactor** to control how much the edge of an object reflects specular lighting.
 
 Pseudo code for the lighting calculations looks similar to this:
 

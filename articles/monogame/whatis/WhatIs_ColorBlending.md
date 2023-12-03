@@ -15,7 +15,7 @@ The blend formula looks like this:
 (source * sourceBlendFactor) blendFunction (destination*destinationBlendFactor)
 ```
 
-The source blend factor is specified by the [ColorSourceBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorSourceBlend) property, and the destination blend factor is specified by the [ColorDestinationBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorDestinationBlend) property. The [ColorBlendFunction](/api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorBlendFunction) property specifies the blend function to use, normally [BlendFunction.Add](/api/Microsoft.Xna.Framework.Graphics.BlendFunction.html). In that case the formula reduces to this:
+The source blend factor is specified by the [ColorSourceBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorSourceBlend) property, and the destination blend factor is specified by the [ColorDestinationBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorDestinationBlend) property. The [ColorBlendFunction](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorBlendFunction) property specifies the blend function to use, normally  [BlendFunction.Add](/api/Microsoft.Xna.Framework.Graphics.BlendFunction.html). In that case the formula reduces to this:
 
 ```text
 (source * sourceBlendFactor) + (destination * destinationBlendFactor)  
@@ -48,9 +48,9 @@ When no blending is done, a source pixel overwrites a destination pixel. When bl
 
 Alpha blending uses the alpha channel of the source color to create a transparency effect so that the destination color appears through the source color. For example, if you clear your backbuffer to [Color.Gray](/api/Microsoft.Xna.Framework.Color.html), it will be colored (0.5,0.5,0.5,1). If you then take a white color with a partial alpha value (1,1,1,0.4), the result will be 60 percent of the destination color and 40 percent of the source: (0.5 x 0.6) + (1 x 0.4). The resulting color will be (0.7,0.7,0.7, 1). The alpha values are multiplied as well - (.6 x 1) + .4 gives us an alpha value of 1.
 
-When drawing a sprite using the [SpriteBatch](/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html) class, choose [BlendState.AlphaBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html) to configure alpha blending.
+When drawing a sprite using the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) class, choose [BlendState.AlphaBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html) to configure alpha blending.
 
-By default, the alpha channel is blended along with the red, green, and blue channels using the [ColorSourceBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html) and [ColorDestinationBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html) properties. You can choose to customize the blending for just the alpha channel by using the [AlphaSourceBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html) and [AlphaDestinationBlend](/api/Microsoft.Xna.Framework.Graphics.BlendState.html) properties.
+By default, the alpha channel is blended along with the red, green, and blue channels using the [ColorSourceBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorSourceBlend) and [ColorDestinationBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorDestinationBlend) properties. You can choose to customize the blending for just the alpha channel by using the [AlphaSourceBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.AlphaSourceBlend) and [AlphaDestinationBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.AlphaDestinationBlend) properties.
 
 # See Also
 
