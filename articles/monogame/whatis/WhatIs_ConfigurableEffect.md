@@ -15,15 +15,15 @@ Although more advanced progammable effects are available on Windows and other pl
 
 Use one of the following configurable effects to implement these rendering effects:
 
-*   [Basic Lighting and Fog](#basic-lighting-and-fog)
-*   [Character Animation](#character-animation)
-*   [More Sophisticated Lighting with a Light Map](#more-sophisticated-lighting-with-a-light-map)
-*   [Billboards and Imposters](#billboards-and-imposters)
-*   [Lighting Highlights Using an Environment Map](#lighting-highlights-using-an-environment-map)
+* [Basic Lighting and Fog](#basic-lighting-and-fog)
+* [Character Animation](#character-animation)
+* [More Sophisticated Lighting with a Light Map](#more-sophisticated-lighting-with-a-light-map)
+* [Billboards and Imposters](#billboards-and-imposters)
+* [Lighting Highlights Using an Environment Map](#lighting-highlights-using-an-environment-map)
 
 ## Basic Lighting and Fog
 
-Use the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) configurable effect to implement general purpose functionality, including the following: transformations; lighting with three directional lights; material colors using ambient, diffuse, and specular properties; a single texture; and fog. To improve speed, fog calculations are based on depth instead of distance from the camera. When you choose a basic effect, you can improve the performance of your game if you don't use any fog or if you only use one of the three available directional lights. For an example, see [Creating a Basic Effect](Use_BasicEffect.md).
+Use the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) configurable effect to implement general purpose functionality, including the following: transformations; lighting with three directional lights; material colors using ambient, diffuse, and specular properties; a single texture; and fog. To improve speed, fog calculations are based on depth instead of distance from the camera. When you choose a basic effect, you can improve the performance of your game if you don't use any fog or if you only use one of the three available directional lights. For an example, see [Creating a Basic Effect](../howto/HowTo_Create_a_BasicEffect.md).
 
 ## Character Animation
 
@@ -38,7 +38,7 @@ The two textures are combined using a fixed modulate2X blend formula as shown he
 ```csharp
       result.rgb = x.rgb * y.rgb * 2;
       result.a = x.a * y.a;
-```   
+```
 
 ## Billboards and Imposters
 

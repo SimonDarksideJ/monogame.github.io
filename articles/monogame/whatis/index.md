@@ -7,7 +7,7 @@ _description: A series of articles to answer common questions related to MonoGam
 
 These articles provide a brief introduction into graphics pipeline functionality.
 
-# In This Section
+## In This Section
 
 [What Is Antialiasing?](WhatIs_Antialiasing.md)
 
@@ -61,7 +61,7 @@ Sampler state determines how texture data is sampled using texture addressing mo
 
 A stencil buffer contains per-pixel integer data which is used to add more control over which pixels are rendered. A stencil buffer can also be used in combination with a depth buffer to do more complex rendering such as simple shadows or outlines.
 
-[What are Vectors, Matrices, and Quaternions?](Math_MonoGame.md)
+[What are Vectors, Matrices, and Quaternions?](WhatIs_VectorMatrixQuat.md)
 
 Presents an overview of the math-related functionality provided by the XNA Framework.
 

@@ -44,7 +44,7 @@ When no blending is done, a source pixel overwrites a destination pixel. When bl
 
 **Figure 1.  This picture illustrates four common blend modes. From left to right: Alpha blending, Additive blending, Multiplicative blending, and 2X Multiplicative blending. The top image in each column is the source image and below, it's effect when added to the destination.**
 
-![](blends.jpg)
+![This picture illustrates four common blend modes](images/blends.jpg)
 
 Alpha blending uses the alpha channel of the source color to create a transparency effect so that the destination color appears through the source color. For example, if you clear your backbuffer to [Color.Gray](/api/Microsoft.Xna.Framework.Color.html), it will be colored (0.5,0.5,0.5,1). If you then take a white color with a partial alpha value (1,1,1,0.4), the result will be 60 percent of the destination color and 40 percent of the source: (0.5 x 0.6) + (1 x 0.4). The resulting color will be (0.7,0.7,0.7, 1). The alpha values are multiplied as well - (.6 x 1) + .4 gives us an alpha value of 1.
 
@@ -52,12 +52,12 @@ When drawing a sprite using the [SpriteBatch](xref:Microsoft.Xna.Framework.Graph
 
 By default, the alpha channel is blended along with the red, green, and blue channels using the [ColorSourceBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorSourceBlend) and [ColorDestinationBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorDestinationBlend) properties. You can choose to customize the blending for just the alpha channel by using the [AlphaSourceBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.AlphaSourceBlend) and [AlphaDestinationBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState.AlphaDestinationBlend) properties.
 
-# See Also
+## See Also
 
-#### Concepts
+### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
-[3D Pipeline Basics](3DGraphics_Overview.md)  
+[What Is a Sprite?](WhatIs_Sprite.md)  
+[3D Pipeline Basics](WhatIs_3DRendering.md)  
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

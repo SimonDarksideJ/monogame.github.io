@@ -11,9 +11,9 @@ Antialiasing is accomplished by multisampling each pixel at multiple pixel locat
 
 Set the [PreferMultiSampling](xref:Microsoft.Xna.Framework.GraphicsDeviceManager.PreferMultiSampling) property on the [GraphicsDeviceManager](xref:Microsoft.Xna.Framework.GraphicsDeviceManager) class to **true** to enable multisampling for the back buffer. This will be ignored if the hardware does not support multisampling.
 
-# See Also
+## See Also
 
-[Enabling Antialiasing (Multisampling)](Enable_Anti_Aliasing.md)  
+[Enabling Antialiasing (Multisampling)](../howto/HowTo_Enable_Anti_Aliasing.md)  
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

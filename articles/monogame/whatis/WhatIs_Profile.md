@@ -7,8 +7,6 @@ _description: The definition for a Graphics Profile for MonoGame!
 
 A profile is a feature set that is implemented in hardware. The Reach profile implements High Level Shader Language (HLSL) Shader Model 2.0 and the HiDef profile implements HLSL Shader Model 3.0.
 
-![Note gif](images/note.gif)
-
 The Reach profile is the only profile available for mobile game development. Nevertheless, this topic provides background information about the purpose of MonoGame profiles and the differences between the Reach and HiDef profiles.
 
 To simplify multiplatform development, MonoGame creates a profile. A profile is platform independent so you do not need to query for capability bits. The APIs for accessing the features implemented in hardware are consistent across platforms so that game code written for one platform will compile and run on another platform with little or no changes. A game will not run if a hardware device does not meet the profile requirements.
@@ -21,7 +19,7 @@ The HiDef profile is designed for the highest performance and largest available 
 
 If you try to run a HiDef game on a device such as a mobile device) that does not support HiDef, an exception is thrown at runtime. Additionally, if you try to access HiDef features from a game built for a Reach profile, the runtime throws an exception. To find out which profile your target hardware supports, call [GraphicsAdapter.IsProfileSupported Method](/api/Microsoft.Xna.Framework.Graphics.GraphicsAdapter.html#Microsoft_Xna_Framework_Graphics_GraphicsAdapter_IsProfileSupported_Microsoft_Xna_Framework_Graphics_GraphicsProfile_).
 
-# Reach vs. HiDef Comparison
+## Reach vs. HiDef Comparison
 
 Differences between the Reach and HiDef profiles are presented next. For more detail, see the sections following the table.
 
@@ -59,19 +57,19 @@ Texture size limitations are listed in the table comparing the two profiles. The
 
 HiDef supports the following features without limitations; Reach supports the following features only for power-of-two textures:
 
-*   The **wrap** texture addressing mode
-*   Mipmaps
-*   DXT compression
+* The **wrap** texture addressing mode
+* Mipmaps
+* DXT compression
 
 ## Formats
 
 There are a wide variety of render target formats. Call [GraphicsAdapter.QueryRenderTargetFormat Method](/api/Microsoft.Xna.Framework.Graphics.GraphicsAdapter.html#Microsoft_Xna_Framework_Graphics_GraphicsAdapter_QueryRenderTargetFormat_Microsoft_Xna_Framework_Graphics_GraphicsProfile_Microsoft_Xna_Framework_Graphics_SurfaceFormat_Microsoft_Xna_Framework_Graphics_DepthFormat_System_Int32_Microsoft_Xna_Framework_Graphics_SurfaceFormat__Microsoft_Xna_Framework_Graphics_DepthFormat__System_Int32__) to find out what is supported for your hardware. The runtime also has a built-in fallback mechanism if the format you request is unavailable. The format parameters used when creating render targets and back buffers are now named "preferredFormat" instead of "format." The runtime will try to create a resource with the exact format passed in, and will fallback to the closest possible match (based on similar bit depth, number of channels, and so on) if that format is unavailable. For example, if you run a Reach game on a Windows Phone device using a 16-bit render target format and then run the game on some consoles that do not support 16-bit render targets, the runtime will switch the render-target format to a [Color](xref:Microsoft.Xna.Framework.Color) format.
 
-# Conclusion
+## Conclusion
 
 XNA introduced the Reach profile for Consoles, Windows, and mobile, and the HiDef profile for Consoles and Windows devices. The HiDef profile includes a strict superset of the functionality in the Reach profile, which means that HiDef implements all Reach functionality and more. If you run a Reach game on a HiDef platform, the framework will enforce Reach rules. Use this to your advantage when you develop a multiplatform game. You can design and debug on the most powerful hardware with the knowledge that the game will compile and run on the other less powerful platforms when you are ready to test your game. The runtime will throw an exception if you try to set the profile to HiDef on hardware that does not support HiDef, or if you are running a Reach profile game that tries to access HiDef features.
 
-# Cited Works
+## Cited Works
 
 "Selecting Reach vs. HiDef." Shawn Hargreaves Blog. July 2010. [http://web.archive.org/web/20120102231201/http://blogs.msdn.com/b/shawnhar/archive/2010/07/19/selecting-reach-vs-hidef.aspx](http://web.archive.org/web/20120102231201/http://blogs.msdn.com/b/shawnhar/archive/2010/07/19/selecting-reach-vs-hidef.aspx) (Last accessed August 2, 2010)
 

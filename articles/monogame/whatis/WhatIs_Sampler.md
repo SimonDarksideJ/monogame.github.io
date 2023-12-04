@@ -17,19 +17,19 @@ Use the [SamplerState](xref:Microsoft.Xna.Framework.Graphics.SamplerState) class
 
 This is the default state for sampling:
 
-*   Use linear filtering.    
-*   Wrap texture addresses on boundaries.    
-*   Set the maximum anisotropy value to 4.    
-*   Do not use mip maps or LOD bias.    
+* Use linear filtering.
+* Wrap texture addresses on boundaries.
+* Set the maximum anisotropy value to 4.
+* Do not use mip maps or LOD bias.
 
 These are the corresponding API states:
 
-*   Set [Filter](xref:Microsoft.Xna.Framework.Graphics.SamplerState.Filter) to **TextureFilter.Linear**.    
-*   Set [AddressU](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressU), [AddressV](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressV), and [AddressW](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressW) to **TextureAddressMode.Wrap**.    
-*   Set [MaxAnisotropy](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MaxAnisotropy) to 4.    
-*   Set [MaxMipLevel](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MaxMipLevel) and [MipMapLevelOfDetailBias](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MipMapLevelOfDetailBias) to 0.
+* Set [Filter](xref:Microsoft.Xna.Framework.Graphics.SamplerState.Filter) to **TextureFilter.Linear**.
+* Set [AddressU](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressU), [AddressV](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressV), and [AddressW](xref:Microsoft.Xna.Framework.Graphics.SamplerState.AddressW) to **TextureAddressMode.Wrap**.
+* Set [MaxAnisotropy](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MaxAnisotropy) to 4.
+* Set [MaxMipLevel](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MaxMipLevel) and [MipMapLevelOfDetailBias](xref:Microsoft.Xna.Framework.Graphics.SamplerState.MipMapLevelOfDetailBias) to 0.
 
-Built-in state objects make it easy to create objects with the most common sampler state settings. The most common settings are **LinearClamp**, **LinearWrap**, **PointClamp**, **PointWrap**, **AnisotropicClamp**, and **AnisotropicWrap**. For an example of creating a state object, see [Creating a State Object](StateObject1.md).
+Built-in state objects make it easy to create objects with the most common sampler state settings. The most common settings are **LinearClamp**, **LinearWrap**, **PointClamp**, **PointWrap**, **AnisotropicClamp**, and **AnisotropicWrap**. For an example of creating a state object, see [Creating a State Object](../howto/HowTo_Create_a_StateObject.md).
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

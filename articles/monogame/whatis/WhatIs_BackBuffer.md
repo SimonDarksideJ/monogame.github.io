@@ -15,7 +15,7 @@ The back buffer created for Xbox 360 is not necessarily the same size as the fin
 
 In addition, if you request a back-buffer resolution that is not supported by the output device, the MonoGame framework automatically selects the highest resolution supported by the output device. For example, if you create a back-buffer with a resolution of 1920x1080 (for example, 1080p or 1080i) and display it on a device with 480i resolution, the back-buffer is resized to 480i automatically.
 
-# See Also
+## See Also
 
 [Viewport](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice.Viewport) 
 
