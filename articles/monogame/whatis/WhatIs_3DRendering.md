@@ -39,7 +39,7 @@ After you call [Game.Initialize](xref:Microsoft.Xna.Framework.Game.Initialize), 
 
 A resource is a collection of data stored in memory that can be accessed by the CPU or GPU. Types of resources that an application might use include render targets, vertex buffers, index buffers, and textures.
 
-Based on the resource management mode that was used when a resource is created, it should be reloaded when the device is reset. For more information, see [Loading Resources](AppModel_HowTo_LoadResources.md).
+Based on the resource management mode that was used when a resource is created, it should be reloaded when the device is reset. For more information, see [Loading Resources](../howto/HowTo_LoadLibraryResources.md).
 
 ### Vertex and Index Buffers
 

@@ -9,14 +9,17 @@ This new and improved documentation area aims to bridge the gaps in the understa
 
 Please check back regually for updates and more details on the evolution of the MonoGame Framework and its API.
 
-# In This Section
+## In This Section
 
 [What Is articles](whatis/index.md)
 
 Provides simple definitions for most of the central concepts maintained by the MonoGame Framework.
 
+[How To articles](howto/index.md)
 
-# Online Resources
+Short guides for everything you wanted to know about how to do game development with MonoGame, devided up in to simple articles for each activity.
+
+## Online Resources
 
 [Check out the full API documentation here](/api/index.md)
 
