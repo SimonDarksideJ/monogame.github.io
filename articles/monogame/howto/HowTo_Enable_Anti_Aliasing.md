@@ -21,13 +21,13 @@ Antialiasing is a technique for minimizing distortion artifacts caused by aliasi
 
 * Set [PreferMultiSampling](/api/Microsoft.Xna.Framework.GraphicsDeviceManager.html#Microsoft_Xna_Framework_GraphicsDeviceManager_PreferMultiSampling) to **true** in your [Game](xref:Microsoft.Xna.Framework.Game) class constructor.
 
-```csharp
+    ```csharp
     graphics.PreferMultiSampling = true;
-```
+    ```
 
 * Set the view matrix to place the camera close to the object so you can more clearly see the smoothed, antialiased edges.
 
-```csharp
+    ```csharp
     worldMatrix = Matrix.CreateRotationX(tilt) * Matrix.CreateRotationY(tilt);
     
     viewMatrix = Matrix.CreateLookAt(new Vector3(1.75f, 1.75f, 1.75f), Vector3.Zero, Vector3.Up);
@@ -37,11 +37,11 @@ Antialiasing is a technique for minimizing distortion artifacts caused by aliasi
         (float)GraphicsDevice.Viewport.Width /
         (float)GraphicsDevice.Viewport.Height,
         1.0f, 100.0f);
-```
+    ```
 
 * Draw the geometry by calling [GraphicsDevice.DrawPrimitives](/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html#Microsoft_Xna_Framework_Graphics_GraphicsDevice_DrawPrimitives_Microsoft_Xna_Framework_Graphics_PrimitiveType_System_Int32_System_Int32_).
 
-```csharp
+    ```csharp
     RasterizerState rasterizerState1 = new RasterizerState();
     rasterizerState1.CullMode = CullMode.None;
     graphics.GraphicsDevice.RasterizerState = rasterizerState1;
@@ -55,7 +55,7 @@ Antialiasing is a technique for minimizing distortion artifacts caused by aliasi
             12
         );
     }
-```
+    ```
 
 ## See Also
 

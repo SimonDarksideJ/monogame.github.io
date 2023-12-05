@@ -25,6 +25,34 @@ Demonstrates how to create a state object using any of the state object classes:
 
 Demonstrates how to enable antialiasing for your game.
 
+[Positioning the Camera](HowTo_FitCameraToScene.md)
+
+Demonstrates how to position the camera so that all objects in a scene are within the view frustum while maintaining the camera's original orientation.
+
+[Transforming a Point](HowTo_TransformPoint.md)
+
+This example demonstrates how to use the [Vector3](xref:Microsoft.Xna.Framework.Vector3) and [Matrix](xref:Microsoft.Xna.Framework.Matrix) classes to transform a point. A matrix transform can include scaling, rotating, and translating information.
+
+[Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)
+
+Demonstrates how to rotate and move a camera in a 3D environment.
+
+[Moving the Camera on a Curve](HowTo_ScriptedCamera.md)
+
+Demonstrates how to use the [Curve](xref:Microsoft.Xna.Framework.Curve) and [CurveKey](xref:Microsoft.Xna.Framework.CurveKey) classes to move a camera along the shape of a curve.
+
+[Selecting an Object in 3D Space](HowTo_DetectClicked3DObject.md)
+
+Demonstrates how to check whether the mouse (or touch location) is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
+
+[Bounding Volumes and Collisions](HowTo_CollisionDetectionOverview.md)
+
+Collision detection determines whether objects in a game world overlap each other.
+
+[Testing for Collisions](HowTo_DetectTwoObjectsColliding.md)
+
+Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

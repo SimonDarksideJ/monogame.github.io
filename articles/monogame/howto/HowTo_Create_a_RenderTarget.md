@@ -13,24 +13,24 @@ Demonstrates how to create a render target using the [RenderTarget2D](xref:Micro
 
 1. Declare variables for a render target using the [RenderTarget2D](xref:Microsoft.Xna.Framework.Graphics.RenderTarget2D) class and the render target texture using a [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D) class.
 
-```csharp
+    ```csharp
     SpriteBatch spriteBatch;
     Texture2D grid;
     RenderTarget2D renderTarget;
-```
+    ```
 
 2. Create a render target, giving it the same size as the back buffer.
 
-```csharp
+    ```csharp
     renderTarget = new RenderTarget2D(
         GraphicsDevice,
         GraphicsDevice.PresentationParameters.BackBufferWidth,
         GraphicsDevice.PresentationParameters.BackBufferHeight);
-```
+    ```
 
 3. Load a grid for a texture, which contains two vertical and two horizontal lines.
 
-```csharp
+    ```csharp
     protected override void LoadContent()
     {
         // Create a new SpriteBatch, which can be used to draw textures.
@@ -38,13 +38,13 @@ Demonstrates how to create a render target using the [RenderTarget2D](xref:Micro
     
         grid = Content.Load<Texture2D>("grid");
     }
-```
+    ```
 
 4. Render the texture to the render target.
 
     This function sets the render target on the device, draws the texture (to the render target) using a [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch), and sets the device render target to null (which resets the device to the back buffer).
 
-```csharp
+    ```csharp
     private void DrawRenderTarget()
     {
         // Set the device to the render target
@@ -60,11 +60,11 @@ Demonstrates how to create a render target using the [RenderTarget2D](xref:Micro
         // Reset the device to the back buffer
         graphicsDeviceManager.GraphicsDevice.SetRenderTarget(null);
     }
-```
+    ```
 
 5. Draw the render target texture to the back buffer.
 
-```csharp
+    ```csharp
     graphicsDeviceManager.GraphicsDevice.Clear(Color.CornflowerBlue);
     
     spriteBatch.Begin();
@@ -74,7 +74,7 @@ Demonstrates how to create a render target using the [RenderTarget2D](xref:Micro
         Color.White                    // no color scaling
         );
     spriteBatch.End();
-```
+    ```
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

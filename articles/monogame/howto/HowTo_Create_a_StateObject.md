@@ -15,26 +15,26 @@ Demonstrates how to create a state object using any of the state object classes:
 
     This example declares three rasterizer state objects and uses them to change the culling state.
 
-```csharp
+    ```csharp
     RasterizerState rsCullNone;
-```
+    ```
 
 2. Create a customizable state object.
 
     Create a state object from the [RasterizerState](xref:Microsoft.Xna.Framework.Graphics.RasterizerState) class and initialize it by explicitly setting the cull mode.
 
-```csharp
+    ```csharp
     rsCullNone = new RasterizerState();
     rsCullNone.CullMode = CullMode.None;
     rsCullNone.FillMode = FillMode.WireFrame;
     rsCullNone.MultiSampleAntiAlias = false;
-```
+    ```
 
 3. Respond to the user pressing the A key on a gamepad to change the culling mode.
 
     The application starts with culling turned off; toggle between culling modes by pushing the A key on a gamepad. Unlike a customizable state object, use a built-in state object to create an object with a set of predefined state.
 
-```csharp
+    ```csharp
     if (GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed)
         changeState = true;
     
@@ -49,7 +49,7 @@ Demonstrates how to create a state object using any of the state object classes:
     
         changeState = false;
     }
-```
+    ```
 
 > The example contains two triangles. The first one is rendered if you select clockwise winding order; the second triangle is rendered if you select counterclockwise winding order; both triangles are rendered if you select no culling.
 

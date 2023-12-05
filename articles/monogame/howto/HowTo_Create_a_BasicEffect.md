@@ -19,7 +19,7 @@ Using the basic effect class requires a set of world, view, and projection matri
 
 1. Declare these objects at the beginning of the game.
 
-```csharp
+    ```csharp
     Matrix worldMatrix;
     Matrix viewMatrix;
     Matrix projectionMatrix;
@@ -27,13 +27,13 @@ Using the basic effect class requires a set of world, view, and projection matri
     VertexDeclaration vertexDeclaration;
     VertexBuffer vertexBuffer;
     BasicEffect basicEffect;
-```
+    ```
 
 2. Initialize the world, view, and projection matrices.
 
     In this example, you create a world matrix that rotates the geometry 22.5 degrees along the x and y axes. The view matrix is a look-at matrix with a camera position at (0, 0, 5), pointing at the origin. The projection matrix is a perspective projection matrix based on a a 45-degree field of view, an aspect ratio equal to the client window, and a set of near and far planes.
 
-```csharp
+    ```csharp
     float tilt = MathHelper.ToRadians(0);  // 0 degree angle
     // Use the world matrix to tilt the cube along x and y axes.
     worldMatrix = Matrix.CreateRotationX(tilt) * Matrix.CreateRotationY(tilt);
@@ -44,11 +44,11 @@ Using the basic effect class requires a set of world, view, and projection matri
         (float)GraphicsDevice.Viewport.Width /
         (float)GraphicsDevice.Viewport.Height,
         1.0f, 100.0f);
-```
+    ```
 
 3. Initialize [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) with transformation and light values.
 
-```csharp
+    ```csharp
     basicEffect = new BasicEffect(graphics.GraphicsDevice);
     
     basicEffect.World = worldMatrix;
@@ -93,7 +93,7 @@ Using the basic effect class requires a set of world, view, and projection matri
             basicEffect.DirectionalLight2.SpecularColor = Vector3.One;
         }
     }
-```
+    ```
 
 4. Create a vertex declaration for the type [VertexPositionNormalTexture](xref:Microsoft.Xna.Framework.Graphics.VertexPositionNormalTexture).
 
@@ -103,7 +103,7 @@ Using the basic effect class requires a set of world, view, and projection matri
 
     * If texturing is enabled, the vertex must have a texture coordinate.
 
-```csharp
+    ```csharp
     vertexDeclaration = new VertexDeclaration(new VertexElement[]
         {
             new VertexElement(0, VertexElementFormat.Vector3, VertexElementUsage.Position, 0),
@@ -111,11 +111,11 @@ Using the basic effect class requires a set of world, view, and projection matri
             new VertexElement(24, VertexElementFormat.Vector2, VertexElementUsage.TextureCoordinate, 0)
         }
     );
-```
+    ```
 
 5. Create the per vertex data. This example shows the data for one face of the cube.
 
-```csharp
+    ```csharp
     Vector3 topLeftFront = new Vector3(-1.0f, 1.0f, 1.0f);
     Vector3 bottomLeftFront = new Vector3(-1.0f, -1.0f, 1.0f);
     Vector3 topRightFront = new Vector3(1.0f, 1.0f, 1.0f);
@@ -156,7 +156,7 @@ Using the basic effect class requires a set of world, view, and projection matri
     cubeVertices[5] =
         new VertexPositionNormalTexture(
         topRightFront, frontNormal, textureTopRight);
-```
+    ```
 
 6. Call [GraphicsDevice.Clear](/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html#Microsoft_Xna_Framework_Graphics_GraphicsDevice_Clear_Microsoft_Xna_Framework_Color_) to clear the render target.
 
@@ -166,7 +166,7 @@ Using the basic effect class requires a set of world, view, and projection matri
 
 9. Draw the geometry by calling [GraphicsDevice.DrawPrimitives](/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html#Microsoft_Xna_Framework_Graphics_GraphicsDevice_DrawPrimitives_Microsoft_Xna_Framework_Graphics_PrimitiveType_System_Int32_System_Int32_).
 
-```csharp
+    ```csharp
     graphics.GraphicsDevice.Clear(Color.SteelBlue);
     
     RasterizerState rasterizerState1 = new RasterizerState();
@@ -185,7 +185,7 @@ Using the basic effect class requires a set of world, view, and projection matri
     
     
     base.Draw(gameTime);
-```
+    ```
 
 © 2012 Microsoft Corporation. All rights reserved.  
 
