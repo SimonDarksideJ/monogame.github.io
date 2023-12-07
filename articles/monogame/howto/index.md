@@ -9,6 +9,38 @@ These articles provide a brief introduction into performing some basic tasks in 
 
 ## In This Section
 
+[Overview of a Sprite](graphics/Sprite_Overview.md)
+
+Provides an overview of what a "Sprite" is in relation to Game Development.
+
+[How To Animate A Sprite](graphics/HowTo_Animate_Sprite.md)
+
+Demonstrates how to draw an animated sprite using a custom class.
+
+[How To Draw A Sprite](graphics/HowTo_Draw_A_Sprite.md)
+
+Demonstrates how to draw a texture to the screen.
+
+[How To Draw A Sprite Background](graphics/HowTo_Draw_Sprite_Background.md)
+
+[How To Draw A Sprite Over A Model](graphics/HowTo_Draw_Sprite_Over_Model.md)
+
+[How To Draw Text](graphics/HowTo_Draw_Text.md)
+
+[How To Make A Scrolling Background](graphics/HowTo_Make_Scrolling_Background.md)
+
+[How To Rotate A Sprite](graphics/HowTo_Rotate_Sprite.md)
+
+[How To Rotate A Sprite Group](graphics/HowTo_Rotate_Sprite_Group.md)
+
+[How To Scale A Sprite](graphics/HowTo_Scale_Sprite.md)
+
+[How To Scale A Sprite using A Matrix](graphics/HowTo_Scale_Sprites_Matrix.md)
+
+[How To Tile Sprites](graphics/HowTo_Tile_Sprites.md)
+
+[How To Tint A Sprite](graphics/HowTo_Tint_Sprite.md)
+
 [How to create a Basic Effect](HowTo_Create_a_BasicEffect.md)
 
 Demonstrates how to create and initialize an instance of the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) class and use it to draw simple geometry.
