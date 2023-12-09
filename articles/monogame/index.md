@@ -5,9 +5,9 @@ _description: Welcome to the MonoGame documentation hub!
 
 # Welcome to the MonoGame documentation hub
 
-This new and improved documentation area aims to bridge the gaps in the understanding of the Monogame Framework, covering all aspects of the features of MonoGame with some support from the original XNA documentation graciously donated by Microsoft.
+This new and improved documentation area aims to bridge the gaps in the understanding of the MonoGame Framework, covering all aspects of the features of MonoGame with some support from the original XNA documentation graciously donated by Microsoft.
 
-Please check back regually for updates and more details on the evolution of the MonoGame Framework and its API.
+Please check back regularly for updates and more details on the evolution of the MonoGame Framework and its API.
 
 ## In This Section
 
@@ -17,7 +17,7 @@ Provides simple definitions for most of the central concepts maintained by the M
 
 [How To articles](howto/index.md)
 
-Short guides for everything you wanted to know about how to do game development with MonoGame, devided up in to simple articles for each activity.
+Short guides for everything you wanted to know about how to do game development with MonoGame, divided up in to simple articles for each activity.
 
 ## Online Resources
 

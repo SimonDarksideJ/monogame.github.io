@@ -73,9 +73,13 @@ A view frustum is a 3D volume that defines how models are projected from camera 
 
 A viewport is a 2D rectangle that defines the size of the rendering surface onto which a 3D scene is projected.
 
-[What Is the GameLoopt?](WhatIs_TheGameLoop.md)
+[What Is the GameLoop?](WhatIs_TheGameLoop.md)
 
 A viewport is a 2D rectangle that defines the size of the rendering surface onto which a 3D scene is projected.
+
+[WhatIs_Audio?](WhatIs_Audio.md)
+
+An overview of how the MonoGame Framework provides audio playback through several core audio classes.
 
 © 2012 Microsoft Corporation. All rights reserved.  
 
