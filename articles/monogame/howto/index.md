@@ -53,6 +53,18 @@ Collision detection determines whether objects in a game world overlap each othe
 
 Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
+[How to detect a Key Press](HowTo_DetectKeyPress.md)
+
+The code in this topic describes how to detect a key press or release on the keyboard.
+
+[Detecting Gestures on a Multi-touch Screen](HowTo_GestureSupport.md)
+
+This topic demonstrates how to detect and use multi-touch gestures in a MonoGame game.
+
+[How to work with Touch Input](HowTo_UseMultiTouchInput.md)
+
+This topic demonstrates how to detect and use multi-touch input in a MonoGame game.
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.
