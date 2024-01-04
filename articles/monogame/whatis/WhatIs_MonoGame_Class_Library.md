@@ -45,9 +45,13 @@ The MonoGame Framework class library is a library of classes, interfaces, and va
 
     Contains classes to enumerate, play, and view songs, albums, playlists, and pictures.
 
-- [Microsoft.Xna.Framework.Utilities](xref:Microsoft.Xna.Framework.Utilities)
+- Microsoft.Xna.Framework.Utilities
 
     Contains classes that provide additional support for working with MonoGame.
+
+- Microsoft.Xna.Framework.Utilities.Deflate
+
+    Contains classes that provide additional support for compression with MonoGame.
 
 © 2012 Microsoft Corporation. All rights reserved.
 

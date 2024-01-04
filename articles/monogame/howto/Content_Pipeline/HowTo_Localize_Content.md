@@ -114,7 +114,7 @@ A new file to contain the new FontDescriptionProcessor class will be added.
 
     Assign the new file a name, such as LocalizedFontProcessor.cs.
 
-2. In the new class file, declare a new class (for example, LocalizedFontProcessor) that derives from [ContentProcessor](xref:Microsoft.Xna.Framework.Content.Pipeline.ContentProcessor-2), and specifies the new LocalizedFontDescription class as input.
+2. In the new class file, declare a new class (for example, LocalizedFontProcessor) that derives from [ContentProcessor](https://monogame.net/api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessor-2.html), and specifies the new LocalizedFontDescription class as input.
 
     ```csharp
     [ContentProcessor]

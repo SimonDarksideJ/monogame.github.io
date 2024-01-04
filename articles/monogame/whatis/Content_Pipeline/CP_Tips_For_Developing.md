@@ -19,7 +19,7 @@ The following information should help you import basic graphics objects.
 
     The default culling mode removes triangles that have a counterclockwise winding order.
 
-- Call [SwapWindingOrder](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper.SwapWindingOrder) to change the winding order of a triangle.
+- Call [SwapWindingOrder](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper) to change the winding order of a triangle.
 
 - Set the scale for graphical objects to 1 unit = 1 meter.
 
@@ -81,7 +81,7 @@ Debugging ProjCP causes MSBuild to compile your test content while running under
 
 - [What Is Content?](CP_Overview.md)  
 - [What is the Content Pipeline?](CP_Architecture.md)  
-- [Extending a Standard Content Processor](CP_Extend_Processor.md)  
+- [Extending a Standard Content Processor](../../howto/Content_Pipeline/HowTo_Extend_Processor.md)  
 - [Adding New Content Types](CP_Content_Advanced.md)  
 
 © 2012 Microsoft Corporation. All rights reserved.  

@@ -18,7 +18,7 @@ This procedure assumes you have copied the new importer or processor to a local 
 5. Navigate to the directory containing the assembly with the custom importer or processor, and then add it.
 6. Save.
 
-The new importer or processor now appears as a choice in [using dialog properties](UsingXNA_Dlg_Properties.md) for importing or processing a newly added game asset.
+The new importer or processor now appears as a choice in dialog properties for importing or processing a newly added game asset.
 
 ## See Also
 

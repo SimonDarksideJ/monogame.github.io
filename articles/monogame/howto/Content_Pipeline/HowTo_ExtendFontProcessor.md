@@ -94,7 +94,7 @@ The Content Pipeline is part of the build process, and it is separate from your 
     context.AddDependency(fullPath);
     ```
 
-7. Read the contents of the file, and add each letter to the input font one by one. Note that the [Characters](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription.Characters) collection keeps track of duplicates automatically. It is not necessary for the user to make sure that each letter is added only once. The **Characters** collection will contain only one instance of each character, no matter how many times **Add** has been called.
+7. Read the contents of the file, and add each letter to the input font one by one. Note that the [Characters](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription) collection keeps track of duplicates automatically. It is not necessary for the user to make sure that each letter is added only once. The **Characters** collection will contain only one instance of each character, no matter how many times **Add** has been called.
 
     ```csharp
     string letters = File.ReadAllText(fullPath, System.Text.Encoding.UTF8);
