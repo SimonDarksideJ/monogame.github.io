@@ -1,5 +1,5 @@
 ---
-_title: How to load content within a Game Library
+_title: How to load content within a Game Library?
 _description: It may be desirable in some designs to load and draw content within the methods of a Game Library. For example, you may wish to distribute code that displays textures, models, or fonts (such as a DrawableGameComponent) in a .DLL.
 ---
 
@@ -7,12 +7,12 @@ _description: It may be desirable in some designs to load and draw content withi
 
 It may be desirable in some designs to load and draw content within the methods of a Game Library. For example, you may wish to distribute code that displays textures, models, or fonts (such as a [DrawableGameComponent](xref:Microsoft.Xna.Framework.DrawableGameComponent)) in a .DLL.
 
-There are two techniques that accomodate this, one in which the binary content is separate from the .DLL, and one in which the content is embedded within the .DLL.
+There are two advanced techniques that accommodate this, one in which the binary content is separate from the .DLL, and one in which the content is embedded within the .DLL.
 
-* [Loading Content in a Game Library](#loading-content-in-a-game-library)
-* [Embedding Content in a Game Library](#embedding-content-in-a-game-library)
+- [Loading Content in a custom Game Library](#loading-content-in-a-custom-game-library)
+- [Embedding Content in a Game Library](#embedding-content-in-a-game-library)
 
-## Loading Content in a Game Library
+## Loading Content in a custom Game Library
 
 In this method, the compiled content used by the game library is distributed in its own .xnb files, separate from the .DLL.
 
@@ -22,7 +22,7 @@ This is the preferred method in most cases, as it makes the most efficient use o
 
 1. Create a new solution that contains a game library project.
 2. [Add a game content project](HowTo_GameContent_Add.md) to the solution.
-3. [Add game assets to the content project](HowTo_AddAResource.md).
+3. In a library project, choose **Add, New Item**, and select "Resources File."
 4. Select the game library project, then right-click and choose **Add Content Reference...**, and select the game content project you just created.
 
 When the solution is built, the resources in the content project will be compiled into binary .xnb files. These files will reside in the "bin\\x86\\Debug\\Content" directory of the game library project (if built as an x86 debug project).
@@ -61,9 +61,9 @@ When the solution is built, the resources in the content project will be compile
 
 You may also embed binary content resources directly in the Game Library and load them from within. This technique requires the declaration of those resources in a reference file. It allows you to distribute code that displays textures, models, or fonts (such as a [DrawableGameComponent](xref:Microsoft.Xna.Framework.DrawableGameComponent)) in a .DLL without distributing the .xnb files separately.
 
-![Note](../images/note.gif)Important
-
-Be aware that all embedded resources are loaded into memory with the .DLL, and cannot be unloaded from main memory. For this reason, this technique is not recommended for most applications, and should only be used when the content to embed is very small.
+> **Note**
+>
+> Be aware that all embedded resources are loaded into memory with the .DLL, and cannot be unloaded from main memory. For this reason, this technique is not recommended for most applications, and should only be used when the content to embed is very small.
 
 ### To add content to a Game Library as references
 
@@ -118,11 +118,11 @@ Once content has been added to the **Resource Designer**, any code running from 
 
 ### Reference
 
-[Game Class](xref:Microsoft.Xna.Framework.Game)  
-[LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent)  
-[UnloadContent](xref:Microsoft.Xna.Framework.Game.UnloadContent)  
-[Game Members](xref:Microsoft.Xna.Framework.Game)  
-[Microsoft.Xna.Framework Namespace](xref:Microsoft.Xna.Framework)  
+- [Game Class](xref:Microsoft.Xna.Framework.Game)  
+- [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent)  
+- [UnloadContent](xref:Microsoft.Xna.Framework.Game.UnloadContent)  
+- [Game Members](xref:Microsoft.Xna.Framework.Game)  
+- [Microsoft.Xna.Framework Namespace](xref:Microsoft.Xna.Framework)  
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

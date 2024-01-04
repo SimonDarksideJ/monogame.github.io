@@ -81,6 +81,14 @@ A viewport is a 2D rectangle that defines the size of the rendering surface onto
 
 An overview of how the MonoGame Framework provides audio playback through several core audio classes.
 
+## See Also
+
+### References
+
+[WhatIs_MonoGame_Class_Library.md](WhatIs_MonoGame_Class_Library.md)
+
+An overview of the MonoGame Class Library reference, containing all the API calls available to the MonoGame Framework.
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.
