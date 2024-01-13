@@ -37,7 +37,7 @@ Demonstrates how to import a [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.
 
 3. Create a [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object for drawing the font on the screen.
 
-4. In your [LoadContent](xref:MXF.Game.LoadContent) method, call [ContentManager.Load](xref:Microsoft.Xna.Framework.Content.ContentManager.Load``1), specifying the [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.SpriteFont) class and the asset name of the imported font.
+4. In your [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) method, call [ContentManager.Load](xref:Microsoft.Xna.Framework.Content.ContentManager.Load``1), specifying the [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.SpriteFont) class and the asset name of the imported font.
 
 5. Create your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object, passing the current [GraphicsDevice](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice).
 

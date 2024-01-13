@@ -79,7 +79,7 @@ Demonstrates how to draw a scrolling background sprite using the [SpriteBatch](x
     // ScrollingBackground.Draw
     ```
 
-7. Draw the background using the origin and screen position calculated in [LoadContent](xref:MXF.Game.LoadContent) and [Update](xref:Microsoft.Xna.Framework.Game.Update).
+7. Draw the background using the origin and screen position calculated in [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) and [Update](xref:Microsoft.Xna.Framework.Game.Update).
 
     ```csharp
     protected override void Draw(GameTime gameTime)

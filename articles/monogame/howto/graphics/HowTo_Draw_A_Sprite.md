@@ -6,8 +6,8 @@ Demonstrates how to draw a sprite by using the [SpriteBatch](xref:Microsoft.Xna.
 
 1. Derive a class from [Game](xref:Microsoft.Xna.Framework.Game).
 2. Define a [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object as a field on your game class.
-3. In your [LoadContent](xref:MXF.Game.LoadContent) method, construct the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object, passing the current graphics device.
-4. Load the textures that will be used for drawing sprites in [LoadContent](xref:MXF.Game.LoadContent).
+3. In your [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) method, construct the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object, passing the current graphics device.
+4. Load the textures that will be used for drawing sprites in [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent).
     In this case, the example uses the **Content** member to load a texture from the MonoGame Framework Content Pipeline. The texture must be in the project, with the same name passed to [Load](xref:Microsoft.Xna.Framework.Content.ContentManager.Load``1).
 
     ```csharp
@@ -26,7 +26,7 @@ Demonstrates how to draw a sprite by using the [SpriteBatch](xref:Microsoft.Xna.
 6. After [Clear](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice.Clear), call [Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Begin) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
 7. Create a [Vector2](xref:Microsoft.Xna.Framework.Vector2) to represent the screen position of the sprite.
 8. Call [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object, passing the texture to draw, the screen position, and the color to apply.
-9. Use [Color.White](xref:MXF.Color) to draw the texture without any color effects.
+9. Use [Color.White](xref:Microsoft.Xna.Framework.Color) to draw the texture without any color effects.
 10. When all the sprites have been drawn, call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
 
     ```csharp

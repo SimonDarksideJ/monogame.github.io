@@ -8,7 +8,7 @@ Demonstrates how to scale sprites using a matrix that is created based on the vi
 
 1. Use the [PreferredBackBufferHeight](xref:Microsoft.Xna.Framework.GraphicsDeviceManager.PreferredBackBufferHeight) and [PreferredBackBufferWidth](xref:Microsoft.Xna.Framework.GraphicsDeviceManager.PreferredBackBufferWidth) properties of [GraphicsDeviceManager](xref:Microsoft.Xna.Framework.GraphicsDeviceManager) during your game's [Initialize](xref:Microsoft.Xna.Framework.Game.Initialize) to set the default screen size of your game.
 
-2. In your [LoadContent](xref:MXF.Game.LoadContent) method, use [Matrix.CreateScale](xref:Microsoft.Xna.Framework.Matrix.CreateScale) to create a scaling matrix.
+2. In your [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) method, use [Matrix.CreateScale](xref:Microsoft.Xna.Framework.Matrix.CreateScale) to create a scaling matrix.
 
    This matrix is recreated any time the resolution of the [GraphicsDevice](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice) changes.
 
