@@ -92,10 +92,6 @@ In Immediate mode, once you call [Begin](xref:Microsoft.Xna.Framework.Graphics.S
 
 Deferred mode is slower than Immediate mode, but it allows multiple instances of [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) to accept [Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Begin) and [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw) calls without interfering with each other.
 
-## See Also
-
-[Getting Started with 2D Games at App Hub Online](http://go.microsoft.com/fwlink/?LinkId=128880)  
-
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.
