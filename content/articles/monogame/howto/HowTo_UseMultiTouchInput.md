@@ -1,6 +1,6 @@
 ---
-_title: How to work with Touch Input.
-_description: This topic demonstrates how to detect and use multi-touch input in a MonoGame game.
+title: How to work with Touch Input.
+description: This topic demonstrates how to detect and use multi-touch input in a MonoGame game.
 ---
 
 # Working with Touch Input

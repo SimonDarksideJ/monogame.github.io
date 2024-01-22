@@ -1,6 +1,6 @@
 ---
-_title: How to enable Antialiasing
-_description: Demonstrates how to enable antialiasing for your game.
+title: How to enable Antialiasing
+description: Demonstrates how to enable antialiasing for your game.
 ---
 
 # Enabling Antialiasing (Multisampling)

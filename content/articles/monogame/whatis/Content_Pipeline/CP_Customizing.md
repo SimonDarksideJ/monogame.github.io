@@ -1,6 +1,6 @@
 ---
-_title: Loading Additional Content Types?
-_description: MonoGame provides the capability to extend Content Pipeline components that import and process almost any game asset file type.
+title: Loading Additional Content Types?
+description: MonoGame provides the capability to extend Content Pipeline components that import and process almost any game asset file type.
 ---
 
 # Loading Additional Content Types

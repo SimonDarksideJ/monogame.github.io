@@ -1,6 +1,6 @@
 ---
-_title: How to display Multiple Screens with Viewports
-_description: Demonstrates how to use viewports to display different scenes simultaneously using two cameras.
+title: How to display Multiple Screens with Viewports
+description: Demonstrates how to use viewports to display different scenes simultaneously using two cameras.
 ---
 
 # Displaying Multiple Screens with Viewports

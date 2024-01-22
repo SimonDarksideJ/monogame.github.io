@@ -1,6 +1,6 @@
 ---
-_title: What Is a Depth Buffer?
-_description: The definition for a Depth Buffer for MonoGame!
+title: What Is a Depth Buffer?
+description: The definition for a Depth Buffer for MonoGame!
 ---
 
 # What Is a Depth Buffer?

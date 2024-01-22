@@ -1,6 +1,6 @@
 ---
-_title: How to Extend the Font Description Processor to Support Additional Characters?
-_description: Describes the process of developing a custom content processor needed to add additional characters to a FontDescription object based on the text that is required by the game.
+title: How to Extend the Font Description Processor to Support Additional Characters?
+description: Describes the process of developing a custom content processor needed to add additional characters to a FontDescription object based on the text that is required by the game.
 ---
 
 # How to: Extend the Font Description Processor to Support Additional Characters

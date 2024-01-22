@@ -1,3 +1,8 @@
+---
+title: Drawing a Masked Sprite over a Background
+description: Demonstrates how to draw a foreground and background sprite using the SpriteBatch class, where only part of the foreground sprite masks the background.
+---
+
 # Drawing a Masked Sprite over a Background
 
 Demonstrates how to draw a foreground and background sprite using the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) class, where only part of the foreground sprite masks the background.

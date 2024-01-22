@@ -1,6 +1,6 @@
 ---
-_title: Content Pipeline Class Library
-_description: Content Pipeline Class Library Reference
+title: Content Pipeline Class Library
+description: Content Pipeline Class Library Reference
 ---
 
 # Content Pipeline Class Library

@@ -1,6 +1,6 @@
 ---
-_title: How to restrict Aspect Ratio on a Graphics Device
-_description: Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.
+title: How to restrict Aspect Ratio on a Graphics Device
+description: Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.
 ---
 
 # Restricting Aspect Ratio on a Graphics Device

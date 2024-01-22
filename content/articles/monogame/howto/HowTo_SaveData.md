@@ -1,6 +1,6 @@
 ---
-_title: How to Save and Load data using MonoGame
-_description: Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.
+title: How to Save and Load data using MonoGame
+description: Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.
 ---
 
 # Writing Data

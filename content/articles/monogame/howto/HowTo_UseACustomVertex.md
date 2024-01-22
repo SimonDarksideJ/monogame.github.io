@@ -1,6 +1,6 @@
 ---
-_title: How to create a Custom Vertex Declaration
-_description: Demonstrates how to create a custom vertex declaration and use it to render a 3D object.
+title: How to create a Custom Vertex Declaration
+description: Demonstrates how to create a custom vertex declaration and use it to render a 3D object.
 ---
 
 # Creating a Custom Vertex Declaration

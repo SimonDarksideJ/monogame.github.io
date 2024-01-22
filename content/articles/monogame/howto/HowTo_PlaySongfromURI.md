@@ -1,6 +1,6 @@
 ---
-_title: How to play a Song from a URI
-_description: Demonstrates how to use the MediaPlayer to play a song from a Uniform Resource Identifier (URI).
+title: How to play a Song from a URI
+description: Demonstrates how to use the MediaPlayer to play a song from a Uniform Resource Identifier (URI).
 ---
 
 # Playing a Song from a URI

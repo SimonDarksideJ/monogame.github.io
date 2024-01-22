@@ -1,6 +1,6 @@
 ---
-_title: How to create an XML File?
-_description: For complex game data, using a software tool to create and maintain these assets may be useful. Level tables, for example, might be easier to develop through a custom-level editor tool.
+title: How to create an XML File?
+description: For complex game data, using a software tool to create and maintain these assets may be useful. Level tables, for example, might be easier to develop through a custom-level editor tool.
 ---
 
 # Creating an XML File

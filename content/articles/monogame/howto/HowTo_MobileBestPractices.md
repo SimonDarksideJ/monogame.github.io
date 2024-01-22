@@ -1,6 +1,6 @@
 ---
-_title: How to apply Best Practices for MonoGame Games
-_description: The practices discussed here will help you have the most success possible with your MonoGame game.
+title: How to apply Best Practices for MonoGame Games
+description: The practices discussed here will help you have the most success possible with your MonoGame game.
 ---
 
 # Best Practices for MonoGame Games

@@ -1,6 +1,6 @@
 ---
-_title: How to position the Camera
-_description: Demonstrates how to position the camera so that all objects in a scene are within the view frustum while maintaining the camera's original orientation.
+title: How to position the Camera
+description: Demonstrates how to position the camera so that all objects in a scene are within the view frustum while maintaining the camera's original orientation.
 ---
 
 # Positioning the Camera

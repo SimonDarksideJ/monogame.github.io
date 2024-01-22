@@ -1,6 +1,6 @@
 ---
-_title: What is the Content Pipeline Architecture?
-_description: The Content Pipeline is designed to be extensible, so that it can easily support new input file formats and new types of conversion.
+title: What is the Content Pipeline Architecture?
+description: The Content Pipeline is designed to be extensible, so that it can easily support new input file formats and new types of conversion.
 ---
 
 # What is the Content Pipeline Architecture?

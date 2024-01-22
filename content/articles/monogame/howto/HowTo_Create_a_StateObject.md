@@ -1,6 +1,6 @@
 ---
-_title: How to create a State Object
-_description: Demonstrates how to create a state object using any of the state object classes.
+title: How to create a State Object
+description: Demonstrates how to create a state object using any of the state object classes.
 ---
 
 # How to create a State Object

@@ -1,6 +1,6 @@
 ---
-_title: What is Antialiasing?
-_description: The definition of Antialsing for MonoGame!
+title: What is Antialiasing?
+description: The definition of Antialsing for MonoGame!
 ---
 
 # What Is Antialiasing?

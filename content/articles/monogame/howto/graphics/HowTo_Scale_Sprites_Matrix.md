@@ -1,3 +1,8 @@
+---
+title: Scaling Sprites Based On Screen Size
+description: Demonstrates how to scale sprites using a matrix that is created based on the viewport width.
+---
+
 # Scaling Sprites Based On Screen Size
 
 Demonstrates how to scale sprites using a matrix that is created based on the viewport width.

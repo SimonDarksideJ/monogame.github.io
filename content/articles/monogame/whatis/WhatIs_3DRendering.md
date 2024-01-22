@@ -1,6 +1,6 @@
 ---
-_title: What is 3D Rendering?
-_description: The basics of the 3D rendering pipeline for MonoGame!
+title: What is 3D Rendering?
+description: The basics of the 3D rendering pipeline for MonoGame!
 ---
 
 # 3D Pipeline Basics

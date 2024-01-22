@@ -1,6 +1,6 @@
 ---
-_title: How to test for Collisions
-_description: Demonstrates how to use the BoundingSphere class to check whether two models are colliding.
+title: How to test for Collisions
+description: Demonstrates how to use the BoundingSphere class to check whether two models are colliding.
 ---
 
 # Testing for Collisions

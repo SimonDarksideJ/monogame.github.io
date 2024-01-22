@@ -1,6 +1,6 @@
 ---
-_title: What is the Content pipeline?
-_description: The basics of the content pipeline for MonoGame!
+title: What is the Content pipeline?
+description: The basics of the content pipeline for MonoGame!
 ---
 
 # Adding Content to a Game

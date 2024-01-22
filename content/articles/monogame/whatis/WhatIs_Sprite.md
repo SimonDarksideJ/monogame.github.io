@@ -1,6 +1,6 @@
 ---
-_title: What Is a Sprite?
-_description: The definition for Sprites in MonoGame!
+title: What Is a Sprite?
+description: The definition for Sprites in MonoGame!
 ---
 
 # What Is a Sprite?

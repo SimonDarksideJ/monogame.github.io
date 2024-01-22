@@ -1,6 +1,6 @@
 ---
-_title: How to detect a Key Press
-_description: The code in this topic describes how to detect a key press or release on the keyboard.
+title: How to detect a Key Press
+description: The code in this topic describes how to detect a key press or release on the keyboard.
 ---
 
 # Detecting a Key Press

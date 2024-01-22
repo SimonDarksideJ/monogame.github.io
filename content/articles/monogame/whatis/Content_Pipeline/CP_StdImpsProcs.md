@@ -1,6 +1,6 @@
 ---
-_title: What are the Standard Content Importers and Content Processors?
-_description: Describes the standard Content Pipeline Content Importers and Content Processors of MonoGame that support various common art asset file formats.
+title: What are the Standard Content Importers and Content Processors?
+description: Describes the standard Content Pipeline Content Importers and Content Processors of MonoGame that support various common art asset file formats.
 ---
 
 # Standard Content Importers and Content Processors

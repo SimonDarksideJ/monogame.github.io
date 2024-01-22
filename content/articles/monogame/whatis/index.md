@@ -1,6 +1,6 @@
 ---
-_title: What is
-_description: A series of articles to answer common questions related to MonoGame operation!
+title: What is
+description: A series of articles to answer common questions related to MonoGame operation!
 ---
 
 # "What Is" Articles for MonoGame

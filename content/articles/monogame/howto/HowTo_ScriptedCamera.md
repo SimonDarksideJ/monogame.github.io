@@ -1,6 +1,6 @@
 ---
-_title: How to move the Camera on a Curve
-_description: Demonstrates how to use the Curve and CurveKey classes to move a camera along the shape of a curve.
+title: How to move the Camera on a Curve
+description: Demonstrates how to use the Curve and CurveKey classes to move a camera along the shape of a curve.
 ---
 
 # Moving the Camera on a Curve

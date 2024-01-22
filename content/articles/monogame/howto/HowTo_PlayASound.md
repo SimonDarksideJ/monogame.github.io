@@ -1,6 +1,6 @@
 ---
-_title: How to play a Sound(effect)
-_description: This topic demonstrates how to play a simple sound by using SoundEffect.
+title: How to play a Sound(effect)
+description: This topic demonstrates how to play a simple sound by using SoundEffect.
 ---
 
 # Playing a Sound

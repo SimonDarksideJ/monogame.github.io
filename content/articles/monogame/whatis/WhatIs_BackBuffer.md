@@ -1,6 +1,6 @@
 ---
-_title: What Is a Back Buffer?
-_description: The definition of a Back Buffer for MonoGame!
+title: What Is a Back Buffer?
+description: The definition of a Back Buffer for MonoGame!
 ---
 
 # What Is a Back Buffer?

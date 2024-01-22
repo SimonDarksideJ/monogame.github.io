@@ -1,6 +1,6 @@
 ---
-_title: How to add an XML Content File to a Project?
-_description: Describes how to add custom game data as an XML file through the Content Pipeline.
+title: How to add an XML Content File to a Project?
+description: Describes how to add custom game data as an XML file through the Content Pipeline.
 ---
 
 # Adding an XML Content File to a Project

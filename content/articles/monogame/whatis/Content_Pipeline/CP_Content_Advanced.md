@@ -1,6 +1,6 @@
 ---
-_title: What are custom content types?
-_description: Content Builders and Processors can be customized to handle almost any content type.
+title: What are custom content types?
+description: Content Builders and Processors can be customized to handle almost any content type.
 ---
 
 # Adding New Content Types

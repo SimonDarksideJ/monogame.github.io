@@ -1,6 +1,6 @@
 ---
-_title: How to exit a Game Immediately
-_description: Demonstrates how to exit a game in response to user input.
+title: How to exit a Game Immediately
+description: Demonstrates how to exit a game in response to user input.
 ---
 
 # Exiting a Game Immediately

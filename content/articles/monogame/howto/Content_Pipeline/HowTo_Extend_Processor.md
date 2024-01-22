@@ -1,6 +1,6 @@
 ---
-_title: How To Extend a Standard Content Processor?
-_description: Describes how MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product.
+title: How To Extend a Standard Content Processor?
+description: Describes how MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product.
 ---
 
 # Extending a Standard Content Processor

@@ -1,6 +1,6 @@
 ---
-_title: How to create a Render Target
-_description: Demonstrates how to create a render target using a RenderTarget2D.
+title: How to create a Render Target
+description: Demonstrates how to create a render target using a RenderTarget2D.
 ---
 
 # Creating a Render Target

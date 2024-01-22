@@ -1,6 +1,6 @@
 ---
-_title: How to resize a Game
-_description: Demonstrates how to resize an active game window.
+title: How to resize a Game
+description: Demonstrates how to resize an active game window.
 ---
 
 # Adding Window Resizing Functionality

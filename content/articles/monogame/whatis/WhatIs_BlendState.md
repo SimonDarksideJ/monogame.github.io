@@ -1,6 +1,6 @@
 ---
-_title: What Is Blend State?
-_description: The definition for the Blend State for MonoGame!
+title: What Is Blend State?
+description: The definition for the Blend State for MonoGame!
 ---
 
 # What Is Blend State?

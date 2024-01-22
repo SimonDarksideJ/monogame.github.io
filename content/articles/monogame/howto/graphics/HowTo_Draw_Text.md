@@ -1,3 +1,8 @@
+---
+title: Drawing Text with a Sprite
+description: Demonstrates how to import a SpriteFont into a project and to draw text using DrawString
+---
+
 # Drawing Text with a Sprite
 
 Demonstrates how to import a [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.SpriteFont) into a project and to draw text using [DrawString](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.DrawString).

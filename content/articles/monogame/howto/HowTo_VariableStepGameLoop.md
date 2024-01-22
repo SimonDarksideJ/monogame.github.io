@@ -1,6 +1,6 @@
 ---
-_title: How to update a game with Variable or Fixed Timing
-_description: Demonstrates how to set up the runtime to call your Update method using variable or fixed timing.
+title: How to update a game with Variable or Fixed Timing
+description: Demonstrates how to set up the runtime to call your Update method using variable or fixed timing.
 ---
 
 # Updating with Variable or Fixed Timing

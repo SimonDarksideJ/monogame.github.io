@@ -1,6 +1,6 @@
 ---
-_title: What is the Game Loop
-_description: The MonoGame Framework Game class implements a game loop, which provides not only the window which displays your game, but also provides overloadable methods that your game implements to facilitate communication between your game and the operating system. This topic provides an overview of the basic functionality provided by the game loop.
+title: What is the Game Loop
+description: The MonoGame Framework Game class implements a game loop, which provides not only the window which displays your game, but also provides overloadable methods that your game implements to facilitate communication between your game and the operating system. This topic provides an overview of the basic functionality provided by the game loop.
 ---
 
 # Initializing a Game

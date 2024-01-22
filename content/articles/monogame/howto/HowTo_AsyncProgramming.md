@@ -1,6 +1,6 @@
 ---
-_title: How to work with Asynchronous Methods in MonoGame
-_description: This topic describes how you can work with asynchronous methods in MonoGame.
+title: How to work with Asynchronous Methods in MonoGame
+description: This topic describes how you can work with asynchronous methods in MonoGame.
 ---
 
 # Working with Asynchronous Methods in MonoGame

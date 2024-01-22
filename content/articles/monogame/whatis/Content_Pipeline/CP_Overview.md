@@ -1,6 +1,6 @@
 ---
-_title: What Is Content?
-_description: Content is all the parts of your game that are not executing managed code. It includes all art assets, such as textures, sprites, meshes, effects, and fonts; and includes sound assets, such as music or brief sound effects. It also can include data assets, such as tables of levels or character attributes.
+title: What Is Content?
+description: Content is all the parts of your game that are not executing managed code. It includes all art assets, such as textures, sprites, meshes, effects, and fonts; and includes sound assets, such as music or brief sound effects. It also can include data assets, such as tables of levels or character attributes.
 ---
 
 # What Is Content?

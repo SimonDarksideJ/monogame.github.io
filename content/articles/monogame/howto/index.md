@@ -1,6 +1,6 @@
 ---
-_title: How To
-_description: A series of articles to answer common questions related to MonoGame operation!
+title: How To
+description: A series of articles to answer common questions related to MonoGame operation!
 ---
 
 # "How To" Articles for MonoGame

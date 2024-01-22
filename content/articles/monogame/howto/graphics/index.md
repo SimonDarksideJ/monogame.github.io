@@ -1,6 +1,6 @@
 ---
-_title: How to
-_description: A series of articles on how to do certain tasks in MonoGame!
+title: How to
+description: A series of articles on how to do certain tasks in MonoGame!
 ---
 
 # "How To" Articles for MonoGame

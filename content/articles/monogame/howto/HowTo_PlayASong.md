@@ -1,6 +1,6 @@
 ---
-_title: How to play a Song / music
-_description: Demonstrates how to play a song from a media library.
+title: How to play a Song / music
+description: Demonstrates how to play a song from a media library.
 ---
 
 # Playing a Song

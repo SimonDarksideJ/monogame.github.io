@@ -1,6 +1,6 @@
 ---
-_title: What Is a Configurable Effect?
-_description: The definition for a Configurable Effect for MonoGame!
+title: What Is a Configurable Effect?
+description: The definition for a Configurable Effect for MonoGame!
 ---
 
 # What Is a Configurable Effect?

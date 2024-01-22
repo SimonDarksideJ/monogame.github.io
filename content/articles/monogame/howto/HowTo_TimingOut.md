@@ -1,6 +1,6 @@
 ---
-_title: How to exit a Game After a Time Out
-_description: Demonstrates how to exit a game after a period of time (such as inactivity) has passed.
+title: How to exit a Game After a Time Out
+description: Demonstrates how to exit a game after a period of time (such as inactivity) has passed.
 ---
 
 # Adding Time-Out Functionality to a Game

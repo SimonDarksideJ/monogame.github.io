@@ -1,6 +1,6 @@
 ---
-_title: What Is Sampler State?
-_description: The definition for a Sampler State for MonoGame!
+title: What Is Sampler State?
+description: The definition for a Sampler State for MonoGame!
 ---
 
 # What Is Sampler State?

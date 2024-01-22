@@ -1,3 +1,8 @@
+---
+title: Drawing a Sprite Over a Model
+description: Demonstrates how to draw a sprite so that it obscures a model. In this example, we are drawing an animated sprite representing an explosion over the current screen position of a 3D model.
+---
+
 # Drawing a Sprite Over a Model
 
 Demonstrates how to draw a sprite so that it obscures a model. In this example, we are drawing an animated sprite representing an explosion over the current screen position of a 3D model.

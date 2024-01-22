@@ -1,6 +1,6 @@
 ---
-_title: What is  a Custom Importer?
-_description: MonoGame provides standard importers and processors for a number of common file formats used to store such basic game assets as models, materials effects, sprites, textures, and so on. For a list of file formats supported by these standard importers and processors.
+title: What is  a Custom Importer?
+description: MonoGame provides standard importers and processors for a number of common file formats used to store such basic game assets as models, materials effects, sprites, textures, and so on. For a list of file formats supported by these standard importers and processors.
 ---
 
 # Adding a Custom Importer

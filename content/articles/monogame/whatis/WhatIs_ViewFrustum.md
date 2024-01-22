@@ -1,6 +1,6 @@
 ---
-_title: What Is a View Frustum?
-_description: The definition for the View Frustum for MonoGame!
+title: What Is a View Frustum?
+description: The definition for the View Frustum for MonoGame!
 ---
 
 # What Is a View Frustum?

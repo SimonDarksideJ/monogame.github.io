@@ -1,6 +1,6 @@
 ---
-_title: How to work with Microphones
-_description: This topic provides basic information about microphone usage in games.
+title: How to work with Microphones
+description: This topic provides basic information about microphone usage in games.
 ---
 
 # Working with Microphones

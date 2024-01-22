@@ -1,6 +1,6 @@
 ---
-_title: What are Vectors, Matrices, and Quaternions?
-_description: What are What are Vectors, Matrices, and Quaternions definitions for MonoGame!
+title: What are Vectors, Matrices, and Quaternions?
+description: What are What are Vectors, Matrices, and Quaternions definitions for MonoGame!
 ---
 
 # What are Vectors, Matrices, and Quaternions?

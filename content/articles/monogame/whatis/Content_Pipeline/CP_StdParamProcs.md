@@ -1,6 +1,6 @@
 ---
-_title: What are the Parameterized Content Processors?
-_description: Describes how parameterized Content Processors work in MonoGame.
+title: What are the Parameterized Content Processors?
+description: Describes how parameterized Content Processors work in MonoGame.
 ---
 
 # Parameterized Content Processors

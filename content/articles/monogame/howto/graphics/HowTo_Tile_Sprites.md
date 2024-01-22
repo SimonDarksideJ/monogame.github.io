@@ -1,8 +1,13 @@
+---
+title: Tiling a Sprite
+description: Demonstrates how to draw a sprite repeatedly in the x and y directions in one Draw call
+---
+
 # Tiling a Sprite
 
 Demonstrates how to draw a sprite repeatedly in the x and y directions in one [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw) call.
 
-![](graphics_sprite_tiled.jpg)
+![Tiled Sprite](graphics_sprite_tiled.jpg)
 
 This sample uses a texture addressing mode to duplicate a texture across the area defined by [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw). Other address modes, such as mirroring, can create interesting results.
 
@@ -21,7 +26,7 @@ This sample uses a texture addressing mode to duplicate a texture across the are
     ```
 
 3. Call [SpriteBatch.Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Begin) to set the sprite state.
-    
+
 4. Set the [TextureAddressMode](xref:Microsoft.Xna.Framework.Graphics.TextureAddressMode) in the [SamplerState](xref:Microsoft.Xna.Framework.Graphics.SamplerState) to [TextureAddressMode.LinearWrap](T.md#TextureAddressMode_Microsoft_Xna_Framework_Graphics_TextureAddressMode.LinearWrap).
 
     ```csharp

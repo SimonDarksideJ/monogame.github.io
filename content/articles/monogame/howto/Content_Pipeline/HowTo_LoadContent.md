@@ -1,6 +1,6 @@
 ---
-_title: How to load content within a Game?
-_description: Loading content is simple using the Content Pipeline within MonoGame projects.
+title: How to load content within a Game?
+description: Loading content is simple using the Content Pipeline within MonoGame projects.
 ---
 
 # Loading Content in a Game

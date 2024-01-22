@@ -1,3 +1,8 @@
+---
+title: Tinting a Sprite
+description: Demonstrates how to tint a sprite using a Color value.
+---
+
 # Tinting a Sprite
 
 Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.Color) value.

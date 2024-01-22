@@ -1,6 +1,6 @@
 ---
-_title: How to loop Sounds
-_description: This section demonstrates how to loop a sound.
+title: How to loop Sounds
+description: This section demonstrates how to loop a sound.
 ---
 
 # Looping a Sound

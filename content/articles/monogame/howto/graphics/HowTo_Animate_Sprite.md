@@ -1,7 +1,8 @@
 ---
-_title:Animating a Sprite
-_description: How to animate a sprite using a custom class!
+title: Animating a Sprite
+description: Demonstrates how to animate a sprite from a texture using a custom class.
 ---
+
 # Animating a Sprite
 
 Demonstrates how to animate a sprite from a texture using a custom class.

@@ -1,6 +1,6 @@
 ---
-_title: What Is Depth Stencil State?
-_description: The definition for the Depth Stencil State for MonoGame!
+title: What Is Depth Stencil State?
+description: The definition for the Depth Stencil State for MonoGame!
 ---
 
 # What Is Depth Stencil State?

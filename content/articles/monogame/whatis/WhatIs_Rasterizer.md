@@ -1,6 +1,6 @@
 ---
-_title: What Is Rasterizer State?
-_description: The definition for a Rasterizer for MonoGame!
+title: What Is Rasterizer State?
+description: The definition for a Rasterizer for MonoGame!
 ---
 
 # What Is Rasterizer State?

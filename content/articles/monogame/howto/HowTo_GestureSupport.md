@@ -1,6 +1,6 @@
 ---
-_title: How to detect Gestures on a Multi-touch Screen.
-_description: This topic demonstrates how to detect and use multi-touch gestures in a MonoGame game.
+title: How to detect Gestures on a Multi-touch Screen.
+description: This topic demonstrates how to detect and use multi-touch gestures in a MonoGame game.
 ---
 
 # Detecting Gestures on a Multi-touch Screen

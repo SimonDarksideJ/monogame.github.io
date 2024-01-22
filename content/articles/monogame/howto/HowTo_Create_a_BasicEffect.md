@@ -1,6 +1,6 @@
 ---
-_title: How to create a Basic Effect
-_description: The basics of the 3D rendering pipeline for MonoGame!
+title: How to create a Basic Effect
+description: The basics of the 3D rendering pipeline for MonoGame!
 ---
 
 # How to create a Basic Effect

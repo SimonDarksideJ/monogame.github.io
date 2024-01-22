@@ -1,6 +1,6 @@
 ---
-_title: How to record Sound with a Microphone
-_description: This topic demonstrates the basics of recording audio using a microphone.
+title: How to record Sound with a Microphone
+description: This topic demonstrates the basics of recording audio using a microphone.
 ---
 
 # Recording Sound with a Microphone

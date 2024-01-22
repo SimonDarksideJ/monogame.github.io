@@ -1,6 +1,6 @@
 ---
-_title: How to create a Full-Screen Game
-_description: Demonstrates how to start a game in full-screen mode.
+title: How to create a Full-Screen Game
+description: Demonstrates how to start a game in full-screen mode.
 ---
 
 # Creating a Full-Screen Game

@@ -1,6 +1,6 @@
 ---
-_title: What Is Color Blending?
-_description: The definition for Color Blending for MonoGame!
+title: What Is Color Blending?
+description: The definition for Color Blending for MonoGame!
 ---
 
 # What Is Color Blending?

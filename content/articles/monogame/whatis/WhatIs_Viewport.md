@@ -1,6 +1,6 @@
 ---
-_title: What Is a Viewport?
-_description: The definition for the Viewport for MonoGame!
+title: What Is a Viewport?
+description: The definition for the Viewport for MonoGame!
 ---
 
 # What Is a Viewport?

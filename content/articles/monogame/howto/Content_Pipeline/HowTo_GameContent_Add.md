@@ -1,6 +1,6 @@
 ---
-_title: How to add Content to your game
-_description: Learn how to add content such as images or sounds to your game.
+title: How to add Content to your game
+description: Learn how to add content such as images or sounds to your game.
 ---
 
 # Adding Content

@@ -1,6 +1,6 @@
 ---
-_title: How to transform a Point
-_description: This example demonstrates how to use the Vector3 and Matrix classes to transform a point. A matrix transform can include scaling, rotating, and translating information.
+title: How to transform a Point
+description: This example demonstrates how to use the Vector3 and Matrix classes to transform a point. A matrix transform can include scaling, rotating, and translating information.
 ---
 
 # Transforming a Point

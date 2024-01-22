@@ -1,6 +1,6 @@
 ---
-_title: How to stream Data from a WAV File
-_description: This topic describes how to stream an audio file using DynamicSoundEffectInstance.
+title: How to stream Data from a WAV File
+description: This topic describes how to stream an audio file using DynamicSoundEffectInstance.
 ---
 
 # Streaming Data from a WAV File

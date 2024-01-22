@@ -1,6 +1,6 @@
 ---
-_title: How to create a Localized Game?
-_description: A localized game is one in which the UI displays alternative sets of text that are appropriate to the language and culture of the gamer.
+title: How to create a Localized Game?
+description: A localized game is one in which the UI displays alternative sets of text that are appropriate to the language and culture of the gamer.
 ---
 
 # How to: Create a Localized Game

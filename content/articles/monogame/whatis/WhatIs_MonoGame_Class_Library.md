@@ -1,6 +1,6 @@
 ---
-_title: MonoGame Framework Class Library
-_description: MonoGame Framework Class Library Reference
+title: MonoGame Framework Class Library
+description: MonoGame Framework Class Library Reference
 ---
 
 # MonoGame Framework Class Library

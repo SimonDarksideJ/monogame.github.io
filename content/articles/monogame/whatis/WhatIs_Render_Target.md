@@ -1,6 +1,6 @@
 ---
-_title: What Is a Render Target?
-_description: The definition for a Render Target for MonoGame!
+title: What Is a Render Target?
+description: The definition for a Render Target for MonoGame!
 ---
 
 # What Is a Render Target?

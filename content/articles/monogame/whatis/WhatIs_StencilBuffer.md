@@ -1,6 +1,6 @@
 ---
-_title: What Is a Stencil Buffer?
-_description: The definition for a Stencil Buffer for MonoGame!
+title: What Is a Stencil Buffer?
+description: The definition for a Stencil Buffer for MonoGame!
 ---
 
 # What Is a Stencil Buffer?

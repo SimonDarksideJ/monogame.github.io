@@ -1,3 +1,8 @@
+---
+title: Drawing a Sprite
+description: Demonstrates how to draw a sprite by using the SpriteBatch class
+---
+
 # Drawing a Sprite
 
 Demonstrates how to draw a sprite by using the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) class.

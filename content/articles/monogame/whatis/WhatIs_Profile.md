@@ -1,6 +1,6 @@
 ---
-_title: What Is a Profile?
-_description: The definition for a Graphics Profile for MonoGame!
+title: What Is a Profile?
+description: The definition for a Graphics Profile for MonoGame!
 ---
 
 # What Is a Profile?

@@ -1,3 +1,8 @@
+---
+title: Scaling a Sprite
+description: Demonstrates how to scale a sprite using a uniform scale.
+---
+
 # Scaling a Sprite
 
 Demonstrates how to scale a sprite using a uniform scale.

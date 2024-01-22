@@ -1,6 +1,6 @@
 ---
-_title: What are Parameterized Processors?
-_description: This topic discusses a method for programmatically modifying existing parameter values, and for adding new parameters to your own processors.
+title: What are Parameterized Processors?
+description: This topic discusses a method for programmatically modifying existing parameter values, and for adding new parameters to your own processors.
 ---
 
 # Developing with Parameterized Processors

@@ -1,6 +1,6 @@
 ---
-_title: How to select an Object in 3D Space
-_description: Demonstrates how to check whether the mouse (or touch location) is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
+title: How to select an Object in 3D Space
+description: Demonstrates how to check whether the mouse (or touch location) is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
 ---
 
 # Selecting an Object in 3D Space

@@ -1,6 +1,6 @@
 ---
-_title: How to adjust Pitch and Volume
-_description: Demonstrates how to manipulate the pitch and volume of sound effects as they play.
+title: How to adjust Pitch and Volume
+description: Demonstrates how to manipulate the pitch and volume of sound effects as they play.
 ---
 
 # Adjusting Pitch and Volume

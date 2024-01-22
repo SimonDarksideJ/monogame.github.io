@@ -1,6 +1,6 @@
 ---
-_title: What is the Content Pipeline Document Object Model?
-_description: The MonoGame Content Document Object Model (DOM) represents the set of built-in classes that can be consumed by standard content processors.
+title: What is the Content Pipeline Document Object Model?
+description: The MonoGame Content Document Object Model (DOM) represents the set of built-in classes that can be consumed by standard content processors.
 ---
 
 # Content Pipeline Document Object Model

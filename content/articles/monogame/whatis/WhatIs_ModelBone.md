@@ -1,6 +1,6 @@
 ---
-_title: What Is a Model Bone?
-_description: The definition for a Model Bone for MonoGame!
+title: What Is a Model Bone?
+description: The definition for a Model Bone for MonoGame!
 ---
 
 # What Is a Model Bone?

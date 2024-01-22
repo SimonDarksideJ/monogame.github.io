@@ -1,6 +1,6 @@
 ---
-_title: Sounds Overview
-_description: An overview of how the MonoGame Framework provides audio playback through several core audio classes.
+title: Sounds Overview
+description: An overview of how the MonoGame Framework provides audio playback through several core audio classes.
 ---
 
 # Introduction

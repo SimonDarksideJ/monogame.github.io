@@ -1,6 +1,6 @@
 ---
-_title: How to use an XML File to Specify Content?
-_description: Game assets managed through the Content Pipeline include graphic items such as textures, models and meshes; sound files such as dialogue or music; and custom data that governs the behavior of the game.
+title: How to use an XML File to Specify Content?
+description: Game assets managed through the Content Pipeline include graphic items such as textures, models and meshes; sound files such as dialogue or music; and custom data that governs the behavior of the game.
 ---
 
 # Using an XML File to Specify Content

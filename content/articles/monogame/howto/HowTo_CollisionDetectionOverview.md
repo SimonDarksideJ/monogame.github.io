@@ -1,6 +1,6 @@
 ---
-_title: How to test collisions with Bounding Volumes
-_description: A walkthrough what is involved in figuring out if two objects collide for MonoGame!
+title: How to test collisions with Bounding Volumes
+description: A walkthrough what is involved in figuring out if two objects collide for MonoGame!
 ---
 
 # Bounding Volumes and Collisions

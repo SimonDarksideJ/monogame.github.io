@@ -1,6 +1,6 @@
 ---
-_title: How to manage automatic aotation and scaling
-_description: A walkthrough what is involved in figuring out if two objects collide for MonoGame!
+title: How to manage automatic aotation and scaling
+description: A walkthrough what is involved in figuring out if two objects collide for MonoGame!
 ---
 
 # Automatic Rotation and Scaling

@@ -1,6 +1,6 @@
 ---
-_title: How to load content within a Game Library?
-_description: It may be desirable in some designs to load and draw content within the methods of a Game Library. For example, you may wish to distribute code that displays textures, models, or fonts (such as a DrawableGameComponent) in a .DLL.
+title: How to load content within a Game Library?
+description: It may be desirable in some designs to load and draw content within the methods of a Game Library. For example, you may wish to distribute code that displays textures, models, or fonts (such as a DrawableGameComponent) in a .DLL.
 ---
 
 # Loading Content Within a Game Library

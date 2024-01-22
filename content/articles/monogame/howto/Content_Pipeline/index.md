@@ -1,6 +1,6 @@
 ---
-_title: How To tasks for the Content Pipeline
-_description: A series of articles to answer common questions related to Content Pipeline operation!
+title: How To tasks for the Content Pipeline
+description: A series of articles to answer common questions related to Content Pipeline operation!
 ---
 
 # "How To" Articles for the Content Pipeline

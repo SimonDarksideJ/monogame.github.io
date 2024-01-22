@@ -1,6 +1,6 @@
 ---
-_title: How to load XML Content at Runtime?
-_description: Describes how to load custom game data at game runtime through the Content Pipeline.
+title: How to load XML Content at Runtime?
+description: Describes how to load custom game data at game runtime through the Content Pipeline.
 ---
 
 # Loading XML Content at Runtime
