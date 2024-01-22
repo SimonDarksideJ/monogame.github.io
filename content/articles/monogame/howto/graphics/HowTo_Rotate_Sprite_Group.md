@@ -9,8 +9,6 @@ Demonstrates how to rotate a group of sprites around a single point.
 
 ## Drawing a Rotated Group of Sprites
 
-### To draw a rotated group of sprites on screen
-
 1. Follow the steps of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 
 2. Create one set of [Vector2](xref:Microsoft.Xna.Framework.Vector2) objects that represents the unrotated positions of the sprites and one set to hold the rotated values.
@@ -73,7 +71,7 @@ Demonstrates how to rotate a group of sprites around a single point.
     Transform each vector using a rotation matrix created for the rotation angle.
 
 5. To rotate around the origin, transform each vector relative to the origin by subtracting the origin vector.
-    
+
 6. Add the origin vector to the transformed vector to create the final rotated vector.
 
     ```csharp
@@ -118,7 +116,7 @@ Demonstrates how to rotate a group of sprites around a single point.
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

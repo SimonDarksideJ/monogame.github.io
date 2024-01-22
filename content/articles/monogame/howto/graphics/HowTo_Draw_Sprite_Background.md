@@ -9,27 +9,7 @@ Demonstrates how to draw a foreground and background sprite using the [SpriteBat
 
 The foreground sprite in this example must include masking information.
 
-## Creating a MonoGame Project
-
-1. Create a new MonoGame Desktop project.
-<!-- markdownlint-disable MD025 -->
-### [Visual Studio Code](#tab/commandline)
-<!-- markdownlint-disable MD025 -->
-
-    ```dotnetcli
-    dotnet new mgdesktopgl
-    ```
-
-<!-- markdownlint-disable MD025 -->
-### [Visual Studio](#tab/visualstudio)
-<!-- markdownlint-enable MD025 -->
-    File->New->MonoGame Desktop
-
----
-
 ## Drawing a Foreground and Background Sprite
-
-### To draw a foreground and background sprite
 
 1. Open the `Game1` class, and load your content as described in the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 
@@ -98,7 +78,7 @@ The foreground sprite in this example must include masking information.
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

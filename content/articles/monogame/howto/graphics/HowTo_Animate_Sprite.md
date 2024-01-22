@@ -11,8 +11,6 @@ The example assumes the texture you are loading contains four frames of the same
 
 ## Drawing an Animated Sprite
 
-### To draw an animated sprite
-
 1. In your game's constructor, create an instance of the **AnimatedTexture** class.
    This example uses (0,0) as the origin of the texture, no rotation, a scale of 2, and a depth of 0.5.
 
@@ -122,11 +120,11 @@ The example assumes the texture you are loading contains four frames of the same
 
 ### Tasks
 
-[Drawing a Sprite](HowToDrawSprite.md)
+[Drawing a Sprite](HowTo_Draw_A_Sprite.md)
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

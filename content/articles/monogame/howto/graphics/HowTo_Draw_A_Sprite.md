@@ -50,7 +50,7 @@ Demonstrates how to draw a sprite by using the [SpriteBatch](xref:Microsoft.Xna.
 
 ### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 ### Reference
 

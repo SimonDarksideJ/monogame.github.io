@@ -9,8 +9,6 @@ Demonstrates how to scale sprites using a matrix that is created based on the vi
 
 ## Scaling Sprites Based on Screen Size
 
-### To scale sprites based on screen size
-
 1. Use the [PreferredBackBufferHeight](xref:Microsoft.Xna.Framework.GraphicsDeviceManager.PreferredBackBufferHeight) and [PreferredBackBufferWidth](xref:Microsoft.Xna.Framework.GraphicsDeviceManager.PreferredBackBufferWidth) properties of [GraphicsDeviceManager](xref:Microsoft.Xna.Framework.GraphicsDeviceManager) during your game's [Initialize](xref:Microsoft.Xna.Framework.Game.Initialize) to set the default screen size of your game.
 
 2. In your [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) method, use [Matrix.CreateScale](xref:Microsoft.Xna.Framework.Matrix.CreateScale) to create a scaling matrix.
@@ -105,11 +103,11 @@ Demonstrates how to scale sprites using a matrix that is created based on the vi
 
 ### Tasks
 
-[Drawing a Sprite](HowTo_Draw_A_Sprite.md)  
+[Drawing a Sprite](HowTo_Draw_A_Sprite.md)
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

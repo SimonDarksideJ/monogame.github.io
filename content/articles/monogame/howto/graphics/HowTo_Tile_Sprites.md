@@ -13,8 +13,6 @@ This sample uses a texture addressing mode to duplicate a texture across the are
 
 ## Drawing a Tiled a Sprite
 
-### To tile a sprite
-
 1. Follow the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 2. In the [Draw](xref:Microsoft.Xna.Framework.Game.Draw) method, create a [Rectangle](xref:Microsoft.Xna.Framework.Rectangle) to define the area to fill.
 
@@ -44,11 +42,11 @@ This sample uses a texture addressing mode to duplicate a texture across the are
 
 ### Tasks
 
-[Drawing a Sprite](HowTo_Draw_A_Sprite.md)  
+[Drawing a Sprite](HowTo_Draw_A_Sprite.md)
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

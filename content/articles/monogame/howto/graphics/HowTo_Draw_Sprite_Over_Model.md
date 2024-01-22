@@ -11,8 +11,6 @@ For this sample, the camera is a standard arc ball camera, implemented by camera
 
 ## Drawing a Sprite Over a 3D Model
 
-### To draw a sprite over a model
-
 1. In your [Update](xref:Microsoft.Xna.Framework.Game.Update) method, handle the input to move your camera, then call **UpdateFrame** on the **AnimatedTexture**.
 
      ```csharp
@@ -118,8 +116,8 @@ For this sample, the camera is a standard arc ball camera, implemented by camera
 
 ### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
-[What Is Color Blending?](WhatIs_ColorBlending.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is Color Blending?](./../../whatis/WhatIs_ColorBlending.md)
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

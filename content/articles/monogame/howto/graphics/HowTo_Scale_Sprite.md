@@ -7,9 +7,7 @@ description: Demonstrates how to scale a sprite using a uniform scale.
 
 Demonstrates how to scale a sprite using a uniform scale.
 
-## Drawing a Scaled Sprite
-
-### To draw a scaled sprite with a uniform scale
+## Drawing a Scaled Sprite with a uniform scale
 
 1. Follow the procedures of [Drawing a Sprite](HowToDrawSprite.md).
 
@@ -134,11 +132,11 @@ Demonstrates how to scale a sprite using a uniform scale.
 
 ### Tasks
 
-[Drawing a Sprite](HowTo_Draw_A_Sprite.md)  
+[Drawing a Sprite](HowTo_Draw_A_Sprite.md)
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

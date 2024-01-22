@@ -9,8 +9,6 @@ Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.C
 
 ## Drawing a Tinted Sprite
 
-### To draw a tinted sprite
-
 1. Follow the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 2. In the [Update](xref:Microsoft.Xna.Framework.Game.Update) method, determine how to tint the sprite.
 
@@ -52,11 +50,11 @@ Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.C
 
 ### Tasks
 
-[Drawing a Sprite](HowTo_Draw_A_Sprite.md)  
+[Drawing a Sprite](HowTo_Draw_A_Sprite.md)
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

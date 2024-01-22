@@ -9,8 +9,6 @@ Demonstrates how to draw a scrolling background sprite using the [SpriteBatch](x
 
 ## Drawing a Scrolling Background Sprite
 
-### To draw a scrolling background sprite
-
 1. Create the game class.
 
 2. Load resources as described in the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
@@ -126,7 +124,7 @@ Demonstrates how to draw a scrolling background sprite using the [SpriteBatch](x
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

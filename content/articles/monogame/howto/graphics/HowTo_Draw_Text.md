@@ -9,8 +9,6 @@ Demonstrates how to import a [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.
 
 ## Adding a Sprite Font and Drawing Text
 
-### To add a sprite font
-
 1. Double click on your Content.mgcb file in Solution Explorer, click **New Item** Button.
 
 2. In the **Add New Item** dialog box, select **Sprite Font Description** and add the filename in the edit box at the top of the dialog.
@@ -102,7 +100,7 @@ Demonstrates how to import a [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 

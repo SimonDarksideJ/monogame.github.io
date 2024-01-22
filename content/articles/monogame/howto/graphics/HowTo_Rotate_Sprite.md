@@ -9,8 +9,6 @@ Demonstrates how to rotate a sprite around its center.
 
 ## Drawing a Rotated Sprite
 
-### To draw a rotated sprite on screen
-
 1. Follow the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 
 2. Determine the screen location of the sprite, and the point within the texture that will serve as the origin.
@@ -83,11 +81,11 @@ Demonstrates how to rotate a sprite around its center.
 
 ### Tasks
 
-[Drawing a Sprite](HowTo_Draw_A_Sprite.md)  
+[Drawing a Sprite](HowTo_Draw_A_Sprite.md)
 
 #### Concepts
 
-[What Is a Sprite?](Sprite_Overview.md)  
+[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 
 #### Reference
 
