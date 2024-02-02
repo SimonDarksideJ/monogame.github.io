@@ -1,6 +1,6 @@
 ---
 title: What are the XML Elements for XMLImporter?
-description: The following base elements are recognized by XmlImporter Class
+description: The base elements that are recognized by XmlImporter Class.
 ---
 
 # XML Elements for XMLImporter

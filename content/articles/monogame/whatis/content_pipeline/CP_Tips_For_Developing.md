@@ -1,6 +1,6 @@
 ---
 title: What are Tips for Developing Custom Importers and Processors?
-description: The information provided should help when you develop Content Pipeline extensions.
+description: The information provided here should help when you develop Content Pipeline extensions.
 ---
 
 # Tips for Developing Custom Importers and Processors

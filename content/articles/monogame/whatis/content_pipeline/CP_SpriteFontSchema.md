@@ -1,6 +1,6 @@
 ---
 title: What is Sprite Font XML Schema Reference?
-description: Describes the valid tags and values for Sprite-Font (.spritefont) XML files used by the Content Pipeline to create [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.SpriteFont) textures.
+description: Describes the valid tags and values for Sprite-Font (.spritefont) XML files used by the Content Pipeline to create SpriteFont textures.
 ---
 
 # Sprite Font XML Schema Reference
