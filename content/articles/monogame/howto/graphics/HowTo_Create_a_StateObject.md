@@ -53,6 +53,8 @@ Demonstrates how to create a state object using any of the state object classes:
 
 > The example contains two triangles. The first one is rendered if you select clockwise winding order; the second triangle is rendered if you select counterclockwise winding order; both triangles are rendered if you select no culling.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

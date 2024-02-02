@@ -41,6 +41,8 @@ There are two techniques for setting how often your **Update** method is called.
     this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 16);    // Update() is called every 16 milliseconds
     ```
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

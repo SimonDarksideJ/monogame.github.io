@@ -124,6 +124,8 @@ Demonstrates how to rotate a group of sprites around a single point.
 [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

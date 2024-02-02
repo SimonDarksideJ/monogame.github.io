@@ -59,6 +59,8 @@ description: Demonstrates how to exit a game after a period of time (such as ina
     }
     ```
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

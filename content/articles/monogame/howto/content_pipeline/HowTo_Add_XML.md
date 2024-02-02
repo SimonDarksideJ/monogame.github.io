@@ -69,6 +69,8 @@ To load the data at runtime, see the tutorial [Loading XML Content at Runtime](H
 - [Using an XML File to Specify Content](HowTo_UseCustomXML.md)  
 - [Adding Content to a Game](HowTo_GameContent_Add.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

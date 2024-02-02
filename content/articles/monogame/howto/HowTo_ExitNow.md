@@ -59,6 +59,8 @@ Demonstrates how to exit a game in response to user input.
     }
     ```
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

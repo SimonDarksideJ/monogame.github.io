@@ -19,6 +19,8 @@ In addition, if you request a back-buffer resolution that is not supported by th
 
 [Viewport](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice.Viewport) 
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

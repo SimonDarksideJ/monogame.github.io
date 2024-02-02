@@ -1,5 +1,5 @@
 ---
-title: Dynamically Updating Vertex Data
+title: How to Dynamically Update Vertex Data
 description: Describes techniques for dynamically updating vertex data in an MonoGame game.
 ---
 
@@ -24,6 +24,8 @@ Sometimes, your game needs to generate geometry because the geometry is not know
 Create a dynamic vertex or index buffer using [DynamicVertexBuffer](xref:Microsoft.Xna.Framework.Graphics.DynamicVertexBuffer) and [DynamicIndexBuffer](xref:Microsoft.Xna.Framework.Graphics.DynamicIndexBuffer) ; create a static vertex or index buffer using [VertexBuffer](xref:Microsoft.Xna.Framework.Graphics.VertexBuffer) and [IndexBuffer](xref:Microsoft.Xna.Framework.Graphics.IndexBuffer). Use a dynamic buffer for vertex data that is updated every render frame, otherwise, use a static buffer.
 
 The samples are located on the App Hub Web site. For a more advanced solution for dynamic vertex updating, download the [Generated Geometry Sample](http://go.microsoft.com/fwlink/?LinkId=93007). This sample uses the [MeshBuilder](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshBuilder) helper class and a custom processor to generate a terrain map from a bitmap loaded by the content manager. Specifically, examine the `Process` method, located in TerrainProcessor.cs, which programmatically creates the terrain geometry based on input from the specified bitmap.
+
+---
 
 © 2012 Microsoft Corporation. All rights reserved.
 

@@ -76,6 +76,8 @@ Demonstrates how to create a render target using the [RenderTarget2D](xref:Micro
     spriteBatch.End();
     ```
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

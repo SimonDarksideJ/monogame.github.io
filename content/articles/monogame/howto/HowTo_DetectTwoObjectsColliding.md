@@ -90,6 +90,8 @@ For an example of determining a particle's path after it hits a surface, see [Ve
 
 [Bounding Volumes and Collisions](HowTo_CollisionDetectionOverview.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

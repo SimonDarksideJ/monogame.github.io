@@ -73,6 +73,8 @@ A view frustum is a 3D volume that defines how models are projected from camera 
 
 A viewport is a 2D rectangle that defines the size of the rendering surface onto which a 3D scene is projected.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

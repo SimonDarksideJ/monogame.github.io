@@ -58,6 +58,8 @@ Pseudo code for the lighting calculations looks similar to this:
       result.rgb += cubeTexture.a * EnvironmentMapSpecular
 ```
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

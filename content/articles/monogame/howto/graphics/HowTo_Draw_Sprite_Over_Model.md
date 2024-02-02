@@ -119,6 +119,8 @@ For this sample, the camera is a standard arc ball camera, implemented by camera
 [What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
 [What Is Color Blending?](./../../whatis/WhatIs_ColorBlending.md)
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

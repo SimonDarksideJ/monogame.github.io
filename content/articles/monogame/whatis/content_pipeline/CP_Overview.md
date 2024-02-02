@@ -68,6 +68,8 @@ These run-time components make use of the [MonoGame Framework Class Library](../
 - [Adding Content to a Game](index.md)  
 - [Adding New Content Types](CP_Content_Advanced.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

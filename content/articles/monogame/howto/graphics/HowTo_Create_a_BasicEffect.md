@@ -187,6 +187,8 @@ Using the basic effect class requires a set of world, view, and projection matri
     base.Draw(gameTime);
     ```
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

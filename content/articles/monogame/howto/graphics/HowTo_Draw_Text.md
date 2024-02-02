@@ -109,6 +109,8 @@ Demonstrates how to import a [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.
 [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.SpriteFont)  
 [ContentManager.Load](xref:Microsoft.Xna.Framework.Content.ContentManager.Load``1)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

@@ -45,6 +45,8 @@ You need a content project in your game compile and build your project.
 - [Game Members](xref:Microsoft.Xna.Framework.Game)  
 - [Microsoft.Xna.Framework Namespace](xref:Microsoft.Xna.Framework)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

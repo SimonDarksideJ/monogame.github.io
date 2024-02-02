@@ -15,6 +15,8 @@ A stencil buffer can be used in more sophisticated ways such as specifying [Sten
 
 To use a stencil buffer, the [DepthFormat](xref:Microsoft.Xna.Framework.Graphics.DepthFormat) of the depth buffer must reserve some bits for the stencil data; the [DepthFormat.Depth24Stencil8](/api/Microsoft.Xna.Framework.Graphics.DepthFormat.html) format uses 8 bits for a stencil buffer as an example. Combining stencil data with an 8 bit [DepthStencilState.StencilMask Property](xref:Microsoft.Xna.Framework.Graphics.DepthStencilState.StencilMask) provide up to eight different stencil buffers.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

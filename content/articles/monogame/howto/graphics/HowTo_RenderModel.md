@@ -1,5 +1,5 @@
 ---
-title: Rendering a Model with a Basic Effect
+title: How to render a Model using a Basic Effect
 description: Demonstrates how to rotate a group of sprites around a single point.
 ---
 
@@ -152,6 +152,8 @@ Development is complete so you are ready to build and run the game. Control the 
 
 [Adding Content to a Game](../Content_Pipeline/HowTo_LoadContent.md)
 [Using Input](../input/index.md)
+
+---
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

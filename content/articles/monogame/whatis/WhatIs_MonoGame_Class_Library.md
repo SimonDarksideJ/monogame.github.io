@@ -53,6 +53,8 @@ The MonoGame Framework class library is a library of classes, interfaces, and va
 
     Contains classes that provide additional support for compression with MonoGame.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

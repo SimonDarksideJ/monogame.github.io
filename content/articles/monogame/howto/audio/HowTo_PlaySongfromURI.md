@@ -55,6 +55,8 @@ Provides methods and properties to play, pause, resume, and stop songs. **MediaP
 
 Provides access to a song in the song library.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

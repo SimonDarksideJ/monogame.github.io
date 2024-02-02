@@ -55,6 +55,7 @@ Describes the valid tags and values for Sprite-Font (.spritefont) XML files used
 
 The base elements that are recognized by XmlImporter Class.
 
+---
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

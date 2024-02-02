@@ -55,6 +55,8 @@ This sample uses a texture addressing mode to duplicate a texture across the are
 [SpriteSortMode](xref:Microsoft.Xna.Framework.Graphics.SpriteSortMode)  
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

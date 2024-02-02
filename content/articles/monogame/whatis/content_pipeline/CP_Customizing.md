@@ -58,6 +58,8 @@ To read the nonstandard game asset file, a custom Content Importer is required t
 - [What Is Content?](CP_Overview.md)  
 - [What is the Content Pipeline?](CP_Architecture.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

@@ -39,6 +39,8 @@ static Vector3 RotatePointOnYAxis(Vector3 point, float angle)
 * CreateScale
 * CreateTranslation
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

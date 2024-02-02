@@ -45,6 +45,8 @@ The flexibility of this process enables you to create and update game assets usi
 
     Describes the process of developing a custom content processor needed to add additional characters to a [FontDescription](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription) object based on the text that is required by the game.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

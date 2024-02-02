@@ -67,6 +67,8 @@ Plays a song or collection of songs.
 
 Gets the [AlbumCollection](xref:Microsoft.Xna.Framework.Media.AlbumCollection) that contains all albums in the media library.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

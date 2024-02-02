@@ -13,6 +13,8 @@ You have a lot of control over how you blend the source and the destination data
 
 For an example that creates and uses a state object, see [Creating a State Object](../howto/HowTo_Create_a_StateObject.md).
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

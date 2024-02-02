@@ -141,6 +141,8 @@ Event that occurs when the number of audio capture buffers awaiting playback is 
 
 Returns a stream to an existing file in the default title storage location.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

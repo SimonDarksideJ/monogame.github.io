@@ -17,6 +17,8 @@ Describes the process of developing a custom content processor needed to add add
 
 Demonstrates how to create A localized game using alternative sets of text that are appropriate to the language and culture of the gamer.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

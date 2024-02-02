@@ -46,6 +46,8 @@ Provides properties, methods, and events for play back of the audio buffer.
 
 Provides properties, methods, and fields and events for capturing audio data with microphones.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

@@ -1,6 +1,6 @@
 ---
 title: How to resize a Game
-description: Demonstrates how to resize an active game window.
+description: Demonstrates how to handle the resizing of the active game window.
 ---
 
 # Adding Window Resizing Functionality
@@ -26,6 +26,8 @@ description: Demonstrates how to resize an active game window.
         // Make changes to handle the new window size.            
     }
     ```
+
+---
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

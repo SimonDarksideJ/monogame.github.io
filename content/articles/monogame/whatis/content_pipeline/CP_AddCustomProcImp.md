@@ -25,6 +25,8 @@ The new importer or processor now appears as a choice in dialog properties for i
 - [Adding New Content Types](CP_Content_Advanced.md)  
 - [Standard Content Importers and Content Processors](CP_StdImpsProcs.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

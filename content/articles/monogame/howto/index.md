@@ -9,73 +9,53 @@ These articles provide a brief introduction into performing some basic tasks in 
 
 ## In This Section
 
-[Overview of a Sprite](graphics/Sprite_Overview.md)
+The section is broken down into 4 distinct categories:
 
-Provides an overview of what a "Sprite" is in relation to Game Development.
+* [Core concepts](#core-concepts)
+* [Game Operations](#game-operations)
+* [Collision Detection](#collision-detection)
+* [Guidance](#guidance)
 
-[How To Animate A Sprite](graphics/HowTo_Animate_Sprite.md)
+### Core concepts
 
-Demonstrates how to draw an animated sprite using a custom class.
+This section details the core concepts to understand how MonoGame projects fit together.
 
-[How To Draw A Sprite](graphics/HowTo_Draw_A_Sprite.md)
+[Audio](./audio/index.md)
+[graphics](./graphics/index.md)
+[content pipeline](./content_pipeline/index.md)
+[Input](./input/index.md)
 
-Demonstrates how to draw a texture to the screen.
+### Game Operations
 
-[How To Draw A Sprite Background](graphics/HowTo_Draw_Sprite_Background.md)
+This section details some of the operational aspects of running a MonoGame game.
 
-[How To Draw A Sprite Over A Model](graphics/HowTo_Draw_Sprite_Over_Model.md)
+[How to manage automatic rotation and scaling](HowTo_AutomaticRotation.md)
 
-[How To Draw Text](graphics/HowTo_Draw_Text.md)
+A walkthrough what is involved in figuring out if two objects collide for MonoGame!
 
-[How To Make A Scrolling Background](graphics/HowTo_Make_Scrolling_Background.md)
+[How to exit a Game Immediately](HowTo_ExitNow.md)
 
-[How To Rotate A Sprite](graphics/HowTo_Rotate_Sprite.md)
+Demonstrates how to exit a game in response to user input.
 
-[How To Rotate A Sprite Group](graphics/HowTo_Rotate_Sprite_Group.md)
+[How to exit a Game After a Time Out](HowTo_TimingOut.md)
 
-[How To Scale A Sprite](graphics/HowTo_Scale_Sprite.md)
+Demonstrates how to exit a game after a period of time (such as inactivity) has passed.
 
-[How To Scale A Sprite using A Matrix](graphics/HowTo_Scale_Sprites_Matrix.md)
+[How to update a game with Variable or Fixed Timing](HowTo_VariableStepGameLoop.md)
 
-[How To Tile Sprites](graphics/HowTo_Tile_Sprites.md)
+Demonstrates how to set up the runtime to call your Update method using variable or fixed timing.
 
-[How To Tint A Sprite](graphics/HowTo_Tint_Sprite.md)
+[How to Save and Load data using MonoGame](HowTo_SaveData.md)
 
-[How to create a Basic Effect](HowTo_Create_a_BasicEffect.md)
+Demonstrates reading and writing data in MonoGame projects.
 
-Demonstrates how to create and initialize an instance of the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) class and use it to draw simple geometry.
+[How to handle resizing of a Game](HowTo_PlayerResize.md)
 
-[How to create a Render Target](HowTo_Create_a_RenderTarget.md)
+Demonstrates how to handle the resizing of the active game window.
 
-Demonstrates how to create a render target using the [RenderTarget2D](xref:Microsoft.Xna.Framework.Graphics.RenderTarget2D) class.
+### Collision Detection
 
-[How to create a State Object](HowTo_Create_a_StateObject.md)
-
-Demonstrates how to create a state object using any of the state object classes: [BlendState](xref:Microsoft.Xna.Framework.Graphics.BlendState), [DepthStencilState](xref:Microsoft.Xna.Framework.Graphics.DepthStencilState), [RasterizerState](xref:Microsoft.Xna.Framework.Graphics.RasterizerState), or [SamplerState](xref:Microsoft.Xna.Framework.Graphics.SamplerState).
-
-[How to enable Antialiasing](HowTo_Enable_Anti_Aliasing.md)
-
-Demonstrates how to enable antialiasing for your game.
-
-[Positioning the Camera](HowTo_FitCameraToScene.md)
-
-Demonstrates how to position the camera so that all objects in a scene are within the view frustum while maintaining the camera's original orientation.
-
-[Transforming a Point](HowTo_TransformPoint.md)
-
-This example demonstrates how to use the [Vector3](xref:Microsoft.Xna.Framework.Vector3) and [Matrix](xref:Microsoft.Xna.Framework.Matrix) classes to transform a point. A matrix transform can include scaling, rotating, and translating information.
-
-[Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)
-
-Demonstrates how to rotate and move a camera in a 3D environment.
-
-[Moving the Camera on a Curve](HowTo_ScriptedCamera.md)
-
-Demonstrates how to use the [Curve](xref:Microsoft.Xna.Framework.Curve) and [CurveKey](xref:Microsoft.Xna.Framework.CurveKey) classes to move a camera along the shape of a curve.
-
-[Selecting an Object in 3D Space](HowTo_DetectClicked3DObject.md)
-
-Demonstrates how to check whether the mouse (or touch location) is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
+This section contains some helpful articles to understand collision detection in a MonoGame game.
 
 [Bounding Volumes and Collisions](HowTo_CollisionDetectionOverview.md)
 
@@ -85,49 +65,19 @@ Collision detection determines whether objects in a game world overlap each othe
 
 Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
-[How to detect a Key Press](HowTo_DetectKeyPress.md)
+### Guidance
 
-The code in this topic describes how to detect a key press or release on the keyboard.
+This section contains articles to help make your MonoGame project successful.
 
-[Detecting Gestures on a Multi-touch Screen](HowTo_GestureSupport.md)
+[How to work with Asynchronous Methods in MonoGame](HowTo_AsyncProgramming.md)
 
-This topic demonstrates how to detect and use multi-touch gestures in a MonoGame game.
+This topic describes how you can work with asynchronous methods in MonoGame.
 
-[How to work with Touch Input](HowTo_UseMultiTouchInput.md)
+[How to apply Best Practices for MonoGame Games](HowTo_MobileBestPractices.md)
 
-This topic demonstrates how to detect and use multi-touch input in a MonoGame game.
+The practices discussed here will help you have the most success possible with your MonoGame game.
 
-[Playing a Sound](HowTo_PlayASound.md)
-
-Demonstrates how to play a simple sound by using [SoundEffect](xref:Microsoft.Xna.Framework.Audio.SoundEffect).
-
-[Looping a Sound](HowTo_LoopASound.md)
-
-Demonstrates how to loop a sound.
-
-[Adjusting Pitch and Volume](HowTo_ChangePitchAndVolume.md)
-
-Demonstrates how to change pitch and volume of a playing sound.
-
-[Playing a Song](HowTo_PlayASong.md)
-
-Demonstrates how to play a song from a user's media library.
-
-[Playing a Song from a URI](HowTo_PlaySongfromURI.md)
-
-Demonstrates how to use the [MediaPlayer](xref:Microsoft.Xna.Framework.Media.MediaPlayer) to play a song from a Uniform Resource Identifier (URI).
-
-[Streaming Data from a WAV File](HowTo_StreamDataFromWav.md)
-
-Demonstrates how to stream audio from a wave (.wav) file.
-
-[Recording Sounds with Microphones](HowTo_Microphone.md)
-
-Topics that provide guidance on writing code to support microphones for MonoGame.
-
-[Recording Sound with a Microphone](HowTo_Record_Microphone.md)
-
-Demonstrates the basics of recording audio using a microphone attached to a device.
+---
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

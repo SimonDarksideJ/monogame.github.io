@@ -23,4 +23,6 @@ Short guides for everything you wanted to know about how to do game development 
 
 [Check out the full API documentation here](/api/index.md)
 
+---
+
 © 2023 The MonoGame Foundation.

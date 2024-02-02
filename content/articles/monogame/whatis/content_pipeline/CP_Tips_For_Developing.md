@@ -84,6 +84,8 @@ Debugging ProjCP causes MSBuild to compile your test content while running under
 - [Extending a Standard Content Processor](../../howto/Content_Pipeline/HowTo_Extend_Processor.md)  
 - [Adding New Content Types](CP_Content_Advanced.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

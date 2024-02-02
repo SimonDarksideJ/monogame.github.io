@@ -47,6 +47,8 @@ The following describes the standard Content Processors and the type of game ass
 - [What Is Content?](CP_Overview.md)  
 - [Adding a Custom Importer](CP_AddCustomProcImp.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

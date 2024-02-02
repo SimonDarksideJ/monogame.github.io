@@ -74,6 +74,8 @@ As written, this sample is least applicable toconsoles, although the technique o
 
 [Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

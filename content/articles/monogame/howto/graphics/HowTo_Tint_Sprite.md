@@ -63,6 +63,8 @@ Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.C
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 [Color](xref:Microsoft.Xna.Framework.Color)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

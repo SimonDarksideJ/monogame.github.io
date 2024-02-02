@@ -62,6 +62,8 @@ A 32-bit floating-point number ranges from ```–3.402823e38``` to ```+3.402823e
 
 For more information about single-precision numbers, see the documentation for the [Single](http://msdn.microsoft.com/en-us/library/system.single.aspx) data type.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

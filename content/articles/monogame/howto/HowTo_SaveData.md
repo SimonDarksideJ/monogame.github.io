@@ -1,6 +1,6 @@
 ---
 title: How to Save and Load data using MonoGame
-description: Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.
+description: Demonstrates reading and writing data in MonoGame projects.
 ---
 
 # Writing Data
@@ -105,6 +105,8 @@ Reading saved data written in this way uses a very similar process. For example:
 ## Serializing data
 
 Text Data
+
+---
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

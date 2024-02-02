@@ -61,6 +61,8 @@ A texture resource is a structured collection of texture data. The data in a tex
 
 You can apply textures by using the [Texture](xref:Microsoft.Xna.Framework.Graphics.BasicEffect.Texture) property of the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) class, or choose to write your own effect methods to apply textures.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

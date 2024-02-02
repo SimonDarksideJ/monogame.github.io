@@ -94,7 +94,7 @@ Demonstrates how to scale a sprite using a uniform scale.
 ### To draw a scaled sprite using a destination rectangle
 
 1. Follow the procedures of [Drawing a Sprite](2DGraphicsHowTo_Draw_Sprite.md).
-    
+
 2. In your **Update** method, construct a rectangle that defines where on screen the sprite will be drawn.
 
    This rectangle does not need to be the same shape or size as the original sprite. Each dimension of the sprite is scaled independently to fit the destination rectangle.
@@ -143,6 +143,8 @@ Demonstrates how to scale a sprite using a uniform scale.
 [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)  
 [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
+
+---
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

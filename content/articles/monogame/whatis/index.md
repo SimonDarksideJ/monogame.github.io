@@ -45,6 +45,8 @@ Presents an overview of the math-related functionality provided by the MonoGame 
 
 An overview of the MonoGame Class Library reference, containing all the API calls available to the MonoGame Framework.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

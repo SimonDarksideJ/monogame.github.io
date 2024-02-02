@@ -39,6 +39,8 @@ When the Content Pipeline is used, the game does not have to parse the XML forma
 
 [Adding Content to a Game](./HowTo_GameContent_Add.md)
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

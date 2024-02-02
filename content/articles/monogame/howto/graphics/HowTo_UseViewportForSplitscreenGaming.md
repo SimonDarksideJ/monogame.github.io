@@ -86,6 +86,8 @@ Demonstrates how to use viewports to display different scenes simultaneously usi
 [GraphicsDevice.Viewport](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice)  
 [Viewport Structure](xref:Microsoft.Xna.Framework.Graphics.Viewport)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

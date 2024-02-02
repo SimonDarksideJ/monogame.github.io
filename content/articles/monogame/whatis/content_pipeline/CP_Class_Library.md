@@ -42,6 +42,8 @@ The Content Pipeline class library is a library of classes, interfaces, and valu
 - [Adding Content to a Game](index.md)  
 - [What Is Content?](CP_Overview.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

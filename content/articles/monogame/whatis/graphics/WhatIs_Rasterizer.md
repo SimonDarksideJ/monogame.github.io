@@ -29,6 +29,8 @@ These are the corresponding API states:
 
 Built-in state objects make it easy to create objects with the most common rasterizer state settings. **CullNone**, **CullClockwise**, and **CullCounterClockwise** are the most common settings. For an example of creating a state object, see [Creating a State Object](../howto/HowTo_Create_a_StateObject.md).
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

@@ -116,6 +116,8 @@ Demonstrates how to scale sprites using a matrix that is created based on the vi
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 [Matrix.CreateScale](xref:Microsoft.Xna.Framework.Matrix.CreateScale)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

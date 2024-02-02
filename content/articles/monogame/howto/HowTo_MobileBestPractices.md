@@ -79,6 +79,8 @@ If you implement automatic game saving, check for an automatically saved state w
 [Setting Aspect ratios for your game](HowTo_AspectRatio.md)  
 [Saving data using MonoGame](HowTo_SaveData.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

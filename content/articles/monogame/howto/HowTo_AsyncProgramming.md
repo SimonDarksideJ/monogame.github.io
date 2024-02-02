@@ -42,6 +42,8 @@ For exhaustive information about asynchronous methods, see [Asynchronous Program
 
 [Asynchronous Programming Design Patterns](http://msdn.microsoft.com/library/ms228969.aspx)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

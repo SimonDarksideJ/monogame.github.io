@@ -73,6 +73,8 @@ XNA introduced the Reach profile for Consoles, Windows, and mobile, and the HiDe
 
 "Selecting Reach vs. HiDef." Shawn Hargreaves Blog. July 2010. [http://web.archive.org/web/20120102231201/http://blogs.msdn.com/b/shawnhar/archive/2010/07/19/selecting-reach-vs-hidef.aspx](http://web.archive.org/web/20120102231201/http://blogs.msdn.com/b/shawnhar/archive/2010/07/19/selecting-reach-vs-hidef.aspx) (Last accessed August 2, 2010)
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

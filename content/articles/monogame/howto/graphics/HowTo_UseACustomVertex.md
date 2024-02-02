@@ -140,6 +140,8 @@ A custom vertex declaration is a class that implements fully customizable per-ve
     }
     ```
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

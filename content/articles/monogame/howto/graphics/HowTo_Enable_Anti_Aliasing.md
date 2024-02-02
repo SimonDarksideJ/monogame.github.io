@@ -70,6 +70,8 @@ Antialiasing is a technique for minimizing distortion artifacts caused by aliasi
 [PreparingDeviceSettings](/api/Microsoft.Xna.Framework.GraphicsDeviceManager.html#Microsoft_Xna_Framework_GraphicsDeviceManager_PreparingDeviceSettings)  
 [PresentationParameters](xref:Microsoft.Xna.Framework.Graphics.PresentationParameters)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

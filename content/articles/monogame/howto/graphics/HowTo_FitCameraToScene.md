@@ -73,6 +73,8 @@ Demonstrates how to position the camera so that all objects in a scene are withi
 
 [Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

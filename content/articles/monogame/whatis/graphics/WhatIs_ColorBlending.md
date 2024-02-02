@@ -59,6 +59,8 @@ By default, the alpha channel is blended along with the red, green, and blue cha
 [What Is a Sprite?](WhatIs_Sprite.md)  
 [3D Pipeline Basics](WhatIs_3DRendering.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

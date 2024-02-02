@@ -86,6 +86,8 @@ The foreground sprite in this example must include masking information.
 [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

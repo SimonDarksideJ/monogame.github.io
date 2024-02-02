@@ -89,6 +89,8 @@ The XML file that specifies the data that the Content Loader will read into the 
 - [Using an XML File to Specify Content](../../howto/Content_Pipeline/HowTo_UseCustomXML.md)  
 - [Adding Content to a Game](../../howto/Content_Pipeline/HowTo_GameContent_Add.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

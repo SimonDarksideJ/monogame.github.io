@@ -76,6 +76,8 @@ Here is a sample localized .spritefont file:
 
 - [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.SpriteFont)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

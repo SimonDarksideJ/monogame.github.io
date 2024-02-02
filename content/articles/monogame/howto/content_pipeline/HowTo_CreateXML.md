@@ -93,6 +93,8 @@ You will create a new project in Visual Studio.
 
 - [IntermediateSerializer Class](xref:Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

@@ -55,6 +55,8 @@ When the game needs the game asset's managed code object, it must call the [Cont
 - [Adding New Content Types](CP_Content_Advanced.md)
 - [Loading Additional Content Types](CP_Customizing.md)
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

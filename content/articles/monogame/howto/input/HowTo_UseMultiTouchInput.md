@@ -74,6 +74,8 @@ The following code demonstrates how to get the current state of the touch input 
 [TouchLocation](xref:Microsoft.Xna.Framework.Input.TouchLocation)  
 [TouchLocationState](xref:Microsoft.Xna.Framework.Input.TouchLocationState)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

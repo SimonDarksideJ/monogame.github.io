@@ -27,6 +27,8 @@ The game window size is shown by the [ClientBounds](xref:Microsoft.Xna.Framework
 
 [What Is a Back Buffer?](WhatIs_BackBuffer.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

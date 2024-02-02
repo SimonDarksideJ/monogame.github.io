@@ -114,6 +114,8 @@ The above sample demonstrates sampling just the first connected controller, to s
 
 > P.S. Most mobiles these days can support Bluetooth GamePads, so make sure you also support them if you intend to ship your game on mobile.
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

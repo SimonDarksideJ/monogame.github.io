@@ -124,6 +124,8 @@ Once content has been added to the **Resource Designer**, any code running from 
 - [Game Members](xref:Microsoft.Xna.Framework.Game)  
 - [Microsoft.Xna.Framework Namespace](xref:Microsoft.Xna.Framework)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

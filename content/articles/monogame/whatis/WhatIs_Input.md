@@ -17,6 +17,8 @@ For multi-touch devices, you can use the raw touch data provided by the [TouchPa
 
 The microphone on mobile can be used to capture audio that can be used in your game. For more information, see [Recording Sounds with Microphones](../howto/HowTo_Microphone.md).
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

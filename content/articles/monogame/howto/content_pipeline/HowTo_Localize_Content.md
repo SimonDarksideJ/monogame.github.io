@@ -218,6 +218,8 @@ Setting the **Culture** property of this class from the [CultureInfo.CurrentCult
 - [Extending a Standard Content Processor](./HowTo_Extend_Processor.md)
 - [Adding New Content Types](../../whatis/Content_Pipeline/CP_Content_Advanced.md)
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

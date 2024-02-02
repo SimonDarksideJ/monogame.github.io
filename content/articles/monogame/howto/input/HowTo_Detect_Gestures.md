@@ -70,6 +70,8 @@ The following code illustrates the procedure for detecting gestures on a multi-t
 [GestureType](xref:Microsoft.Xna.Framework.Input.Touch.GestureType)  
 [GestureSample](xref:Microsoft.Xna.Framework.Input.Touch.GestureSample)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

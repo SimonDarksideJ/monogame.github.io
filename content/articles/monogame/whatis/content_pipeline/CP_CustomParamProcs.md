@@ -119,6 +119,8 @@ This code passes the `SwitchCoordinateSystem` property (declared earlier) value 
 - [Adding New Content Types](CP_Content_Advanced.md)  
 - [Parameterized Content Processors](CP_StdParamProcs.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

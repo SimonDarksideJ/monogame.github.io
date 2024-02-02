@@ -19,6 +19,8 @@ A view frustum is defined by a field of view (fov), and by the distances of the 
 
 [What Is a Viewport?](WhatIs_Viewport.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

@@ -132,6 +132,8 @@ The example assumes the texture you are loading contains four frames of the same
 [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

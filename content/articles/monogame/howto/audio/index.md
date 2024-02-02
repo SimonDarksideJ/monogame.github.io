@@ -5,17 +5,43 @@ description: A series of articles to answer common questions related to audio op
 
 # "How To" Articles for Audio
 
-These articles provide a brief introduction into performing some advanced Content Pipeline tasks in MonoGame.
+These articles provide a brief introduction into managing audio in MonoGame games.
 
 ## In This Section
 
-[How to Extend the Font Description Processor to Support Additional Characters](HowTo_ExtendFontProcessor.md)
+[Playing a Sound](HowTo_PlayASound.md)
 
-Describes the process of developing a custom content processor needed to add additional characters to a [FontDescription](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription) object based on the text that is required by the game.
+Demonstrates how to play a simple sound by using [SoundEffect](xref:Microsoft.Xna.Framework.Audio.SoundEffect).
 
-[How to Create a Localized Game](HowTo_Localize_Content.md)
+[Looping a Sound](HowTo_LoopASound.md)
 
-Demonstrates how to create A localized game using alternative sets of text that are appropriate to the language and culture of the gamer.
+Demonstrates how to loop a sound.
+
+[Adjusting Pitch and Volume](HowTo_ChangePitchAndVolume.md)
+
+Demonstrates how to change pitch and volume of a playing sound.
+
+[Playing a Song](HowTo_PlayASong.md)
+
+Demonstrates how to play a song from a user's media library.
+
+[Playing a Song from a URI](HowTo_PlaySongfromURI.md)
+
+Demonstrates how to use the [MediaPlayer](xref:Microsoft.Xna.Framework.Media.MediaPlayer) to play a song from a Uniform Resource Identifier (URI).
+
+[Streaming Data from a WAV File](HowTo_StreamDataFromWav.md)
+
+Demonstrates how to stream audio from a wave (.wav) file.
+
+[Recording Sounds with Microphones](HowTo_Microphone.md)
+
+Topics that provide guidance on writing code to support microphones for MonoGame.
+
+[Recording Sound with a Microphone](HowTo_Record_Microphone.md)
+
+Demonstrates the basics of recording audio using a microphone attached to a device.
+
+---
 
 © 2012 Microsoft Corporation. All rights reserved.  
 

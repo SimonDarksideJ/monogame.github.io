@@ -15,6 +15,8 @@ Set the [PreferMultiSampling](xref:Microsoft.Xna.Framework.GraphicsDeviceManager
 
 [Enabling Antialiasing (Multisampling)](../howto/HowTo_Enable_Anti_Aliasing.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

@@ -137,6 +137,8 @@ After building and installing your new `NoCompressionModelProcessor` (see [Addin
 - [Standard Content Importers and Content Processors](../../whatis/Content_Pipeline/CP_StdImpsProcs.md)  
 - [Adding a Custom Importer](../../whatis/Content_Pipeline/CP_AddCustomProcImp.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

@@ -107,4 +107,6 @@ Now run the game. You should get the following:
 
 ![Game](~/articles/getting_started/images/3_game.png)
 
+---
+
 © 2023 The MonoGame Foundation.

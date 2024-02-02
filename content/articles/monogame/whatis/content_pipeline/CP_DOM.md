@@ -20,6 +20,8 @@ The following diagram lists the complete Content DOM.
 - [Extending a Standard Content Processor](../../howto/Content_Pipeline/HowTo_Extend_Processor.md)  
 - [Adding New Content Types](CP_Content_Advanced.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

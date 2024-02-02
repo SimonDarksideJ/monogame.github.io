@@ -27,6 +27,8 @@ The following describes only standard Content Processors that accept parameters,
 
 - [Adding Content to a Game](../../howto/Content_Pipeline/HowTo_GameContent_Add.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.
 
 © 2023 The MonoGame Foundation.

@@ -29,6 +29,12 @@ Demonstrates how to detect and use multi-touch input in a MonoGame game.
 
 Demonstrates how to detect and use multi-touch gestures in a MonoGame game.
 
+[How to select an Object in 3D Space](HowTo_DetectClicked3DObject.md)
+
+Demonstrates how to check whether the mouse (or touch location) is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
+
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.

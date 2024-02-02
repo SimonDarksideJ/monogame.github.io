@@ -136,6 +136,8 @@ Using [Curve](xref:Microsoft.Xna.Framework.Curve)s allows a path to be defined b
 
 [Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)  
 
+---
+
 © 2012 Microsoft Corporation. All rights reserved.  
 
 © 2023 The MonoGame Foundation.
