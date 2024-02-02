@@ -21,7 +21,7 @@
         },
         {
             "label": "Community",
-            "url": "https://community.monogame.net"
+            "url": "/community/"
         },
         {
             "label": "Showcase",
@@ -30,6 +30,10 @@
         {
             "label": "Blog",
             "url": "/blog/"
+        },
+		        {
+            "label": "Bounties",
+            "url": "/bounties/"
         },
         {
             "label": "About",
@@ -75,6 +79,11 @@
             "title": "Twitter",
             "url": "https://twitter.com/MonoGameTeam",
             "icon": "bi-twitter"
+        },
+        {
+            "title": "Blog RSS Feed",
+            "url": "https://monogame.net/blog/feed.xml",
+            "icon": "bi-rss-fill"
         }
     ]
 }
