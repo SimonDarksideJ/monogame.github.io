@@ -22,7 +22,7 @@ Demonstrates how to create and draw a simple quad—two triangles that form a re
 
 Demonstrates how to load and render a model using the XNA Framework Content Pipeline.
 
-[Drawing a Sprite Over a Model](2DGraphicsHowTo_DrawSpriteOverModel.md)
+[Drawing a Sprite Over a Model](HowTo_Draw_Sprite_Over_Model.md)
 
 Demonstrates how to draw a sprite so that it obscures a model.
 
@@ -50,11 +50,11 @@ Demonstrates how to draw 3D primitives using lines and triangles arranged as str
 
 Describes techniques for dynamically updating vertex data in an XNA Framework game.
 
-[Displaying Multiple Screens with Viewports](Use_Viewport_For_Splitscreen_Gaming.md)
+[Displaying Multiple Screens with Viewports](HowTo_UseViewportForSplitscreenGaming.md)
 
 Demonstrates how to use viewports to display different scenes simultaneously using two cameras.
 
-[Transformations and Collision Testing](Math.md)
+[Transformations and Collision Testing](3DGraphics_Transformations_and_Collision_Testing.md)
 
 Provides classes and methods for manipulating vectors and matrices.
 
