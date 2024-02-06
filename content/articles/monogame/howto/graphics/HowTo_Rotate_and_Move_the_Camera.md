@@ -166,3 +166,6 @@ For the sake of simplicity, the sample limits the camera object to rotation abou
     }
     ```
 
+© 2012 Microsoft Corporation. All rights reserved.  
+
+© The MonoGame Team.

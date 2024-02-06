@@ -100,3 +100,6 @@ The code in the topic shows you the technique. You can download a complete code 
 [Bounding Volumes and Collisions](bb313876.md)  
 [Collision Content Catalog at App Hub Online](http://go.microsoft.com/fwlink/?linkid=128869)
 
+© 2012 Microsoft Corporation. All rights reserved.  
+
+© The MonoGame Team.

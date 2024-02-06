@@ -179,3 +179,6 @@ The code in the topic shows you the technique. You can download a complete code 
 
 [Rotating and Moving the Camera](bb197901.md)
 
+© 2012 Microsoft Corporation. All rights reserved.  
+
+© The MonoGame Team.

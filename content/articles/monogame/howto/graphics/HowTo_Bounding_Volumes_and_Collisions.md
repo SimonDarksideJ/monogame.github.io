@@ -79,3 +79,7 @@ When implementing other bounding volume classes and intersection tests, you will
 #### App Hub Online
 
 [Collision Content Catalog at App Hub Online](http://go.microsoft.com/fwlink/?linkid=128869)
+
+© 2012 Microsoft Corporation. All rights reserved.  
+
+© The MonoGame Team.
