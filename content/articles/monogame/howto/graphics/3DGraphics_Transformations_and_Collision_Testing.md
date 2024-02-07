@@ -7,11 +7,11 @@ Provides classes and methods for manipulating vectors and matrices. This section
 
   - [Positioning the Camera](HowTo_Position_the_Camera.md)  
     Demonstrates how to position the camera so that all objects in a scene are within the view frustum while maintaining the camera's original orientation.
-  - [Transforming a Point](HowTo_Transform_a_Point.md)  
+  - [Transforming a Point](HowTo_TransformPoint.md)  
     This example demonstrates how to use the [Vector3](bb199670.md) and [Matrix](bb197911.md) classes to transform a point. A matrix transform can include scaling, rotating, and translating information.
-  - [Rotating and Moving the Camera](HowTo_Rotate_and_Move_the_Camera.md)  
+  - [Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)  
     Demonstrates how to rotate and move a camera in a 3D environment.
-  - [Moving the Camera on a Curve](HowTo_Move_the_Camera_on_a_Curve.md)  
+  - [Moving the Camera on a Curve](HowTo_ScriptedCamera.md)  
     Demonstrates how to use the [Curve](bb196070.md) and [CurveKey](bb196065.md) classes to move a camera along the shape of a curve.
   - [Selecting an Object with a Mouse](HowTo_Select_and_Object_with_a_Mouse.md)  
     Demonstrates how to check whether the mouse is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.

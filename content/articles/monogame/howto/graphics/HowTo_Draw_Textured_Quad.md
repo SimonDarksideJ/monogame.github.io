@@ -3,8 +3,6 @@
 
 Demonstrates how to use a custom effect and a texture to render a 3D object.
 
-![Bb195020.graphics\_custom\_vertex(en-us,XNAGameStudio.41).png](images\Bb976065.graphics_custom_vertex(en-us,XNAGameStudio.41).png "Bb195020.graphics_custom_vertex(en-us,XNAGameStudio.41).png")
-
 # Using a custom effect and a texture
 
 ### To use a custom effect and a texture
@@ -31,9 +29,9 @@ Demonstrates how to use a custom effect and a texture to render a 3D object.
 
 3.  Create a custom effect using the [Effect](xref:Microsoft.Xna.Framework.Graphics.Effect) class.
 
-4.  Load the [Effect](bb196527.md) object using the [ContentManager.Load\<Effect\>](xref:Microsoft.Xna.Framework.Content.ContentManager) method to load the .fx file.
+4.  Load the [Effect](xref:Microsoft.Xna.Framework.Graphics.Effect) object using the [ContentManager.Load\<Effect\>](xref:Microsoft.Xna.Framework.Content.ContentManager) method to load the .fx file.
 
-5.  Load a [Texture2D](bb199316.md) object using the [ContentManager.Load\<Texture2D\>](xref:Microsoft.Xna.Framework.Content.ContentManager)) method to load the asset.
+5.  Load a [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D) object using the [ContentManager.Load\<Texture2D\>](xref:Microsoft.Xna.Framework.Content.ContentManager)) method to load the asset.
 
 6.  Call [SetValue](xref:Microsoft.Xna.Framework.Graphics.Effect) to initialize each effect parameter using the corresponding game property.
 
