@@ -19,12 +19,12 @@ The XNA Framework has three classes that represent three-dimensional volumes. Us
 
 ## Bounding Sphere
 
-The [BoundingSphere Structure](bb195173.md) represents the space occupied by a sphere.
+The [BoundingSphere Structure](xref:Microsoft.Xna.Framework.BoundingSphere) represents the space occupied by a sphere.
 
 There are several benefits of using a bounding sphere for collision detection.
 
   - Sphere to sphere checks are very fast. To check for collision between two spheres, the distance between the centers of the spheres is compared to the sum of the radii of both spheres. If the distance is less than the combined radii of both spheres, the spheres intersect.
-  - The [BoundingSphere Structure](bb195173.md) class is compact. It stores only a vector representing its center and its radius.
+  - The [BoundingSphere Structure](xref:Microsoft.Xna.Framework.BoundingSphere) class is compact. It stores only a vector representing its center and its radius.
   - Unlike a bounding box, a bounding sphere doesn’t need to be recreated if the model rotates. If the model being bounded rotates, the bounding sphere will still be large enough to contain it.
   - Moving a bounding sphere is inexpensive. Just add a value to the center.
 
