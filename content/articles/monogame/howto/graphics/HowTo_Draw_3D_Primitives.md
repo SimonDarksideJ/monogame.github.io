@@ -1,3 +1,7 @@
+---
+title: Drawing 3D Primitives using Lists or Strips
+description: Demonstrates how to draw 3D primitives using lines and triangles arranged as strips or lists.
+---
 
 # Drawing 3D Primitives using Lists or Strips
 

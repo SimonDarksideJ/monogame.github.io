@@ -1,3 +1,7 @@
+---
+title: Creating a Custom Effect with Texturing
+description: Demonstrates how to use a custom effect and a texture to render a 3D object.
+---
 
 # Creating a Custom Effect with Texturing
 

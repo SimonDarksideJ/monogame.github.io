@@ -1,4 +1,7 @@
-
+---
+title: Transformations and Collision Testing
+description: Provides classes and methods for manipulating vectors and matrices. This section discusses math and includes examples of common math-related game tasks.
+---
 # Transformations and Collision Testing
 
 Provides classes and methods for manipulating vectors and matrices. This section discusses math and includes examples of common math-related game tasks.

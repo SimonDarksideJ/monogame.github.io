@@ -147,7 +147,7 @@ Collision detection determines whether objects in a game world overlap each othe
 
 [Testing for Collisions](HowTo_Test_for_Collisions.md)
 
-Demonstrates how to use the [BoundingSphere](bb195173.md) class to check whether two models are colliding.
+Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
 ---
 
