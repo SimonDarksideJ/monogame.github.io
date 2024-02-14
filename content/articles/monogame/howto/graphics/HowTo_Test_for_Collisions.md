@@ -1,18 +1,10 @@
-
+---
+title: Testing for Collisions
+description: Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
+---
 # Testing for Collisions
 
-Demonstrates how to use the [BoundingSphere](bb195173.md) class to check whether two models are colliding.
-
-
-> [!TIP]
-> This technique is implemented in the FuelCell game, a game developed by following a series of focused articles that discuss basic 3D game development. For more information, see <A href="dd254739.md">FuelCell: "Ships" Passing in the Night</A>.
-
-
-# The Complete Sample
-
-The code in the topic shows you the technique. You can download a complete code sample for this topic, including full source code and any additional supporting files required by the sample.
-
-[Download CollisionBetweenSpheres](http://go.microsoft.com/fwlink/?linkid=198839).
+Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
 # Detecting Whether Two Models Collide
 
@@ -52,7 +44,7 @@ The code in the topic shows you the technique. You can download a complete code 
     
     2.  Offset the bounding spheres by the current positions of the models.
     
-    3.  Call the [BoundingSphere.Intersects](bb197631.md) method to check the pairs of bounding spheres for collision.
+    3.  Call the [BoundingSphere.Intersects](xref:Microsoft.Xna.Framework.BoundingSphere) method to check the pairs of bounding spheres for collision.
         
         If the method returns **true**, the objects are colliding.
     
@@ -84,20 +76,15 @@ The code in the topic shows you the technique. You can download a complete code 
         }
         ```
 
-
-> [!NOTE]
-> For an example of determining a particle's path after it hits a surface, see <A href="bb198638.md">Vector3.Reflect</A>.
-
-
 ## See Also
 
 #### Tasks
 
-[Rotating and Moving the Camera](bb197901.md)  
+[Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)  
 
 #### Concepts
 
-[Bounding Volumes and Collisions](bb313876.md)  
+[Bounding Volumes and Collisions](HowTo_Bounding_Volumes_and_Collisions.md)  
 [Collision Content Catalog at App Hub Online](http://go.microsoft.com/fwlink/?linkid=128869)
 
 © 2012 Microsoft Corporation. All rights reserved.  

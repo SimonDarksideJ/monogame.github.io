@@ -1,5 +1,8 @@
-
-# Selecting an Object with a Mouse (Windows)
+---
+title: Selecting an Object with a Mouse
+description: Demonstrates how to check whether the mouse is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
+---
+# Selecting an Object with a Mouse
 
 Demonstrates how to check whether the mouse is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
 

@@ -1,4 +1,7 @@
-
+---
+title: Rendering 3D with Effects
+description: Describes step-by-step procedures for using 3D graphics techniques.
+---
 
 # Rendering 3D with Effects
 

@@ -1,4 +1,7 @@
-
+---
+title: Bounding Volumes and Collisions
+description: An overview of Bounding Volumes and Collisions.
+---
 # Bounding Volumes and Collisions
 
 Collision detection determines whether objects in a game world overlap each other.

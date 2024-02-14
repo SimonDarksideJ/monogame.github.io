@@ -2,6 +2,7 @@
 title: Transformations and Collision Testing
 description: Provides classes and methods for manipulating vectors and matrices. This section discusses math and includes examples of common math-related game tasks.
 ---
+
 # Transformations and Collision Testing
 
 Provides classes and methods for manipulating vectors and matrices. This section discusses math and includes examples of common math-related game tasks.
@@ -21,7 +22,7 @@ Provides classes and methods for manipulating vectors and matrices. This section
   - [Bounding Volumes and Collisions](HowTo_Bounding_Volumes_and_Collisions.md)  
     Collision detection determines whether objects in a game world overlap each other.
   - [Testing for Collisions](HowTo_Test_for_Collisions.md)  
-    Demonstrates how to use the [BoundingSphere](bb195173.md) class to check whether two models are colliding.
+    Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
 ## See Also
 
