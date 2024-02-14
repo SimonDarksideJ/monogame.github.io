@@ -34,7 +34,7 @@ There is one major drawback to using the bounding sphere class for collision det
 
 ## Bounding Box
 
-The [BoundingBox Structure](bb195161.md) represents the space occupied by a box. The bounding box class is axis aligned. Each face of the bounding box is perpendicular to the x-axis, the y-axis, or the z-axis.
+The [BoundingBox Structure](xref:Microsoft.Xna.Framework.BoundingBox) represents the space occupied by a box. The bounding box class is axis aligned. Each face of the bounding box is perpendicular to the x-axis, the y-axis, or the z-axis.
 
 There are several benefits of using the bounding box for collision detection.
 
@@ -49,21 +49,21 @@ There are a few drawbacks of using the bounding box for collision detection.
 
 ## Bounding Frustum
 
-Use a [BoundingFrustum Class](bb195165.md) to create a bounding volume that corresponds to the space visible to the camera. You create a bounding frustum from the combined view and projection matrix that the camera is using currently. If the camera moves or rotates, you need to recreate the bounding frustum. The bounding frustum isn’t used to determine when two objects collide, but rather when an object intersects with the volume of space viewable by the camera. Objects that do not intersect and are not contained by the bounding frustum are not visible to the camera and don’t need to be drawn. For complex models, this can reduce the number of pixels that need to be rendered.
+Use a [BoundingFrustum Class](xref:Microsoft.Xna.Framework.BoundingFrustum) to create a bounding volume that corresponds to the space visible to the camera. You create a bounding frustum from the combined view and projection matrix that the camera is using currently. If the camera moves or rotates, you need to recreate the bounding frustum. The bounding frustum isn’t used to determine when two objects collide, but rather when an object intersects with the volume of space viewable by the camera. Objects that do not intersect and are not contained by the bounding frustum are not visible to the camera and don’t need to be drawn. For complex models, this can reduce the number of pixels that need to be rendered.
 
 # Non-Bounding Volume Classes
 
 ## Plane
 
-The [Plane Structure](bb198451.md) describes a 2D plane. The plane is defined by a normal vector (perpendicular to the plane) and a point on the plane. The plane class supports intersection tests with the bounding volume classes. The plane class’s intersection test returns the tested object's position relative to the plane. The return value indicates whether the object intersects the plane. If the object does not intersect the plane, the return value indicates whether the object is on the plane’s front side or back side.
+The [Plane Structure](xref:Microsoft.Xna.Framework.Plane) describes a 2D plane. The plane is defined by a normal vector (perpendicular to the plane) and a point on the plane. The plane class supports intersection tests with the bounding volume classes. The plane class’s intersection test returns the tested object's position relative to the plane. The return value indicates whether the object intersects the plane. If the object does not intersect the plane, the return value indicates whether the object is on the plane’s front side or back side.
 
 ## Ray
 
-The [Ray Structure](bb198582.md) describes a ray starting at a point in space. The ray structure supports intersection tests with the bounding volume classes. The return value of the ray intersection tests is the distance the intersection occurred at, or null if no intersection occurred.
+The [Ray Structure](xref:Microsoft.Xna.Framework.Ray) describes a ray starting at a point in space. The ray structure supports intersection tests with the bounding volume classes. The return value of the ray intersection tests is the distance the intersection occurred at, or null if no intersection occurred.
 
 ## Model
 
-In addition to the information needed to draw a model, the [Model Class](bb198092.md) contains bounding volumes for its parts. When a model is imported, the content pipeline calculates the bounding sphere for each of the model's parts. To check for collision between two models, you can compare the bounding spheres for one model to all of the bounding spheres of the other model.
+In addition to the information needed to draw a model, the [Model Class](xref:Microsoft.Xna.Framework.Graphics.Model) contains bounding volumes for its parts. When a model is imported, the content pipeline calculates the bounding sphere for each of the model's parts. To check for collision between two models, you can compare the bounding spheres for one model to all of the bounding spheres of the other model.
 
 # Contains and Intersects Methods
 
@@ -71,7 +71,7 @@ Bounding volume classes have methods to support two types of collision tests: in
 
 # Adding New Collision Data Structures
 
-When implementing other bounding volume classes and intersection tests, you will probably need to add a custom content pipeline processor. For example, your game might need to use convex hulls for collision detection. You could use a custom processor to determine the convex hull and then place it in the model's tag field. Then, when the model is loaded at run time, the convex hull information would be available in the model. For more information, see [Extending a Standard Content Processor](bb447748.md).
+When implementing other bounding volume classes and intersection tests, you will probably need to add a custom content pipeline processor. For example, your game might need to use convex hulls for collision detection. You could use a custom processor to determine the convex hull and then place it in the model's tag field. Then, when the model is loaded at run time, the convex hull information would be available in the model. For more information, see [Extending a Standard Content Processor](../content_pipeline/HowTo_Extend_Processor.md).
 
 ## See Also
 

@@ -21,13 +21,13 @@ The code in this topic shows you the technique. You can download a complete code
 
 ### To check whether the mouse is positioned over a 3D object
 
-1.  Get the current state of the mouse by using [GetState](bb197233.md).
+1.  Get the current state of the mouse by using [GetState](xref:Microsoft.Xna.Framework.Input.Mouse).
     
     ``` csharp
     MouseState mouseState = Mouse.GetState();
     ```
 
-2.  Get the current screen coordinates of the mouse from [X](bb200107.md) and [Y](bb200119.md).
+2.  Get the current screen coordinates of the mouse from [X](xref:Microsoft.Xna.Framework.Input.Mouse) and [Y](xref:Microsoft.Xna.Framework.Input.Mouse).
     
     ``` csharp
     int mouseX = mouseState.X;
@@ -55,7 +55,7 @@ The code in this topic shows you the technique. You can download a complete code
         proj, view, world);
     ```
 
-7.  Create a [Ray](bb198582.md) whose origin is at the near point and whose direction points to the far point.
+7.  Create a [Ray](xref:Microsoft.Xna.Framework.Ray) whose origin is at the near point and whose direction points to the far point.
     
     ``` csharp
     // Create a ray from the near clip plane to the far clip plane.
@@ -64,15 +64,15 @@ The code in this topic shows you the technique. You can download a complete code
     Ray pickRay = new Ray(nearPoint, direction);
     ```
 
-8.  Loop throught each object in the scene using the [Intersects](bb197646.md) method to check whether the [Ray](bb198582.md) intersects each object.
+8.  Loop throught each object in the scene using the [Intersects](xref:Microsoft.Xna.Framework.Ray) method to check whether the [Ray](xref:Microsoft.Xna.Framework.Ray) intersects each object.
 
-9.  If the [Ray](bb198582.md) intersects an object, check whether it is the closest object intersected so far. If it is, store the object and the distance at which it was intersected, replacing any previously stored object.
+9.  If the [Ray](xref:Microsoft.Xna.Framework.Ray) intersects an object, check whether it is the closest object intersected so far. If it is, store the object and the distance at which it was intersected, replacing any previously stored object.
 
 10. When you completely loop through the objects, the last object stored will be the closest object underneath the area the user clicked.
 
 ## See Also
 
-[Rotating and Moving the Camera](bb197901.md)
+[Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)
 
 © 2012 Microsoft Corporation. All rights reserved.  
 
