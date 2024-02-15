@@ -11,7 +11,7 @@ An effect initializes the graphics pipeline for performing transforms, lighting,
 
 During rendering, the graphics pipeline transforms 3D geometry to a 2D surface, giving you the option of adding lighting, texturing and many other per-vertex or per-pixel visual effects. An effect initializes the pipeline to render 3D geometry using vertex and pixel shaders, although you can also render a 2D sprite with an effect.
 
-Although more advanced progammable effects are available on Windows and other platfroms. There are several built-in configurable effects which have been designed to run efficiently on mobile GPU hardware, and which are appropriate to the Reach [profile](WhatIs_Profile.md) used for Windows Phone games.
+Although more advanced progammable effects are available on Windows and other platfroms. There are several built-in configurable effects which have been designed to run efficiently on mobile GPU hardware, and which are appropriate to the Reach [profile](../WhatIs_Profile.md) used for Windows Phone games.
 
 Use one of the following configurable effects to implement these rendering effects:
 
@@ -23,7 +23,7 @@ Use one of the following configurable effects to implement these rendering effec
 
 ## Basic Lighting and Fog
 
-Use the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) configurable effect to implement general purpose functionality, including the following: transformations; lighting with three directional lights; material colors using ambient, diffuse, and specular properties; a single texture; and fog. To improve speed, fog calculations are based on depth instead of distance from the camera. When you choose a basic effect, you can improve the performance of your game if you don't use any fog or if you only use one of the three available directional lights. For an example, see [Creating a Basic Effect](../howto/HowTo_Create_a_BasicEffect.md).
+Use the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) configurable effect to implement general purpose functionality, including the following: transformations; lighting with three directional lights; material colors using ambient, diffuse, and specular properties; a single texture; and fog. To improve speed, fog calculations are based on depth instead of distance from the camera. When you choose a basic effect, you can improve the performance of your game if you don't use any fog or if you only use one of the three available directional lights. For an example, see [Creating a Basic Effect](../../howto/graphics/HowTo_Create_a_BasicEffect.md).
 
 ## Character Animation
 

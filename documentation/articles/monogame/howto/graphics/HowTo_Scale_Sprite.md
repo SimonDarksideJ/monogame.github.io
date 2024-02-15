@@ -9,7 +9,7 @@ Demonstrates how to scale a sprite using a uniform scale.
 
 ## Drawing a Scaled Sprite with a uniform scale
 
-1. Follow the procedures of [Drawing a Sprite](HowToDrawSprite.md).
+1. Follow the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 
 2. In your **Update** method, determine how your sprite will be scaled.
 
@@ -53,11 +53,11 @@ Demonstrates how to scale a sprite using a uniform scale.
     }
     ```
 
-4. When all the sprites have been drawn, call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
+4. When all the sprites have been drawn, call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
 
 ### To draw a scaled sprite using a nonuniform scale
 
-1. Follow the procedures of [Drawing a Sprite](HowToDrawSprite.md).
+1. Follow the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 2. In your **Update** method, determine how your sprite will be scaled along each axis and store those values in a [Vector2](xref:Microsoft.Xna.Framework.Vector2) object.
 
     ```csharp
@@ -89,11 +89,11 @@ Demonstrates how to scale a sprite using a uniform scale.
     }
     ```
 
-4. When all of the sprites have been drawn, call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
+4. When all of the sprites have been drawn, call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
 
 ### To draw a scaled sprite using a destination rectangle
 
-1. Follow the procedures of [Drawing a Sprite](2DGraphicsHowTo_Draw_Sprite.md).
+1. Follow the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
 
 2. In your **Update** method, construct a rectangle that defines where on screen the sprite will be drawn.
 
@@ -113,7 +113,7 @@ Demonstrates how to scale a sprite using a uniform scale.
     }
     ```
 
-3. When drawing the sprite, specify the destination rectangle as a parameter to [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw).
+3. When drawing the sprite, specify the destination rectangle as a parameter to [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_).
 
     The sprite will be drawn, filling the destination rectangle.
 
@@ -126,7 +126,7 @@ Demonstrates how to scale a sprite using a uniform scale.
     }
     ```
 
-4. When all of the sprites have been drawn, call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
+4. When all of the sprites have been drawn, call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
 
 ## See Also
 
@@ -136,12 +136,12 @@ Demonstrates how to scale a sprite using a uniform scale.
 
 #### Concepts
 
-[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is a Sprite?](../../whatis/graphics/WhatIs_Sprite.md)
 
 #### Reference
 
 [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)  
-[Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
+[SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_)
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
 ---

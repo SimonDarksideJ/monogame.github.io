@@ -11,11 +11,12 @@ These articles provide a details on how to use the Graphics API in MonoGame.
 
 This section demonstrates several graphical concepts divided into three categories:
 
-* [Sprites](#sprites)
+* [2D Sprite Rendering](#2d-sprite-rendering)
 * [Cameras](#cameras)
-* [Rendering 3D](#rendering-3d)
+* [3D Rendering](#3d-rendering)
+* [3D Collisions](#3d-collisions)
 
-### Sprites
+### 2D Sprite Rendering
 
 This section walks through several core concepts related to sprite rendering, including drawing text to the screen.
 
@@ -61,7 +62,7 @@ Demonstrates how to scale sprites using a matrix that is created based on the vi
 
 [How To Tile Sprites](HowTo_Tile_Sprites.md)
 
-Demonstrates how to draw a sprite repeatedly in the x and y directions in one [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw) call.
+Demonstrates how to draw a sprite repeatedly in the x and y directions in one Draw call.
 
 [How To Tint A Sprite](HowTo_Tint_Sprite.md)
 
@@ -99,7 +100,7 @@ Demonstrates how to rotate and move a camera in a 3D environment. You can rotate
 
 Demonstrates how to use the Curve and CurveKey classes to move a camera along the shape of a curve.
 
-### Rendering 3D
+### 3D Rendering
 
 This section walks through several core concepts related 3D rendering and math practices with MonoGame.
 
@@ -110,6 +111,10 @@ This example demonstrates how to use the Vector3 and Matrix classes to transform
 [How to create a Basic Effect](HowTo_Create_a_BasicEffect.md)
 
 Demonstrates how to create and initialize an instance of the BasicEffect class and use it to draw simple geometry.
+
+[Using a Basic Effect with Texturing](HowTo_Draw_Textured_Quad.md)
+
+Demonstrates how to create and draw a simple quad—two triangles that form a rectangle or square—using **DrawUserIndexedPrimitives**.
 
 [How to render a Model using a Basic Effect](HowTo_RenderModel.md)
 
@@ -135,19 +140,19 @@ Geometry in a 3D game is defined by vertex data. Sometimes, a game needs to modi
 
 Demonstrates how to draw 3D primitives using lines and triangles arranged as strips or lists.
 
-### Collisions 3D
+### 3D Collisions
+
+[Bounding Volumes and Collisions](../HowTo_CollisionDetectionOverview.md)
+
+Collision detection determines whether objects in a game world overlap each other.
 
 [Selecting an Object with a Mouse](HowTo_Select_and_Object_with_a_Mouse.md)
 
 Demonstrates how to check whether the mouse is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
 
-[Bounding Volumes and Collisions](HowTo_Bounding_Volumes_and_Collisions.md)
- 
-Collision detection determines whether objects in a game world overlap each other.
-
 [Testing for Collisions](HowTo_Test_for_Collisions.md)
 
-Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
+Demonstrates how to use the BoundingSphere class to check whether two models are colliding.
 
 ---
 

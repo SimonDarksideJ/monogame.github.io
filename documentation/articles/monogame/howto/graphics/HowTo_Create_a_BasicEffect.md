@@ -7,9 +7,7 @@ description: The basics of the 3D rendering pipeline for MonoGame!
 
 Demonstrates how to create and initialize an instance of the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) class and use it to draw simple geometry.
 
-![Note](../images/note.gif) Note
-
-The steps described here apply to effects created with the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) class. Use the [Effect](xref:Microsoft.Xna.Framework.Graphics.Effect) class to write a custom effect. The example draws aliased geometry. To see an example that draws smoother edges because it also applies antialiasing, see [Enabling Antialiasing (Multisampling)](HowTo_Enable_Anti_Aliasing.md).
+> The steps described here apply to effects created with the [BasicEffect](xref:Microsoft.Xna.Framework.Graphics.BasicEffect) class. Use the [Effect](xref:Microsoft.Xna.Framework.Graphics.Effect) class to write a custom effect. The example draws aliased geometry. To see an example that draws smoother edges because it also applies anti-aliasing, see [Enabling Anti-aliasing (Multi-sampling)](HowTo_Enable_Anti_Aliasing.md).
 
 ## Using BasicEffect
 

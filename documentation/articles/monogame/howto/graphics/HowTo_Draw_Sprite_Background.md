@@ -33,12 +33,12 @@ The foreground sprite in this example must include masking information.
     }
     ```
 
-2. In [Draw](xref:Microsoft.Xna.Framework.Game) method of your game class, call [Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) for the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch).
+2. In [Game.Draw](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Draw_Microsoft_Xna_Framework_GameTime_) method of your game class, call [SpriteBatch.Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__) for the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch).
 
 3. Specify [BlendState.None](xref:Microsoft.Xna.Framework.Graphics.BlendState).
    This will tell the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) to ignore alpha color values when drawing sprites. By default, the z-order of sprites is the order in which they are drawn.
 
-4. Call the [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) method, passing in the `StarTexture`.  Then call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End).
+4. Call the [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) method, passing in the `StarTexture`.  Then call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End).
 
     ```csharp
     public override void Draw (GameTime game)
@@ -49,13 +49,13 @@ The foreground sprite in this example must include masking information.
     }
     ```
 
-5. Underneath the code we wrote previously, call [Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Begin) for the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) again.
+5. Underneath the code we wrote previously, call [SpriteBatch.Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__) for the [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) again.
 
 6. This time, specify [BlendState.AlphaBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState).
 
-    This will cause pixels on the sprite with an alpha value less than 255 to become progressively transparent based on the magnitude of the alpha value. An alpha of 0 will make the pixel completely transparent. Calling [Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Begin) with no parameters causes [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) to default to [BlendState.AlphaBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState).
+    This will cause pixels on the sprite with an alpha value less than 255 to become progressively transparent based on the magnitude of the alpha value. An alpha of 0 will make the pixel completely transparent. Calling [SpriteBatch.Begin](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__) with no parameters causes [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) to default to [BlendState.AlphaBlend](xref:Microsoft.Xna.Framework.Graphics.BlendState).
 
-7. Call the [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) method, passing the `ShipTexture`, `ViperPos` and finally [Color.White](xref:Microsoft.Xna.Framework.Graphics.Color) . Then call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End).
+7. Call the [Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) method, passing the `ShipTexture`, `ViperPos` and finally [Color.White](xref:Microsoft.Xna.Framework.Color) . Then call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End).
 
     ```csharp
     public override void Draw (GameTime game)
@@ -78,12 +78,12 @@ The foreground sprite in this example must include masking information.
 
 #### Concepts
 
-[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is a Sprite?](../../whatis/graphics/WhatIs_Sprite.md)
 
 #### Reference
 
 [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)  
-[Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
+[SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_)
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
 ---

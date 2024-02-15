@@ -13,7 +13,7 @@ Set the [PreferMultiSampling](xref:Microsoft.Xna.Framework.GraphicsDeviceManager
 
 ## See Also
 
-[Enabling Antialiasing (Multisampling)](../howto/HowTo_Enable_Anti_Aliasing.md)  
+[Enabling Anti-aliasing (Multi-sampling)](../../howto/graphics/HowTo_Enable_Anti_Aliasing.md)  
 
 ---
 

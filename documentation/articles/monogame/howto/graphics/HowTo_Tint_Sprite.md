@@ -10,7 +10,7 @@ Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.C
 ## Drawing a Tinted Sprite
 
 1. Follow the procedures of [Drawing a Sprite](HowTo_Draw_A_Sprite.md).
-2. In the [Update](xref:Microsoft.Xna.Framework.Game.Update) method, determine how to tint the sprite.
+2. In the [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_) method, determine how to tint the sprite.
 
    In this example, the value of the game pad thumbsticks determine the Red, Green, Blue, and Alpha values to apply to the sprite.
 
@@ -29,7 +29,7 @@ Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.C
     }
     ```
 
-3. In the [Draw](xref:Microsoft.Xna.Framework.Game.Draw) method, pass the color value created in [Update](xref:Microsoft.Xna.Framework.Game.Update) to [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw).
+3. In the [Game.Draw](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Draw_Microsoft_Xna_Framework_GameTime_) method, pass the color value created in [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_) to [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_).
 
     ```csharp
     protected override void Draw(GameTime gameTime)
@@ -44,7 +44,7 @@ Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.C
     }
     ```
 
-4. When all of the sprites have been drawn, call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
+4. When all of the sprites have been drawn, call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
 
 ## See Also
 
@@ -54,14 +54,13 @@ Demonstrates how to tint a sprite using a [Color](xref:Microsoft.Xna.Framework.C
 
 #### Concepts
 
-[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is a Sprite?](../../whatis/graphics/WhatIs_Sprite.md)
 
 #### Reference
 
-[SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)  
-[Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
-[Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
-[Color](xref:Microsoft.Xna.Framework.Color)  
+[SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)
+[SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_)[Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)
+[Color](xref:Microsoft.Xna.Framework.Color)
 
 ---
 

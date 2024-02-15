@@ -53,7 +53,7 @@ Demonstrates how to draw a scrolling background sprite using the [SpriteBatch](x
     }
     ```
 
-6. To scroll the background, change the screen position of the background texture in your [Update](xref:Microsoft.Xna.Framework.Game.Update) method.
+6. To scroll the background, change the screen position of the background texture in your [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_) method.
 
    This example moves the background down 100 pixels per second by increasing the screen position's Y value.
 
@@ -82,7 +82,7 @@ Demonstrates how to draw a scrolling background sprite using the [SpriteBatch](x
     // ScrollingBackground.Draw
     ```
 
-7. Draw the background using the origin and screen position calculated in [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) and [Update](xref:Microsoft.Xna.Framework.Game.Update).
+7. Draw the background using the origin and screen position calculated in [Game.LoadContent](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_LoadContent) and [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_).
 
     ```csharp
     protected override void Draw(GameTime gameTime)
@@ -124,12 +124,12 @@ Demonstrates how to draw a scrolling background sprite using the [SpriteBatch](x
 
 #### Concepts
 
-[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is a Sprite?](../../whatis/graphics/WhatIs_Sprite.md)
 
 #### Reference
 
 [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)  
-[Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
+[SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_)
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
 ---

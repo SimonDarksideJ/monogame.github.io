@@ -9,11 +9,11 @@ If your game is to use a few sound files, then the [SoundEffect](xref:Microsoft.
 
 ## Simple Audio Playback
 
-The simplest way to play sounds for background music or sound effects is to use [SoundEffect](xref:Microsoft.Xna.Framework.Audio.SoundEffect) and [SoundEffectInstance](xref:Microsoft.Xna.Framework.Audio.SoundEffectInstance). Source audio files are added like any other game asset to the project. For example code, see [Playing a Sound](../HowTo/HowTo_PlayASound.md), [Looping a Sound](../HowTo/HowTo_LoopASound.md), and [Adjusting Pitch and Volume](../HowTo/HowTo_ChangePitchAndVolume.md). For background music, see [Playing a Song](../HowTo/HowTo_PlayASong.md).
+The simplest way to play sounds for background music or sound effects is to use [SoundEffect](xref:Microsoft.Xna.Framework.Audio.SoundEffect) and [SoundEffectInstance](xref:Microsoft.Xna.Framework.Audio.SoundEffectInstance). Source audio files are added like any other game asset to the project. For example code, see [Playing a Sound](../HowTo/audio/HowTo_PlayASound.md), [Looping a Sound](../HowTo/audio/HowTo_LoopASound.md), and [Adjusting Pitch and Volume](../HowTo/audio/HowTo_ChangePitchAndVolume.md). For background music, see [Playing a Song](../HowTo/audio/HowTo_PlayASong.md).
 
 ## Accessing the Audio Buffer
 
-Developers can use [DynamicSoundEffectInstance](xref:Microsoft.Xna.Framework.Audio.DynamicSoundEffectInstance) for direct access to an audio buffer. By accessing the audio buffer, developers can manipulate sound, break up large sound files into smaller data chunks, and stream sound. For example code, see [Streaming Data from a WAV File](../HowTo/HowTo_StreamDataFromWav.md).
+Developers can use [DynamicSoundEffectInstance](xref:Microsoft.Xna.Framework.Audio.DynamicSoundEffectInstance) for direct access to an audio buffer. By accessing the audio buffer, developers can manipulate sound, break up large sound files into smaller data chunks, and stream sound. For example code, see [Streaming Data from a WAV File](../HowTo/audio/HowTo_StreamDataFromWav.md).
 
 ## 3D Audio
 
@@ -42,23 +42,23 @@ The audio format has the following constraints:
 
 ## Songs as Background Music
 
-Access to the media library, combined with the ability to use playlists, allows games to create interesting background scores that can change with gameplay. Songs can be played directly from the media library, or can be imported by using the Content Pipeline. For more information, see [Playing a Song](../howto/HowTo_PlayASong.md).
+Access to the media library, combined with the ability to use playlists, allows games to create interesting background scores that can change with gameplay. Songs can be played directly from the media library, or can be imported by using the Content Pipeline. For more information, see [Playing a Song](../howto/audio/HowTo_PlayASong.md).
 
 ## Concepts
 
-[Playing a Sound](../howto/HowTo_PlayASound.md)
+[Playing a Sound](../howto/audio/HowTo_PlayASound.md)
 
 Demonstrates how to play a simple sound by using [SoundEffect](xref:Microsoft.Xna.Framework.Audio.SoundEffect).
 
-[Streaming Data from a WAV File](../howto/HowTo_StreamDataFromWav.md)
+[Streaming Data from a WAV File](../howto/audio/HowTo_StreamDataFromWav.md)
 
 Demonstrates how to stream audio from a wave (.wav) file.
 
-[Playing a Song](../howto/HowTo_PlayASong.md)
+[Playing a Song](../howto/audio/HowTo_PlayASong.md)
 
 Demonstrates how to play a song from a user's media library.
 
-[Playing a Song from a URI](../howto/HowTo_PlaySongfromURI.md)
+[Playing a Song from a URI](../howto/audio/HowTo_PlaySongfromURI.md)
 
 Demonstrates how to use the [MediaPlayer](xref:Microsoft.Xna.Framework.Media.MediaPlayer) to play a song from a Uniform Resource Identifier (URI).
 

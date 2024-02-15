@@ -50,7 +50,7 @@ Demonstrates how to play a simple sound by using [SoundEffect](xref:Microsoft.Xn
 
 Demonstrates how to loop a sound.
 
-[Creating and Playing Sounds](../whatis/WhatIs_Audio.md)
+[Creating and Playing Sounds](../../whatis/WhatIs_Audio.md)
 
 Provides overviews about audio technology, and presents predefined scenarios to demonstrate how to use audio.
 

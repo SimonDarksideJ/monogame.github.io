@@ -11,7 +11,7 @@ The blend state class, [BlendState](xref:Microsoft.Xna.Framework.Graphics.BlendS
 
 You have a lot of control over how you blend the source and the destination data. For example, you can choose to overwrite the destination with the source data by setting [BlendState.Opaque](xref:Microsoft.Xna.Framework.Graphics.BlendState) or combine the data by adding them together using [BlendState.Additive](xref:Microsoft.Xna.Framework.Graphics.BlendState). You can blend only the color data or the alpha data, or both, by setting up the blending functions [ColorBlendFunction](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorBlendFunction) and [AlphaBlendFunction](xref:Microsoft.Xna.Framework.Graphics.BlendState.AlphaBlendFunction). You can even limit your blending operation to one or more colors (or channels) using [ColorWriteChannels](xref:Microsoft.Xna.Framework.Graphics.BlendState.ColorWriteChannels).
 
-For an example that creates and uses a state object, see [Creating a State Object](../howto/HowTo_Create_a_StateObject.md).
+For an example that creates and uses a state object, see [Creating a State Object](../../howto/graphics/HowTo_Create_a_StateObject.md).
 
 ---
 

@@ -21,7 +21,7 @@ The game window size is shown by the [ClientBounds](xref:Microsoft.Xna.Framework
 
 **Figure 1.  **DisplayMode** and **ClientBounds** areas on Windows and Xbox 360.**
 
-![DisplayMode and ClientBounds** areas on Windows and console](images/viewport.jpg)
+![DisplayMode and ClientBounds** areas on Windows and console](../images/viewport.jpg)
 
 ## See Also
 

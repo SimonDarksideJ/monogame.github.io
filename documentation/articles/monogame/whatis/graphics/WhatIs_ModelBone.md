@@ -7,7 +7,7 @@ description: The definition for a Model Bone for MonoGame!
 
 A model bone is a matrix that represents the position of a mesh as it relates to other meshes in a 3D model.
 
-![The structure of a ModelMesh](images/Model-ModelMesh.png)
+![The structure of a ModelMesh](../images/Model-ModelMesh.png)
 
 A complex computer-generated object, often called a model, is made up of many vertices and materials organized into a set of meshes. In the XNA Framework, a model is represented by the [Model](xref:Microsoft.Xna.Framework.Graphics.Model) class. A model contains one or more meshes, each of which is represented by a [ModelMesh](xref:Microsoft.Xna.Framework.Graphics.ModelMesh) class. Each mesh is associated with one bone represented by the [ModelBone](xref:Microsoft.Xna.Framework.Graphics.ModelBone) class.
 

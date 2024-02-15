@@ -7,7 +7,7 @@ description: Demonstrates how to use viewports to display different scenes simul
 
 Demonstrates how to use viewports to display different scenes simultaneously using two cameras.
 
-![A Split screen Example](images/graphics_split_screen.png)
+![A Split screen Example](../images/graphics_split_screen.png)
 
 ## To create multiple screens
 
@@ -48,7 +48,7 @@ Demonstrates how to use viewports to display different scenes simultaneously usi
     }
     ```
 
-3. In your Game [Draw](xref:Microsoft.Xna.Framework.Game) method, assign one of the viewports to draw as the [GraphicsDevice](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice)[Viewport](xref:Microsoft.Xna.Framework.Graphics.Viewport).
+3. In your Game [Game.Draw](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Draw_Microsoft_Xna_Framework_GameTime_) method, assign one of the viewports to draw as the [GraphicsDevice](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice)[Viewport](xref:Microsoft.Xna.Framework.Graphics.Viewport).
 
 4. Draw your scene as normal, using the camera (or view matrix) associated with this perspective along with the proper projection matrix.
 
@@ -79,7 +79,7 @@ Demonstrates how to use viewports to display different scenes simultaneously usi
 
 ### Concepts
 
-[What Is a Viewport?](../whatis/WhatIs_Viewport.md)  
+[What Is a Viewport?](../../whatis/graphics/WhatIs_Viewport.md)  
 
 #### Reference
 

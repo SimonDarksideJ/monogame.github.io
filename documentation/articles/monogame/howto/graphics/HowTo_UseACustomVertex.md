@@ -7,7 +7,7 @@ description: Demonstrates how to create a custom vertex declaration and use it t
 
 Demonstrates how to create a custom vertex declaration and use it to render a 3D object.
 
-![Custom Vertex Example](images/graphics_custom_vertex.png)
+![Custom Vertex Example](../images/graphics_custom_vertex.png)
 
 Game Studio includes a few predefined classes for common vertex buffer declarations such as [VertexPositionColor](xref:Microsoft.Xna.Framework.Graphics.VertexPositionColor) and [VertexPositionColorTexture](xref:Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture). If you need to create a vertex buffer declaration that includes additional user-defined types, create a custom vertex declaration.
 

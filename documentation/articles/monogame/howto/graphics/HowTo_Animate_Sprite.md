@@ -49,7 +49,7 @@ The example assumes the texture you are loading contains four frames of the same
     }
     ```
 
-3. In your game's [Update](xref:Microsoft.Xna.Framework.Game.Update) method, determine which animation frame to display.
+3. In your game's [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_) method, determine which animation frame to display.
 
     ```csharp
     protected override void Update(GameTime gameTime)
@@ -82,7 +82,7 @@ The example assumes the texture you are loading contains four frames of the same
     }
     ```
 
-4. In your game's [Draw](xref:Microsoft.Xna.Framework.Game.Draw) method, call [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw) on the **AnimatedTexture** object.
+4. In your game's [Game.Draw](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Draw_Microsoft_Xna_Framework_GameTime_) method, call [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_) on the **AnimatedTexture** object.
 
     ```csharp
     protected override void Draw(GameTime gameTime)
@@ -124,12 +124,12 @@ The example assumes the texture you are loading contains four frames of the same
 
 #### Concepts
 
-[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is a Sprite?](../../whatis/graphics/WhatIs_Sprite.md)
 
 #### Reference
 
 [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)
-[Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)
+[SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_)
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)
 
 ---

@@ -1,17 +1,18 @@
 ---
 title: Testing for Collisions
-description: Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
+description: Demonstrates how to use the BoundingSphere class to check whether two models are colliding.
 ---
+
 # Testing for Collisions
 
 Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
-# Detecting Whether Two Models Collide
+## Detecting Whether Two Models Collide
 
 ### To check whether two objects are colliding
 
-1.  Track the position of a model as it moves about the game world.
-    
+1. Track the position of a model as it moves about the game world.
+
     ``` csharp
     struct WorldObject
     {
@@ -36,20 +37,20 @@ Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.Boundi
     }
     ```
 
-2.  Make a nested loop with the first model's meshes as the outer loop and the second model's meshes as the inner loop.
+2. Make a nested loop with the first model's meshes as the outer loop and the second model's meshes as the inner loop.
 
-3.  Inside the loop, follow these steps.
-    
-    1.  Get the bounding sphere for the current mesh of the first model and the current mesh of the second model.
-    
-    2.  Offset the bounding spheres by the current positions of the models.
-    
-    3.  Call the [BoundingSphere.Intersects](xref:Microsoft.Xna.Framework.BoundingSphere) method to check the pairs of bounding spheres for collision.
-        
+3. Inside the loop, follow these steps.
+
+    1. Get the bounding sphere for the current mesh of the first model and the current mesh of the second model.
+
+    2. Offset the bounding spheres by the current positions of the models.
+
+    3. Call the [BoundingSphere.Intersects](xref:Microsoft.Xna.Framework.BoundingSphere) method to check the pairs of bounding spheres for collision.
+
         If the method returns **true**, the objects are colliding.
-    
-    4.  If the models are colliding, break out of the loop.
-        
+
+    4. If the models are colliding, break out of the loop.
+
         ``` csharp
         static void CheckForCollisions(ref WorldObject c1, ref WorldObject c2)
         {
@@ -78,15 +79,12 @@ Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.Boundi
 
 ## See Also
 
-#### Tasks
-
 [Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)  
 
-#### Concepts
+### Concepts
 
-[Bounding Volumes and Collisions](HowTo_Bounding_Volumes_and_Collisions.md)  
-[Collision Content Catalog at App Hub Online](http://go.microsoft.com/fwlink/?linkid=128869)
+[Bounding Volumes and Collisions](../HowTo_CollisionDetectionOverview.md)  
 
-© 2012 Microsoft Corporation. All rights reserved.  
+© 2012 Microsoft Corporation. All rights reserved.
 
-© The MonoGame Team.
+© 2023 The MonoGame Foundation.

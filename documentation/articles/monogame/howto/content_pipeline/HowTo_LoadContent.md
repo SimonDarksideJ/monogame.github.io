@@ -40,7 +40,7 @@ You need a content project in your game compile and build your project.
 ### Reference
 
 - [Game Class](xref:Microsoft.Xna.Framework.Game)  
-- [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent)  
+- [Game.LoadContent](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_LoadContent)  
 - [UnloadContent](xref:Microsoft.Xna.Framework.Game.UnloadContent)  
 - [Game Members](xref:Microsoft.Xna.Framework.Game)  
 - [Microsoft.Xna.Framework Namespace](xref:Microsoft.Xna.Framework)  

@@ -45,7 +45,7 @@ Demonstrates how to rotate a group of sprites around a single point.
     }
     ```
 
-4. In your [Update](xref:Microsoft.Xna.Framework.Game.Update) method, copy the unrotated vectors and determine the screen position around which all the sprites will rotate.
+4. In your [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_) method, copy the unrotated vectors and determine the screen position around which all the sprites will rotate.
 
     ```csharp
     private float RotationAngle = 0f;
@@ -106,7 +106,7 @@ Demonstrates how to rotate a group of sprites around a single point.
     }
     ```
 
-8. When all the sprites have been drawn, call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End).
+8. When all the sprites have been drawn, call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End).
 
 ## See Also
 
@@ -116,12 +116,12 @@ Demonstrates how to rotate a group of sprites around a single point.
 
 #### Concepts
 
-[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is a Sprite?](../../whatis/graphics/WhatIs_Sprite.md)
 
 #### Reference
 
 [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)  
-[Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
+[SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_)
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
 ---

@@ -2,5 +2,5 @@
   href: index.md
 - name: Content Pipeline
   href: content_pipeline/index.md
-- name: What is Antialiasing?
-  href: WhatIs_Antialiasing.md
+- name: Graphics
+  href: graphics/index.md

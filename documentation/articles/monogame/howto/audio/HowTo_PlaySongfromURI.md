@@ -41,7 +41,7 @@ The following steps show you how to play an .mp3 song located on the Internet.
 
 Demonstrates how to play a song from a user's media library.
 
-[Media Overview](../whatis/WhatIs_Audio.md)
+[Media Overview](../../whatis/WhatIs_Audio.md)
 
 Provides a high-level overview about the capabilities—such as playing music and video and accessing pictures—of the Media API in XNA Game Studio.
 

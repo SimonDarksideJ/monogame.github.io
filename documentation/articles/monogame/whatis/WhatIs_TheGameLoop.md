@@ -77,7 +77,7 @@ The [GameComponent](xref:Microsoft.Xna.Framework.GameComponent) class provides t
 
 ## Related articles
 
-[Creating a Full-Screen Game](../howto/HowTo_FullScreen.md)
+[Creating a Full-Screen Game](../howto/graphics/HowTo_FullScreen.md)
 
 Demonstrates how to start a game in full-screen mode.
 
@@ -85,7 +85,7 @@ Demonstrates how to start a game in full-screen mode.
 
 Demonstrates how to resize an active game window.
 
-[Restricting Aspect Ratio on a Graphics Device](../howto/HowTo_AspectRatio.md)
+[Restricting Aspect Ratio on a Graphics Device](../howto/graphics/HowTo_AspectRatio.md)
 
 Demonstrates how to create a custom [GraphicsDeviceManager](xref:Microsoft.Xna.Framework.GraphicsDeviceManager) that only selects graphics devices with widescreen aspect ratios in full-screen mode.
 

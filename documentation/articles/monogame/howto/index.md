@@ -13,7 +13,6 @@ The section is broken down into 4 distinct categories:
 
 * [Core concepts](#core-concepts)
 * [Game Operations](#game-operations)
-* [Collision Detection](#collision-detection)
 * [Guidance](#guidance)
 
 ### Core concepts
@@ -52,18 +51,6 @@ Demonstrates reading and writing data in MonoGame projects.
 [How to handle resizing of a Game](HowTo_PlayerResize.md)
 
 Demonstrates how to handle the resizing of the active game window.
-
-### Collision Detection
-
-This section contains some helpful articles to understand collision detection in a MonoGame game.
-
-[Bounding Volumes and Collisions](HowTo_CollisionDetectionOverview.md)
-
-Collision detection determines whether objects in a game world overlap each other.
-
-[Testing for Collisions](HowTo_DetectTwoObjectsColliding.md)
-
-Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
 ### Guidance
 

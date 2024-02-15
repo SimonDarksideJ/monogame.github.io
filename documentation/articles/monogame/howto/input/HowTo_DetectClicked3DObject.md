@@ -7,13 +7,12 @@ description: Demonstrates how to check whether the mouse (or touch location) is 
 
 Demonstrates how to check whether the mouse (or touch location) is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
 
-![Note](../images/note.gif)Note
-
-This example applies most directly to Windows development where mice are ubiquitous and Mobile where a touch replaces a mouse.
+> [!TIP]
+> This example applies most directly to Windows development where mice are ubiquitous and Mobile where a touch replaces a mouse.
 
 Because the [Mouse](xref:Microsoft.Xna.Framework.Input.Mouse) class and [MouseState](xref:Microsoft.Xna.Framework.Input.MouseState) structure do provide limited functionality on Windows Phone, this sample should work, as is, on that platform as well. However, a better solution on Windows Phone would be to substitute a call to the [TouchPanel.GetState](xref:Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState) method for the call to the [Mouse.GetState](xref:Microsoft.Xna.Framework.Input.Mouse.GetState) method in order to retrieve alternative X and Y coordinates from a Windows Phone touch screen. In general, games and other applications designed for Windows Phone should use the [TouchPanel](xref:Microsoft.Xna.Framework.Input.Touch.TouchPanel) class to retrieve user input.
 
-As written, this sample is least applicable toconsoles, although the technique of creating a ray and then keeping track of the closest object that intersects the ray remains potentially useful.
+As written, this sample is least applicable to consoles, although the technique of creating a ray and then keeping track of the closest object that intersects the ray remains potentially useful.
 
 ## Detecting Whether a User Clicked a 3D Object
 
@@ -64,7 +63,7 @@ As written, this sample is least applicable toconsoles, although the technique o
     Ray pickRay = new Ray(nearPoint, direction);
     ```
 
-8. Loop throught each object in the scene using the **Intersects** method to check whether the [Ray](xref:Microsoft.Xna.Framework.Ray) intersects each object.
+8. Loop through each object in the scene using the **Intersects** method to check whether the [Ray](xref:Microsoft.Xna.Framework.Ray) intersects each object.
 
 9. If the [Ray](xref:Microsoft.Xna.Framework.Ray) intersects an object, check whether it is the closest object intersected so far. If it is, store the object and the distance at which it was intersected, replacing any previously stored object.
 
@@ -72,7 +71,7 @@ As written, this sample is least applicable toconsoles, although the technique o
 
 ## See Also
 
-[Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)  
+[Rotating and Moving the Camera](../graphics/HowTo_RotateMoveCamera.md)  
 
 ---
 

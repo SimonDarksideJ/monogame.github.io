@@ -52,7 +52,7 @@ Audio can enrich an application and add needed polish. Playing audio should also
 * Allow sound effects and background music to be turned on and off by users.
 * Play directional sounds that reflect a location of the originating element on the screen.
 
-For more detailed information on audio see [Creating and Playing Sounds](../whatis/WhatIs_Audio.md).
+For more detailed information on audio see [Creating and Playing Sounds](../../whatis/WhatIs_Audio.md).
 
 ## Respond Correctly to Back Button Use
 
@@ -76,7 +76,7 @@ If you implement automatic game saving, check for an automatically saved state w
 ## See Also
 
 [Creating a your first MonoGame Game](https://monogame.net/articles/getting_started/index.html)
-[Setting Aspect ratios for your game](HowTo_AspectRatio.md)  
+[Setting Aspect ratios for your game](./graphics/HowTo_AspectRatio.md)  
 [Saving data using MonoGame](HowTo_SaveData.md)  
 
 ---

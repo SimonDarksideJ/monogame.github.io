@@ -33,7 +33,7 @@ An Content Importer typically converts content into managed objects based on the
 
 A _Content Processor_ takes one specific type of an imported game asset and compiles it into a managed code object that can be loaded and used by MonoGame games.
 
-Each Content Processor acts upon a specific object type. For example, the [Effect Processor](CP_StdImpsProcs.md#Processors) accepts only [EffectContent](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.EffectContent) objects, representing a DirectX Effect asset.
+Each Content Processor acts upon a specific object type. For example, the [Effect Processor](CP_StdImpsProcs.md#standard-parameterized-content-processors) accepts only [EffectContent](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.EffectContent) objects, representing a DirectX Effect asset.
 
 When you include a game asset file in your MonoGame .mgcb file, its **dialog properties** page specifies the appropriate Content Importer and Content Processor. Thereafter, when you build your game (by pressing F5), the assigned Content Importer and Content Processor for each asset is invoked automatically. The asset is built into your game in a form that can be loaded at run time by your game.
 
@@ -43,7 +43,7 @@ The format of data in the .XNB file is tightly coupled to the MonoGame Framework
 
 ### Runtime Components
 
-Runtime components of the Content Pipeline support loading and using the transformed game asset by your MonoGame game. These components use the [MonoGame library](../../whatis/WhatIs_MonoGame_Class_Library.md), which can be extended to create custom components.
+Runtime components of the Content Pipeline support loading and using the transformed game asset by your MonoGame game. These components use the [MonoGame library](../WhatIs_MonoGame_Class_Library.md), which can be extended to create custom components.
 
 Content Loader
 

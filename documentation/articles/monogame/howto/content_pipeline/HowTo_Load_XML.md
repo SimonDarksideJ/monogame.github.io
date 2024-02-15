@@ -29,7 +29,7 @@ Add the "MyDataTypes" library as a reference in the game project.
     PetData[] pets;
     ```
 
-5. In the [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) override function, load the custom content.
+5. In the [Game.LoadContent](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_LoadContent) override function, load the custom content.
 
     ```csharp
     protected override void LoadContent()

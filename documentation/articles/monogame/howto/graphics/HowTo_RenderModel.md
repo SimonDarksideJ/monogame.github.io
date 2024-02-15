@@ -43,7 +43,7 @@ The remaining parts render the model and add some user control of the model. All
 
     This code loads the model into the `gameShip` member (using [Load](xref:Microsoft.Xna.Framework.Content.ContentManager)).
 
-4. Create a new **private** method (called **DrawModel**) in the **Game1** class by adding the following code before the existing [Draw](xref:Microsoft.Xna.Framework.Game) method.
+4. Create a new **private** method (called **DrawModel**) in the **Game1** class by adding the following code before the existing [Game.Draw](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Draw_Microsoft_Xna_Framework_GameTime_) method.
 
     ```csharp
     private void DrawModel(Model m)
@@ -104,7 +104,7 @@ At this point, the rendering code for the model is complete, but the user contro
 
     These members store the current position, zoom, and rotation values. In addition, the `gameWorldRotation` simplifies the `UpdateGamePad` code.
 
-2. Add a private method (called **UpdateGamePad**) before the call to [Update](xref:Microsoft.Xna.Framework.Game.Update).
+2. Add a private method (called **UpdateGamePad**) before the call to [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_).
 
     ```csharp
     private void UpdateGamePad()
@@ -136,7 +136,7 @@ At this point, the rendering code for the model is complete, but the user contro
 
     This code implements an exit method for the game (pressing the **A** button on a GamePad), and updates the position members with the current input of the game controller.
 
-3. Modify the **Update** method by adding a call to `UpdateGamePad`, before the call to [Update](xref:Microsoft.Xna.Framework.Game.Update).
+3. Modify the **Update** method by adding a call to `UpdateGamePad`, before the call to [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_).
 
     ```csharp
     UpdateGamePad();

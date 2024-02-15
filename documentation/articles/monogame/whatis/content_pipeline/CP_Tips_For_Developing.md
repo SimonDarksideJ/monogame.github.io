@@ -19,19 +19,19 @@ The following information should help you import basic graphics objects.
 
     The default culling mode removes triangles that have a counterclockwise winding order.
 
-- Call [SwapWindingOrder](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper) to change the winding order of a triangle.
+- Call [MeshHelper.SwapWindingOrder](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper#Microsoft_Xna_Framework_Content_Pipeline_Graphics_MeshHelper_SwapWindingOrder_Microsoft_Xna_Framework_Content_Pipeline_Graphics_MeshContent_) to change the winding order of a triangle.
 
 - Set the scale for graphical objects to 1 unit = 1 meter.
 
-- Call [TransformScene](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper.TransformScene) to change the scale of an object.
+- Call [MeshHelper.TransformScene](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper#Microsoft_Xna_Framework_Content_Pipeline_Graphics_MeshHelper_TransformScene_Microsoft_Xna_Framework_Content_Pipeline_Graphics_NodeContent_Microsoft_Xna_Framework_Matrix_) to change the scale of an object.
 
 ## Taking Advantage of Content Pipeline Mesh Classes
 
 There are several properties and classes that are particularly useful when using [NodeContent](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent) objects to represent a 3D scene or mesh.
 
-- The [NodeContent.Children](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.Children) property represents hierarchical information.
+- The [NodeContent.Children](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent#Microsoft_Xna_Framework_Content_Pipeline_Graphics_NodeContent_Children) property represents hierarchical information.
 
-- The [NodeContent.Transform](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.Transform) property contains the local transform of the 3D object.
+- The [NodeContent.Transform](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent#Microsoft_Xna_Framework_Content_Pipeline_Graphics_NodeContent_Transform) property contains the local transform of the 3D object.
 
 - The [Pipeline.Graphics.MeshContent](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshContent) class (a subclass of [Pipeline.Graphics.NodeContent](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent)) is used to represent meshes.
 

@@ -27,7 +27,7 @@ These are the corresponding API states:
 * Set [MultiSampleAntiAlias](xref:Microsoft.Xna.Framework.Graphics.RasterizerState.MultiSampleAntiAlias) to **true**.
 * Set [DepthBias](xref:Microsoft.Xna.Framework.Graphics.RasterizerState.DepthBias) and [SlopeScaleDepthBias](xref:Microsoft.Xna.Framework.Graphics.RasterizerState.SlopeScaleDepthBias) to 0.
 
-Built-in state objects make it easy to create objects with the most common rasterizer state settings. **CullNone**, **CullClockwise**, and **CullCounterClockwise** are the most common settings. For an example of creating a state object, see [Creating a State Object](../howto/HowTo_Create_a_StateObject.md).
+Built-in state objects make it easy to create objects with the most common rasterizer state settings. **CullNone**, **CullClockwise**, and **CullCounterClockwise** are the most common settings. For an example of creating a state object, see [Creating a State Object](../../howto/graphics/HowTo_Create_a_StateObject.md).
 
 ---
 

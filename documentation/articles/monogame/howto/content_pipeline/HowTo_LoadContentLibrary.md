@@ -44,7 +44,7 @@ When the solution is built, the resources in the content project will be compile
     }
     ```
 
-3. In the [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) method, load your content normally using your [ContentManager](xref:Microsoft.Xna.Framework.Content.ContentManager).
+3. In the [Game.LoadContent](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_LoadContent) method, load your content normally using your [ContentManager](xref:Microsoft.Xna.Framework.Content.ContentManager).
 
     ```csharp
     SpriteBatch spriteBatch;
@@ -101,7 +101,7 @@ Once content has been added to the **Resource Designer**, any code running from 
     }
     ```
 
-4. In the [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent) method, load your content normally using your [ContentManager](xref:Microsoft.Xna.Framework.Content.ContentManager).
+4. In the [Game.LoadContent](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_LoadContent) method, load your content normally using your [ContentManager](xref:Microsoft.Xna.Framework.Content.ContentManager).
 
     ```csharp
     SpriteBatch spriteBatch;
@@ -119,7 +119,7 @@ Once content has been added to the **Resource Designer**, any code running from 
 ### Reference
 
 - [Game Class](xref:Microsoft.Xna.Framework.Game)  
-- [LoadContent](xref:Microsoft.Xna.Framework.Game.LoadContent)  
+- [Game.LoadContent](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_LoadContent)  
 - [UnloadContent](xref:Microsoft.Xna.Framework.Game.UnloadContent)  
 - [Game Members](xref:Microsoft.Xna.Framework.Game)  
 - [Microsoft.Xna.Framework Namespace](xref:Microsoft.Xna.Framework)  

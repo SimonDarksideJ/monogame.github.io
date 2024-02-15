@@ -31,7 +31,7 @@ Demonstrates how to rotate a sprite around its center.
     }
     ```
 
-3. In your [Update](xref:Microsoft.Xna.Framework.Game.Update) method, determine the rotation angle to use for the sprite.
+3. In your [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_) method, determine the rotation angle to use for the sprite.
 
    The angle is specified in radians, and it can be greater than two times π, but does not need to be.
 
@@ -58,7 +58,7 @@ Demonstrates how to rotate a sprite around its center.
     }
     ```
 
-4. In your [Draw](xref:Microsoft.Xna.Framework.Game.Draw) method, call [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw) with the texture, angle, screen position, and origin of the texture.
+4. In your [Game.Draw](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Draw_Microsoft_Xna_Framework_GameTime_) method, call [SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_) with the texture, angle, screen position, and origin of the texture.
 
     ```csharp
     protected override void Draw(GameTime gameTime)
@@ -75,7 +75,7 @@ Demonstrates how to rotate a sprite around its center.
     }
     ```
 
-5. When all the sprites have been drawn, call [End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
+5. When all the sprites have been drawn, call [SpriteBatch.End](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_End) on your [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch) object.
 
 ## See Also
 
@@ -85,12 +85,12 @@ Demonstrates how to rotate a sprite around its center.
 
 #### Concepts
 
-[What Is a Sprite?](./../../whatis/WhatIs_Sprite.md)
+[What Is a Sprite?](../../whatis/graphics/WhatIs_Sprite.md)
 
 #### Reference
 
 [SpriteBatch](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch)  
-[Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw)  
+[SpriteBatch.Draw](xref:Microsoft.Xna.Framework.Graphics.SpriteBatch#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_)
 [Texture2D](xref:Microsoft.Xna.Framework.Graphics.Texture2D)  
 
 ---

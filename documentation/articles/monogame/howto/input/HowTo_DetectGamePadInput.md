@@ -5,9 +5,9 @@ description: The code in this topic describes how to detect input on a GamePad.
 
 # Detecting input from a GamePad
 
-By using [GetState](xref:Microsoft.Xna.Framework.Input.GamePad.GamePad) a game can determine which buttons are being held down. A game often needs to detect when a user has pressed or released a button. For example, there is the case of an action title that requires users to press and release keys in rapid succession. The example uses a cached [GamePadState](xref:Microsoft.Xna.Framework.Input.GamePadState) object to determine if buttons were pressed or released in a given frame.
+By using [GamePad.GetState](xref:Microsoft.Xna.Framework.Input.GamePad#Microsoft_Xna_Framework_Input_GamePad_GetState_System_Int32_) a game can determine which buttons are being held down. A game often needs to detect when a user has pressed or released a button. For example, there is the case of an action title that requires users to press and release keys in rapid succession. The example uses a cached [GamePadState](xref:Microsoft.Xna.Framework.Input.GamePadState) object to determine if buttons were pressed or released in a given frame.
 
-Unlike GamePads however, multiple GamePads can be connected to a computer or console at the same time, so the [GetState](xref:Microsoft.Xna.Framework.Input.GamePad) call requires an Index parameter for which controller is being polled.  You also need to query the system the game is currently on for its [MaximumGamePadCount](xref:Microsoft.Xna.Framework.Input.GamePad) to determine how many controllers are supported and how many need to be polled for each frame.  Also unlike GamePads, GamePads can be disconnected (especially if the battery dies) at any time and most consoles require you to validate this to avoid player issues.
+Unlike GamePads however, multiple GamePads can be connected to a computer or console at the same time, so the [GamePad.GetState](xref:Microsoft.Xna.Framework.Input.GamePad#Microsoft_Xna_Framework_Input_GamePad_GetState_System_Int32_) call requires an Index parameter for which controller is being polled.  You also need to query the system the game is currently on for its [GamePad.MaximumGamePadCount](xref:Microsoft.Xna.Framework.Input.GamePad#Microsoft_Xna_Framework_Input_GamePad_MaximumGamePadCount) to determine how many controllers are supported and how many need to be polled for each frame.  Also unlike GamePads, GamePads can be disconnected (especially if the battery dies) at any time and most consoles require you to validate this to avoid player issues.
 
 Depending on game design, there may be times when checking for a button press needs to occur more frequently, and other times it does not. It is possible in the case of very fast button presses that more than one key press could occur within one frame. In such a case, the last button press is returned. Writing code that checks as often as possible for button presses is the best way to handle this case.
 
@@ -30,7 +30,7 @@ Additionally, most controllers also support haptic feedback (vibration) in the c
 
 2. Assign this object a value in your constructor.
 
-3. Call [GetState](xref:Microsoft.Xna.Framework.Input.GamePad) to retrieve the current GamePad state (in this example, the **newState** object).
+3. Call [GamePad.GetState](xref:Microsoft.Xna.Framework.Input.GamePad#Microsoft_Xna_Framework_Input_GamePad_GetState_System_Int32_) to retrieve the current GamePad state (in this example, the **newState** object).
 
 4. Compare the values in your **newState** object to the values in the **oldState** object.
 

@@ -13,9 +13,9 @@ Physical keyboards may or may not be present on mobile devices; you should not r
 
 If the mobile device does have access to a physical keyboard, the same methods used for keyboards on desktop can be used, given a few caveats.
 
-For multi-touch devices, you can use the raw touch data provided by the [TouchPanel](xref:Microsoft.Xna.Framework.Input.TouchPanel) class, but you can also use MonoGame's support for predefined gestures if your input fits one of the supported gesture types. For information about working with raw multi-touch input, see [Working with Touch Input](../howto/HowTo_UseMultiTouchInput.md). For information about gesture support, see [Detecting Gestures on a Multi-touch Screen](../howto/input/HowTo_Detect_Gestures.md).
+For multi-touch devices, you can use the raw touch data provided by the [TouchPanel](xref:Microsoft.Xna.Framework.Input.Touch.TouchPanel) class, but you can also use MonoGame's support for predefined gestures if your input fits one of the supported gesture types. For information about working with raw multi-touch input, see [Working with Touch Input](../howto/input/HowTo_UseMultiTouchInput.md). For information about gesture support, see [Detecting Gestures on a Multi-touch Screen](../howto/input/HowTo_Detect_Gestures.md).
 
-The microphone on mobile can be used to capture audio that can be used in your game. For more information, see [Recording Sounds with Microphones](../howto/HowTo_Microphone.md).
+The microphone on mobile can be used to capture audio that can be used in your game. For more information, see [Recording Sounds with Microphones](../howto/audio/HowTo_Microphone.md).
 
 ---
 

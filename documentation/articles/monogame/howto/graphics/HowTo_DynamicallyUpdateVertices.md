@@ -9,7 +9,7 @@ Geometry in a 3D game is defined by vertex data. Sometimes, a game needs to modi
 
 ## Updating a Set of Primitives Dynamically
 
-The [Primitives Sample](https://github.com/simondarksidej/XNAGameStudio/wiki/Primitives) demonstrates a dynamic vertex buffer that is generated during each rendering frame. The sample renders primitives by first calling `Begin`, adding the necessary vertices, using the `Add` method, and then calling `End`. This forces the buffer to be drawn to the current device. The `Flush` method calls [DrawUserPrimitives](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice.DrawUserPrimitives) method when `End` is called or when the buffer has no room for new vertices. If there is no room, the buffer is written to the device, it is reset, and the pending vertices are added.
+The [Primitives Sample](https://github.com/simondarksidej/XNAGameStudio/wiki/Primitives) demonstrates a dynamic vertex buffer that is generated during each rendering frame. The sample renders primitives by first calling `Begin`, adding the necessary vertices, using the `Add` method, and then calling `End`. This forces the buffer to be drawn to the current device. The `Flush` method calls [GraphicsDevice.DrawUserPrimitives](xref:Microsoft.Xna.Framework.Graphics.GraphicsDevice#Microsoft_Xna_Framework_Graphics_GraphicsDevice_DrawUserPrimitives__1_Microsoft_Xna_Framework_Graphics_PrimitiveType___0___System_Int32_System_Int32_) method when `End` is called or when the buffer has no room for new vertices. If there is no room, the buffer is written to the device, it is reset, and the pending vertices are added.
 
 ## Dynamically Rendering a Persistent Set of Primitives
 
