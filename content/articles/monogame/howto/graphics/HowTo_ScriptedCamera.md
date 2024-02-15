@@ -126,7 +126,7 @@ Using [Curve](xref:Microsoft.Xna.Framework.Curve)s allows a path to be defined b
         cameraCurveLookat.GetPointOnCurve((float)time);
     ```
 
-9. In [Game.Update](xref:Microsoft.Xna.Framework.Game), use [gameTime.ElapsedGameTime.TotalMilliseconds](xref:Microsoft.Xna.Framework.GameTime.ElapsedGameTime) to increment the time since the camera started moving.
+9. In [Game.Update](xref:Microsoft.Xna.Framework.Game#Microsoft_Xna_Framework_Game_Update_Microsoft_Xna_Framework_GameTime_), use [gameTime.ElapsedGameTime.TotalMilliseconds](xref:Microsoft.Xna.Framework.GameTime.ElapsedGameTime) to increment the time since the camera started moving.
 
     ```csharp
     time += gameTime.ElapsedGameTime.TotalMilliseconds;

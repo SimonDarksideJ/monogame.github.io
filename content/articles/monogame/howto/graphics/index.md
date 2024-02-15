@@ -91,6 +91,10 @@ Demonstrates how to create a render target using the RenderTarget2D class.
 
 Demonstrates how to use viewports to display different scenes simultaneously using two cameras.
 
+[Rotating and Moving the Camera](HowTo_RotateMoveCamera.md)
+
+Demonstrates how to rotate and move a camera in a 3D environment. You can rotate the camera about its y-axis, and move it forward and backward. You control the camera's position and orientation by using the directional keys on your keyboard or by using the D-pad of your gamepad.
+
 [How to move the Camera on a Curve](HowTo_ScriptedCamera.md)
 
 Demonstrates how to use the Curve and CurveKey classes to move a camera along the shape of a curve.
@@ -126,6 +130,24 @@ Demonstrates how to create a custom vertex declaration and use it to render a 3D
 [How to Dynamically Update Vertex Data](HowTo_DynamicallyUpdateVertices.md)
 
 Geometry in a 3D game is defined by vertex data. Sometimes, a game needs to modify vertex data or even generate new vertex data dynamically (at run time). Here are some solutions for dynamically updating vertex data.
+
+[Drawing 3D Primitives using Lists or Strips](HowTo_Draw_3D_Primitives.md)
+
+Demonstrates how to draw 3D primitives using lines and triangles arranged as strips or lists.
+
+### Collisions 3D
+
+[Selecting an Object with a Mouse](HowTo_Select_and_Object_with_a_Mouse.md)
+
+Demonstrates how to check whether the mouse is positioned over a 3D object by creating a ray starting at the camera's near clipping plane and ending at its far clipping plane.
+
+[Bounding Volumes and Collisions](HowTo_Bounding_Volumes_and_Collisions.md)
+ 
+Collision detection determines whether objects in a game world overlap each other.
+
+[Testing for Collisions](HowTo_Test_for_Collisions.md)
+
+Demonstrates how to use the [BoundingSphere](xref:Microsoft.Xna.Framework.BoundingSphere) class to check whether two models are colliding.
 
 ---
 

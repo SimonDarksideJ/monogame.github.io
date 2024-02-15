@@ -18,7 +18,7 @@ This example has three main parts: importing and processing the model, drawing t
 
 3. Open the **Properties** window and verify that the correct importer and processor are specified.
 
-    > For this example, the **Content Importer** is AutoDesk FBX - XNA Framework and the **Content Processor** is Model - XNA Framework.
+    > For this example, the **Content Importer** is AutoDesk FBX - MonoGame Framework and the **Content Processor** is Model - MonoGame Framework.
 
 4. Save the solution.
 
