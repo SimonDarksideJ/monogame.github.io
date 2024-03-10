@@ -1,11 +1,8 @@
 ---
 title: How to use an XML File to Specify Content?
 description: Game assets managed through the Content Pipeline include graphic items such as textures, models and meshes; sound files such as dialogue or music; and custom data that governs the behavior of the game.
+requireMSLicense: true
 ---
-
-# Using an XML File to Specify Content
-
-Game assets managed through the Content Pipeline include graphic items such as textures, models and meshes; sound files such as dialogue or music; and custom data that governs the behavior of the game.
 
 Data tables, for example, are custom data that might describe different characters’ attributes or the features of each level in the game. The content and format of this data is specific to the requirements of the game. Custom game data in the form of an XML file also can be loaded into your game through the standard features of the Content Pipeline.
 
@@ -13,9 +10,13 @@ When the Content Pipeline is used, the game does not have to parse the XML forma
 
 ## In This Section
 
-- [Creating an XML File](HowTo_CreateXML.md)
+- [How to Add custom game data as an XML file](HowTo_Add_XML.md)
 
-    Describes how to use [IntermediateSerializer](xref:Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer) from a Windows application to generate XML content to add to a XNA Game Studio application.
+    Describes how to add custom game data as an XML file through the Content Pipeline.
+
+- [Generating a custom XML File](HowTo_GenerateCustomXML.md)
+
+    Describes how to use [IntermediateSerializer](xref:Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer) from a Windows application to generate XML content to add to a MonoGame application.
 
 - [Adding an XML Content File to a MonoGame Project](HowTo_GameContent_Add.md)
 
@@ -38,9 +39,3 @@ When the Content Pipeline is used, the game does not have to parse the XML forma
 ### Concepts
 
 [Adding Content to a Game](./HowTo_GameContent_Add.md)
-
----
-
-© 2012 Microsoft Corporation. All rights reserved.  
-
-© 2023 The MonoGame Foundation.

@@ -1,11 +1,8 @@
 ---
 title: How to load content within a Game Library?
 description: It may be desirable in some designs to load and draw content within the methods of a Game Library. For example, you may wish to distribute code that displays textures, models, or fonts (such as a DrawableGameComponent) in a .DLL.
+requireMSLicense: true
 ---
-
-# Loading Content Within a Game Library
-
-It may be desirable in some designs to load and draw content within the methods of a Game Library. For example, you may wish to distribute code that displays textures, models, or fonts (such as a [DrawableGameComponent](xref:Microsoft.Xna.Framework.DrawableGameComponent)) in a .DLL.
 
 There are two advanced techniques that accommodate this, one in which the binary content is separate from the .DLL, and one in which the content is embedded within the .DLL.
 
@@ -123,9 +120,3 @@ Once content has been added to the **Resource Designer**, any code running from 
 - [UnloadContent](xref:Microsoft.Xna.Framework.Game.UnloadContent)  
 - [Game Members](xref:Microsoft.Xna.Framework.Game)  
 - [Microsoft.Xna.Framework Namespace](xref:Microsoft.Xna.Framework)  
-
----
-
-© 2012 Microsoft Corporation. All rights reserved.  
-
-© 2023 The MonoGame Foundation.

@@ -1,20 +1,17 @@
 ---
 title: How to create a Localized Game?
 description: A localized game is one in which the UI displays alternative sets of text that are appropriate to the language and culture of the gamer.
+requireMSLicense: true
 ---
-
-# How to: Create a Localized Game
-
-A localized game is one in which the UI displays alternative sets of text that are appropriate to the language and culture of the gamer.
 
 This tutorial demonstrates methods that allow a game to display differing UI text according to the platform's current culture setting stored in [CultureInfo](http://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx). It also demonstrates how to extend the Content Pipeline so that the minimum number of additionally required font characters are included in the game executable for the localized text.
 
 For more detailed information about both globalization and localization issues for Windows Phone, see [Globalization and Localization for Windows Phone](http://go.microsoft.com/fwlink/?LinkId=254839) in the Windows Phone documentation.
 
-* [Creating Resource Files](#creating-resource-files)
-* [Extending the Content Pipeline](#extending-the-content-pipeline)
-* [Associating Localization Data and Processors With Fonts](#associating-localization-data-and-processors-with-fonts)
-* [Using Localized Strings in the Game](#using-localized-strings-in-the-game)
+- [Creating Resource Files](#creating-resource-files)
+- [Extending the Content Pipeline](#extending-the-content-pipeline)
+- [Associating Localization Data and Processors With Fonts](#associating-localization-data-and-processors-with-fonts)
+- [Using Localized Strings in the Game](#using-localized-strings-in-the-game)
 
 ## Creating Resource Files
 
@@ -217,9 +214,3 @@ Setting the **Culture** property of this class from the [CultureInfo.CurrentCult
 
 - [Extending a Standard Content Processor](./HowTo_Extend_Processor.md)
 - [Adding New Content Types](../../whatis/Content_Pipeline/CP_Content_Advanced.md)
-
----
-
-© 2012 Microsoft Corporation. All rights reserved.
-
-© 2023 The MonoGame Foundation.

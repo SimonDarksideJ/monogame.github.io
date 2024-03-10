@@ -1,11 +1,8 @@
 ---
 title: How to create a Render Target
 description: Demonstrates how to create a render target using a RenderTarget2D.
+requireMSLicense: true
 ---
-
-# How to create a Render Target
-
-The sample demonstrates how to create a render target using the [RenderTarget2D](xref:Microsoft.Xna.Framework.Graphics.RenderTarget2D) class and draw the resulting texture to the screen.
 
 The example is very basic but the principles are the same, when drawing to a Render Texture we apply the following process.
 
@@ -115,9 +112,3 @@ The final output should look like the following:
 ![Output](../images/HowTo_Create_a_RenderTarget_Final.png)
 
 Rendering a 32 by 32 square from the RenderTarget texture to a position 200 x 50 on the screen.
-
----
-
-© 2012 Microsoft Corporation. All rights reserved.  
-
-© 2023 The MonoGame Foundation.

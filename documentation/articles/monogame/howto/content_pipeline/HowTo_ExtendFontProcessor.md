@@ -1,11 +1,8 @@
 ---
 title: How to Extend the Font Description Processor to Support Additional Characters?
 description: Describes the process of developing a custom content processor needed to add additional characters to a FontDescription object based on the text that is required by the game.
+requireMSLicense: true
 ---
-
-# How to: Extend the Font Description Processor to Support Additional Characters
-
-Describes the process of developing a custom content processor needed to add additional characters to a [FontDescription](xref:Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription) object based on the text that is required by the game.
 
 In a font description (.spritefont) file, the `<CharacterRegions>` area can be used to add additional characters to a font description. This enables you to use a [SpriteFont](xref:Microsoft.Xna.Framework.Graphics.SpriteFont) to render an additional range of characters.
 
@@ -150,9 +147,3 @@ When you build the solution, the new processor adds the characters in the messag
 
 [Extending a Standard Content Processor](./HowTo_Extend_Processor.md)
 [Adding New Content Types](../../whatis/Content_Pipeline/CP_Content_Advanced.md)
-
----
-
-© 2012 Microsoft Corporation. All rights reserved.
-
-© 2023 The MonoGame Foundation.

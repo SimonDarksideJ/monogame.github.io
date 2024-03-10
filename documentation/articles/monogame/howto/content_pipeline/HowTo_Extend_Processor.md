@@ -1,11 +1,10 @@
 ---
 title: How To Extend a Standard Content Processor?
 description: Describes how MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product.
+requireMSLicense: true
 ---
 
-# Extending a Standard Content Processor
-
-Describes how MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product. See [Standard Content Importers and Content Processors](../../whatis/Content_Pipeline/CP_StdImpsProcs.md) for a description of standard processors.
+MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product. See [Standard Content Importers and Content Processors](../../whatis/Content_Pipeline/CP_StdImpsProcs.md) for a description of standard processors.
 
 Because there are so many asset variants supported by different digital content creation (DCC) tools, it is often useful to be able to modify how one of the standard processors operates. The following examples illustrate some of the kinds of things you might want to do.
 
@@ -136,9 +135,3 @@ After building and installing your new `NoCompressionModelProcessor` (see [Addin
 - [What is the Content Pipeline?](../../whatis/Content_Pipeline/CP_Architecture.md)  
 - [Standard Content Importers and Content Processors](../../whatis/Content_Pipeline/CP_StdImpsProcs.md)  
 - [Adding a Custom Importer](../../whatis/Content_Pipeline/CP_AddCustomProcImp.md)  
-
----
-
-© 2012 Microsoft Corporation. All rights reserved.
-
-© 2023 The MonoGame Foundation.
