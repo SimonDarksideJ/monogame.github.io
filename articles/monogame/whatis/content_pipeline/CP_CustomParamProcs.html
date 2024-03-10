@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="What are Parameterized Processors? | MonoGame ">
+
+    <title>What are Parameterized Processors? | MonoGame </title>
+<meta name="description" content="This topic discusses a method for programmatically modifying existing parameter values, and for adding new parameters to your own processors.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_CustomParamProcs.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="What are Parameterized Processors? | MonoGame ">
+    <meta name="og:description" content="This topic discusses a method for programmatically modifying existing parameter values, and for adding new parameters to your own processors.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_CustomParamProcs.html">
+    <meta name="twitter:title" content="What are Parameterized Processors? | MonoGame ">
+    <meta name="twitter:description" content="This topic discusses a method for programmatically modifying existing parameter values, and for adding new parameters to your own processors.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_CustomParamProcs.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="developing-with-parameterized-processors">Developing with Parameterized Processors</h1>
+
+<p>This topic discusses a method for programmatically modifying existing parameter values, and for adding new parameters to your own processors.</p>
+<h2 id="programmatically-setting-parameter-values">Programmatically Setting Parameter Values</h2>
+<p>When you need to pass parameter values from one processor to another (also referred to as chaining), use the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessorContext.html">BuildAsset</a> and <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessorContext.html">BuildAndLoadAsset</a> methods. Pass the parameter and its value using the <em>processorParameters</em> argument of the respective method. For example, a custom model processor would invoke a second processor for model textures with a call to <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessorContext.html">BuildAsset</a> and pass any parameter values in the <em>processorParameters</em> argument.</p>
+<p>The following code example demonstrates this technique. First, add several parameters to a data dictionary:</p>
+<pre><code class="lang-csharp">      //create a dictionary to hold the processor parameter
+      OpaqueDataDictionary parameters = new OpaqueDataDictionary();
+
+      //add several parameters to the dictionary
+      parameters.Add( &quot;ColorKeyColor&quot;, Color.Magenta );
+      parameters.Add( &quot;ColorKeyEnabled&quot;, true );
+      parameters.Add( &quot;ResizeToPowerOfTwo&quot;, true );
+</code></pre>
+<p>After adding the necessary parameters, pass the dictionary to the chained processor:</p>
+<pre><code class="lang-csharp">      context.BuildAsset&lt;TextureContent, TextureContent=&quot;&quot;&gt;(
+      texture, typeof( TextureProcessor ).Name,
+      parameters,
+      null,
+      null );
+</code></pre>
+<p>This call passes all parameters (stored in <code>parameters</code>) to a texture processor.</p>
+<p>Again, any parameters not recognized by the receiving processor are ignored. Therefore, if the parameter <code>ColorKeyCode</code> is entered into the dictionary as <em>ColourKeyCode</em>, it is ignored by the receiving processor.</p>
+<h2 id="declaring-process-parameters">Declaring Process Parameters</h2>
+<p>Adding one or more parameters to your custom processor requires additional code in your processor's definition. Parameters support the following types:</p>
+<ul>
+<li>bool</li>
+<li>byte</li>
+<li>sbyte</li>
+<li>char</li>
+<li>decimal</li>
+<li>double</li>
+<li>float</li>
+<li>int</li>
+<li>uint</li>
+<li>long</li>
+<li>ulong</li>
+<li>short</li>
+<li>ushort</li>
+<li>string</li>
+<li>enum</li>
+<li><a class="xref" href="../../../../api/Microsoft.Xna.Framework.Vector2.html">Vector2</a>, <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Vector3.html">Vector3</a>, and <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Vector4.html">Vector4</a></li>
+<li><a class="xref" href="../../../../api/Microsoft.Xna.Framework.Color.html">Color</a></li>
+</ul>
+<p>Parameters of other types are ignored by the processor.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Apply the Browsable attribute (with a value of <strong>false</strong>) to an individual parameter to prevent that parameter from being displayed in the Properties window.</p>
+</blockquote>
+<p>The following code example defines a simple custom processor that switches the coordinate system of a model using a single parameter (called switchCoordinateSystem):</p>
+<pre><code class="lang-csharp">      public class SwitchCoordSystemProcessor : ModelProcessor
+      {
+      #region Processor Parameters
+      private bool switchCoordinateSystem = false;
+
+      [DisplayName(&quot;Switch Coordinate System&quot;)]
+      [DefaultValue(false)]
+      [Description(&quot;Switches the coordinate system of a model.&quot;)]
+      public bool SwitchCoordinateSystem
+      {
+        get { return switchCoordinateSystem; }
+        set { switchCoordinateSystem = value; }
+      }
+      //additional class code follows...
+</code></pre>
+<p>In this code, the <code>SwitchCoordSystemProcessor</code> class is derived from <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">ModelProcessor</a>. This indicates that the processor accepts a model as input. The next few lines declare a single property called <code>SwitchCoordinateSystem</code> of type <strong>bool</strong>. Note that every parameter must have a **set*- method. The property also has several attributes applied to it:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute name</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DisplayName</td>
+<td>Name of the property when it appears in the Properties window of the MonoGame Pipeline tool. If not specified, the internal property name, declared in the source code, is used. For this example, &quot;Switch Coordinate System&quot; would be displayed.</td>
+</tr>
+<tr>
+<td>DefaultValue</td>
+<td>A user interface (UI) hint specifying the possible default value of the property. This value is used only as a UI hint; it will not be set on the property, nor will it override the default value declared in the code.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Descriptive text displayed when you select the property in the Properties window of the MonoGame Pipeline Tool.</td>
+</tr>
+</tbody>
+</table>
+<p>This completes the definition of the <code>SwitchCoordinateSystem</code> property.</p>
+<p>In the next code example, the class definition is continued with an override of the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">Process</a> method:</p>
+<pre><code class="lang-csharp">      //additional class code precedes...
+
+      public override ModelContent Process(NodeContent input, ContentProcessorContext context)
+      {
+        if (switchCoordinateSystem)
+        {
+          Matrix switchMatrix = Matrix.Identity;
+          switchMatrix.Forward = Vector3.Backward;
+          MeshHelper.TransformScene(input, switchMatrix);
+        }
+
+        return base.Process(input, context);
+      }
+</code></pre>
+<p>This code passes the <code>SwitchCoordinateSystem</code> property (declared earlier) value to <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper.html">TransformScene</a>, which is a helper method that applies a transform to a scene hierarchy.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="CP_Content_Advanced.html">Adding New Content Types</a></li>
+<li><a href="CP_StdParamProcs.html">Parameterized Content Processors</a></li>
+</ul>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_CustomParamProcs.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

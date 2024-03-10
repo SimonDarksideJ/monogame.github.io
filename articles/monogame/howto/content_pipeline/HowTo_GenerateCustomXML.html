@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="How to create a custom XML File? | MonoGame ">
+
+    <title>How to create a custom XML File? | MonoGame </title>
+<meta name="description" content="For complex game data, using a software tool to create and maintain these assets may be useful. Level tables, for example, might be easier to develop through a custom-level editor tool.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_GenerateCustomXML.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="How to create a custom XML File? | MonoGame ">
+    <meta name="og:description" content="For complex game data, using a software tool to create and maintain these assets may be useful. Level tables, for example, might be easier to develop through a custom-level editor tool.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_GenerateCustomXML.html">
+    <meta name="twitter:title" content="How to create a custom XML File? | MonoGame ">
+    <meta name="twitter:description" content="For complex game data, using a software tool to create and maintain these assets may be useful. Level tables, for example, might be easier to develop through a custom-level editor tool.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_GenerateCustomXML.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+
+<p>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.html">IntermediateSerializer</a> class of the MonoGame Framework can be employed by custom tools running under Windows to directly serialize game data to an XML file.</p>
+<p>An XML file generated in this way then can be included in the game project and imported by <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.XmlImporter.html">XmlImporter Class</a> as part of the Content Pipeline. Because <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.XmlImporter.html">XmlImporter</a> is actually a wrapper for <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.html">IntermediateSerializer</a>, it is certain that the XML file will be in the <a href="../../whatis/Content_Pipeline/CP_XML_Elements.md">correct format</a> to be deserialized by the same facility.</p>
+<p>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.html">IntermediateSerializer</a> class is controlled through the <code>XmlWriter</code> class of the .NET Framework defined in <code>System.Xml</code>. The properties of the <code>XmlWriterSettings</code> class can be used to specify its output properties.</p>
+<p>The serializer produces its output according to these rules:</p>
+<ul>
+<li>All public fields and properties are serialized; a separate XML element is used for each.</li>
+<li>Protected, private, or internal data is skipped.</li>
+<li>Get-only or set-only properties are skipped.</li>
+<li>Properties come before fields.</li>
+<li>If there is more than one field or property, these are serialized in the order they are declared.</li>
+<li>Nested types are serialized using nested XML elements.</li>
+<li>When the class derives from another, members of the base class are serialized before data from the derived type.</li>
+</ul>
+<h2 id="xml-serialization-example">XML Serialization Example</h2>
+<p>The following steps create a simple program that demonstrates how a program can use the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.html">IntermediateSerializer</a> method <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.html">IntermediateSerializer.Serialize Generic Method</a> to serialize program data to an XML file.</p>
+<h3 id="step-1-create-a-new-project">Step 1: Create a New Project</h3>
+<p>You will create a new project in Visual Studio.</p>
+<ol>
+<li><p>On the <code>File</code> menu, click <code>New</code>, and then click <code>Project</code>.</p>
+</li>
+<li><p>In the <code>New Project</code> dialog box, ensure <code>Windows</code> is selected in the <code>Project types</code> pane, and then click <code>Console Application</code> in the <code>Templates</code> pane.</p>
+</li>
+<li><p>Open the new project, then in the <code>Solution Explorer</code>, right-click the <code>Dependencies</code> folder, and then click <code>Manage NuGet Packages..</code>.</p>
+</li>
+<li><p>Click on the <code>Browse</code> tab (if not selected) and search for the <code>MonoGame.Framework.Content.Pipeline</code> package, and then click <code>Install</code>.</p>
+<p>Accept any dialog prompts for Licenses or dependencies as they appear.</p>
+</li>
+<li><p>Additionally, install the <code>MonoGame.Framework.DesktopGL</code> NuGet package which is required by the <code>Content.Pipeline</code> package.</p>
+</li>
+</ol>
+<h2 id="step-2-add-xml-serialization">Step 2: Add XML Serialization</h2>
+<ol>
+<li><p>In the <code>Solution Explorer</code>, double-click <code>Program.cs</code> to edit it.</p>
+</li>
+<li><p>Add <code>using</code> declarations for the System.Xml and Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate namespaces.</p>
+<pre><code class="lang-csharp">    using System.Xml;
+    using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
+</code></pre>
+</li>
+<li><p>Define a class to serialize to XML with the properties you wish to store in your custom XML.</p>
+<pre><code class="lang-csharp">    namespace XMLSerializerTest
+    {
+        class MyData
+        {
+            public int elf = 23;
+            public string hello = &quot;Hello World&quot;;
+        }
+    }
+</code></pre>
+</li>
+<li><p>Within the function <code>Main</code> of the <code>Program</code> class, add the following code. This code employs <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.html">IntermediateSerializer.Serialize Generic Method</a> to serialize the <code>MyData</code> class as an XML file.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyData ExampleData = new MyData();
+
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+
+            using (XmlWriter writer = XmlWriter.Create(&quot;example.xml&quot;, settings))
+            {
+                IntermediateSerializer.Serialize(writer, ExampleData, null);
+            }
+        }
+    }
+</code></pre>
+<h2 id="step-3-generate-xml">Step 3: Generate XML</h2>
+<ol>
+<li>Press F5 to build and execute the program.</li>
+<li>Examine the <code>example.xml</code> file in the project's <code>bin\\Debug\\netx.0</code> folder.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>netx.0</code> relates to the version of .NET your project is building under, <code>net6.0</code> for <code>.NET 6</code> and <code>net8.0</code> for <code>.NET 8</code></p>
+</div>
+<p>You should have an output that looks like the following:</p>
+<pre><code class="lang-xml">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;XnaContent xmlns:XMLSerializerTest=&quot;XMLSerializerTest&quot;&gt;
+      &lt;Asset Type=&quot;XMLSerializerTest:MyData&quot;&gt;
+        &lt;elf&gt;23&lt;/elf&gt;
+        &lt;hello&gt;Hello World&lt;/hello&gt;
+      &lt;/Asset&gt;
+    &lt;/XnaContent&gt;
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<h3 id="concepts">Concepts</h3>
+<ul>
+<li><a href="HowTo_UseCustomXML.html">Using an XML File to Specify Content</a></li>
+<li><a href="HowTo_GameContent_Add.html">Adding Content to a Game</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.html">IntermediateSerializer Class</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_GenerateCustomXML.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

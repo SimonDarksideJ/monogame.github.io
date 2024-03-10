@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Detecting a Key Press | MonoGame ">
+
+    <title>Detecting a Key Press | MonoGame </title>
+<meta name="description" content="The code in this topic describes how to detect a key press or release on the keyboard.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/howto/input/HowTo_DetectKeyPress.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="Detecting a Key Press | MonoGame ">
+    <meta name="og:description" content="The code in this topic describes how to detect a key press or release on the keyboard.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/howto/input/HowTo_DetectKeyPress.html">
+    <meta name="twitter:title" content="Detecting a Key Press | MonoGame ">
+    <meta name="twitter:description" content="The code in this topic describes how to detect a key press or release on the keyboard.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/input/HowTo_DetectKeyPress.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="detecting-a-key-press">Detecting a Key Press</h1>
+
+<p>By using <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Input.Keyboard.html#Microsoft_Xna_Framework_Input_Keyboard_GetState">GetState</a> a game can determine which keys are being held down. A game often needs to detect when a user has pressed or released a key. For example, there is the case of an action title that requires users to press and release keys in rapid succession. The example uses a cached <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Input.KeyboardState.html">KeyboardState</a> object to determine if keys were pressed or released in a given frame.</p>
+<p>Depending on game design, there may be times when checking for a key press needs to occur more frequently, and other times it does not. It is possible in the case of very fast key presses that more than one key press could occur within one frame. In such a case, the last key press is returned. Writing code that checks as often as possible for key presses is the best way to handle this case.</p>
+<h2 id="detecting-a-key-press-or-release">Detecting a Key Press or Release</h2>
+<ol>
+<li><p>Declare a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Input.KeyboardState.html">KeyboardState</a> object to hold the last known keyboard state (in this example, the <strong>oldState</strong> object).</p>
+</li>
+<li><p>Assign this object a value in your constructor.</p>
+</li>
+<li><p>Call <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Input.Keyboard.html#Microsoft_Xna_Framework_Input_Keyboard_GetState">GetState</a> to retrieve the current keyboard state (in this example, the <strong>newState</strong> object).</p>
+</li>
+<li><p>Compare the values in your <strong>newState</strong> object to the values in the <strong>oldState</strong> object.</p>
+<p>Keys pressed in the <strong>newState</strong> object that were not pressed in the <strong>oldState</strong> object were pressed during this frame. Conversely, keys pressed in the <strong>oldState</strong> object that are not pressed in the <strong>newState</strong> object were released during this frame.</p>
+</li>
+<li><p>Update <strong>oldState</strong> object to the <strong>newState</strong> object before leaving <strong>Update</strong>.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+
+namespace Keypress
+{
+    public class Game1 : Microsoft.Xna.Framework.Game
+    {
+        GraphicsDeviceManager graphics;
+        KeyboardState oldState;
+
+        public Game1()
+        {
+            graphics = new GraphicsDeviceManager(this);
+        }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+            oldState = Keyboard.GetState();
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            // Allows the game to exit
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            {
+                this.Exit();
+            }
+
+            UpdateInput();
+
+            base.Update(gameTime);
+        }
+
+        private void UpdateInput()
+        {
+            KeyboardState newState = Keyboard.GetState();
+
+            // Is the SPACE key down?
+            if (newState.IsKeyDown(Keys.Space))
+            {
+                if (!oldState.IsKeyDown(Keys.Space))
+                {
+                    // If not down last update, key has just been pressed.
+                }
+            }
+            else if (oldState.IsKeyDown(Keys.Space))
+            {
+                // Key was down last update, but not down now, so it has just been released.
+            }
+
+            // Update saved state.
+            oldState = newState;
+        }
+
+        protected override void Draw(GameTime gameTime)
+        {
+            base.Draw(gameTime);
+        }
+    }
+}
+</code></pre>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/input/HowTo_DetectKeyPress.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

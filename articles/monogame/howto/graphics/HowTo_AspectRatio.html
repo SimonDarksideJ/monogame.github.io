@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="How to restrict Aspect Ratio on a Graphics Device | MonoGame ">
+
+    <title>How to restrict Aspect Ratio on a Graphics Device | MonoGame </title>
+<meta name="description" content="Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/howto/graphics/HowTo_AspectRatio.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="How to restrict Aspect Ratio on a Graphics Device | MonoGame ">
+    <meta name="og:description" content="Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/howto/graphics/HowTo_AspectRatio.html">
+    <meta name="twitter:title" content="How to restrict Aspect Ratio on a Graphics Device | MonoGame ">
+    <meta name="twitter:description" content="Demonstrates how to create a custom GraphicsDeviceManager that only selects graphics devices with widescreen aspect ratios in full-screen mode.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/graphics/HowTo_AspectRatio.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="restricting-aspect-ratio-on-a-graphics-device">Restricting Aspect Ratio on a Graphics Device</h1>
+
+<p>Demonstrates how to create a custom <a class="xref" href="../../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html">GraphicsDeviceManager</a> that only selects graphics devices with widescreen aspect ratios in full-screen mode.</p>
+<h2 id="restricting-graphics-devices">Restricting Graphics Devices</h2>
+<h3 id="to-restrict-graphics-devices-to-widescreen-aspect-ratios-in-full-screen-mode">To restrict graphics devices to widescreen aspect ratios in full-screen mode</h3>
+<ol>
+<li><p>Create a class that derives from <a class="xref" href="../../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html">GraphicsDeviceManager</a>.</p>
+<pre><code class="lang-csharp">public class CustomGraphicsDeviceManager : GraphicsDeviceManager
+{
+    public CustomGraphicsDeviceManager( Game game )
+        : base( game )
+    {
+    }
+
+}
+</code></pre>
+</li>
+<li><p>Add a <strong>WideScreenOnly</strong> property to the class.</p>
+<p>The property is used to turn on and off the widescreen-only behavior.</p>
+<pre><code class="lang-csharp">private bool isWideScreenOnly;
+public bool IsWideScreenOnly
+{
+    get { return isWideScreenOnly; }
+    set { isWideScreenOnly = value; }
+}
+</code></pre>
+</li>
+<li><p>Determine the minimum desired aspect ratio.</p>
+<pre><code class="lang-csharp">static float WideScreenRatio = 1.6f; //1.77777779f;
+</code></pre>
+</li>
+<li><p>Override the <strong>RankDevices</strong> method of <a class="xref" href="../../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html">GraphicsDeviceManager</a>.</p>
+<p>Note the call to <a class="xref" href="../../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html">base.RankDevices</a>. This call ensures that the new version of <strong>RankDevices</strong> has an already ranked list of available devices with which to work.</p>
+<pre><code class="lang-csharp">protected override void RankDevices( 
+    List&lt;GraphicsDeviceInformation&gt; foundDevices )
+{
+    base.RankDevices( foundDevices );
+}
+</code></pre>
+</li>
+<li><p>Add a check to see if the <strong>WideScreenOnly</strong> property is <strong>true</strong>.</p>
+<pre><code class="lang-csharp">if (IsWideScreenOnly)
+{
+    ...
+}
+</code></pre>
+</li>
+<li><p>In the <strong>if</strong> block, loop through all found devices, and check whether the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.PresentationParameters.html">PresentationParameters</a> indicate the device is full-screen.</p>
+</li>
+<li><p>If the device is full-screen, determine the aspect ratio of the device by dividing the <strong>BackBufferWidth</strong> by the <strong>BackBufferHeight</strong>.</p>
+</li>
+<li><p>If the aspect ratio is less than the desired aspect ratio, remove the device from the list of found devices.</p>
+<pre><code class="lang-csharp">for (int i = 0; i &lt; foundDevices.Count; )
+{
+    PresentationParameters pp = 
+        foundDevices[i].PresentationParameters;
+    if (pp.IsFullScreen == true)
+    {
+        float aspectRatio = (float)(pp.BackBufferWidth) / 
+            (float)(pp.BackBufferHeight);
+
+        // If the device does not have a widescreen aspect 
+        // ratio, remove it.
+        if (aspectRatio &lt; WideScreenRatio) 
+        { 
+            foundDevices.RemoveAt( i ); 
+        }
+        else { i++; }
+    }
+    else i++;
+}
+</code></pre>
+</li>
+<li><p>Replace the default <a class="xref" href="../../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html">GraphicsDeviceManager</a> with the derived <a class="xref" href="../../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html">GraphicsDeviceManager</a>.</p>
+</li>
+<li><p>To test the new component, set the <strong>WideScreenOnly</strong> and <strong>IsFullScreen</strong> properties to <strong>true</strong>.</p>
+<pre><code class="lang-csharp">        public Game1()
+        {
+            graphics = new CustomGraphicsDeviceManager(this);
+            Content.RootDirectory = &quot;Content&quot;;
+
+            this.graphics.PreferMultiSampling = false;
+#if WINDOWS
+            this.graphics.PreferredBackBufferWidth = 1280;
+            this.graphics.PreferredBackBufferHeight = 720;
+#endif
+#if WINDOWS_PHONE
+            this.graphics.PreferredBackBufferWidth = 400;
+            this.graphics.PreferredBackBufferHeight = 600;
+#endif
+
+            this.graphics.IsFullScreen = true;
+            this.graphics.IsWideScreenOnly = true;
+            graphics.ApplyChanges();
+        }
+</code></pre>
+</li>
+</ol>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/graphics/HowTo_AspectRatio.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

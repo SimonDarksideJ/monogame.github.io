@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="What are the XML Elements for XMLImporter? | MonoGame ">
+
+    <title>What are the XML Elements for XMLImporter? | MonoGame </title>
+<meta name="description" content="The base elements that are recognized by XmlImporter Class.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_XML_Elements.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="What are the XML Elements for XMLImporter? | MonoGame ">
+    <meta name="og:description" content="The base elements that are recognized by XmlImporter Class.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_XML_Elements.html">
+    <meta name="twitter:title" content="What are the XML Elements for XMLImporter? | MonoGame ">
+    <meta name="twitter:description" content="The base elements that are recognized by XmlImporter Class.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_XML_Elements.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="xml-elements-for-xmlimporter">XML Elements for XMLImporter</h1>
+
+<h2 id="xml-elements">XML Elements</h2>
+<p>The following base elements are recognized by <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.XmlImporter.html">XmlImporter Class</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Parent</th>
+<th>Children</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;XnaContent&gt;</code></td>
+<td>—</td>
+<td><code>&lt;Asset&gt;</code></td>
+<td>Top-level tag for XNA Content.</td>
+</tr>
+<tr>
+<td><code>&lt;Asset&gt;</code></td>
+<td><code>&lt;XnaContent&gt;</code></td>
+<td><code>&lt;Item&gt;</code></td>
+<td>Marks the asset. The <em>Type</em> attribute specifies the corresponding namespace and class of the matching data type.</td>
+</tr>
+<tr>
+<td><code>&lt;Item&gt;</code></td>
+<td><code>&lt;Asset&gt;</code></td>
+<td>—</td>
+<td>When the asset contains multiple objects (as in an array), marks a single object within the group. The child elements correspond to the properties of the data type's class definition.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<h2 id="example-1-single-object">Example 1: Single Object</h2>
+<p>This example demonstrates an XML file that defines an asset that consists of a single item (not an array).</p>
+<p>Assume that the XML file is to define a single object of data for the class that is defined as:</p>
+<pre><code class="lang-csharp">namespace XMLTest
+{
+    class MyTest
+    {
+        public int elf;
+        public string hello;
+    }
+} 
+</code></pre>
+<p>The XML file that specifies the data that the Content Loader will read into the object would appear as:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;XnaContent&gt;
+  &lt;Asset Type=&quot;XMLTest.MyTest&quot;&gt;
+    &lt;elf&gt;23&lt;/elf&gt;
+    &lt;hello&gt;Hello World&lt;/hello&gt;
+  &lt;/Asset&gt;
+&lt;/XnaContent&gt;
+</code></pre>
+<h2 id="example-2-multiple-objects">Example 2: Multiple Objects</h2>
+<p>This example demonstrates an XML file that defines an asset that is an array of objects.</p>
+<p>Assume that the XML file is to define an array of data for the class that is defined as:</p>
+<pre><code class="lang-csharp">namespace MyDataTypes
+{
+    public class CatData
+    {
+        public string Name;
+        public float Weight;
+        public int Lives;
+    }
+}
+</code></pre>
+<p>The XML file that specifies the data that the Content Loader will read into the object array would appear as:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;XnaContent&gt;
+  &lt;Asset Type=&quot;MyDataTypes.CatData[]&quot;&gt;
+    &lt;Item&gt;
+      &lt;Name&gt;Rhys&lt;/Name&gt;
+      &lt;Weight&gt;17&lt;/Weight&gt;
+      &lt;Lives&gt;9&lt;/Lives&gt;
+    &lt;/Item&gt;
+    &lt;Item&gt;
+      &lt;Name&gt;Boo&lt;/Name&gt;
+      &lt;Weight&gt;11&lt;/Weight&gt;
+      &lt;Lives&gt;5&lt;/Lives&gt;
+    &lt;/Item&gt;
+  &lt;/Asset&gt;
+&lt;/XnaContent&gt;
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../../howto/Content_Pipeline/HowTo_UseCustomXML.md">Using an XML File to Specify Content</a></li>
+<li><a href="../../howto/Content_Pipeline/HowTo_GameContent_Add.md">Adding Content to a Game</a></li>
+</ul>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_XML_Elements.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

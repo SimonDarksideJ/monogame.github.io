@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Loading Additional Content Types? | MonoGame ">
+
+    <title>Loading Additional Content Types? | MonoGame </title>
+<meta name="description" content="MonoGame provides the capability to extend Content Pipeline components that import and process almost any game asset file type.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_Customizing.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="Loading Additional Content Types? | MonoGame ">
+    <meta name="og:description" content="MonoGame provides the capability to extend Content Pipeline components that import and process almost any game asset file type.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_Customizing.html">
+    <meta name="twitter:title" content="Loading Additional Content Types? | MonoGame ">
+    <meta name="twitter:description" content="MonoGame provides the capability to extend Content Pipeline components that import and process almost any game asset file type.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_Customizing.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="loading-additional-content-types">Loading Additional Content Types</h1>
+
+<p>MonoGame provides standard Content Pipeline components that import and process the most commonly used game asset file types. These file types include, for example, Content Importers for the Autodesk (.fbx) format and the DirectX (.x) format. A complete list of file types is available in the <a href="CP_StdImpsProcs.html">Standard Content Importers and Content Processors</a> topic. Most digital Content creation (DCC) tools are capable of creating output in at least one of these standard formats.</p>
+<h2 id="choosing-to-customize">Choosing to Customize</h2>
+<p>A custom Content Importer is required for game assets available only in formats unsupported by MonoGame standard Content Importers. One may already be available from a third party. Custom Content Importers can be developed by DCC vendors, game-engine developers, and interested game hobbyists. Once a custom Content Importer is installed on your computer, you can associate art files with the Content Importer to invoke it when you build the art files (see <a href="CP_AddCustomProcImp.html">Adding a Custom Importer</a>).</p>
+<p>You may need to write your own custom MonoGame Content Pipeline components to:</p>
+<ul>
+<li>Support a new type of game asset or format from a DCC tool.</li>
+<li>Derive special-purpose content from another piece of content at the time the game is built.</li>
+</ul>
+<p>Here are some typical scenarios, and a summary of which Content Pipeline components require customization.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>When to customize</th>
+<th>Output options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Importer</td>
+<td><ul><li>A game asset created by a DCC tool is available only in a format unsupported by a MonoGame standard Content Importer.</li></ul></td>
+<td><ol><li><a href="CP_DOM.html">Content Document Object Model</a> (DOM) object that can be consumed by a standard Content Processor.</li><li>A custom object that must be consumed by a custom Content Processor.</li></ol></td>
+</tr>
+<tr>
+<td>Content Processor</td>
+<td><ul><li>Must process the custom output of a custom Content Importer.</li><li>Needs to process the output of a standard Content Importer in a special-purpose way.</li></ul></td>
+<td><ol><li>A standard Content Processor output type.</li><li>A custom Content Processor output type that must be consumed by a custom Content Loader at game run time.</li></ol></td>
+</tr>
+<tr>
+<td>Content Loader</td>
+<td><ul><li>Must load custom output of a customized Content Processor.</li><li>A custom Content Loader is implemented by extending the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.ContentManager.html">ContentManager.Load</a> method to load the new custom data type.</li></ul></td>
+<td><ol><li>A standard MonoGame Framework class object.</li><li>A custom class object.</li></ol></td>
+</tr>
+</tbody>
+</table>
+<h2 id="customization-scenarios">Customization Scenarios</h2>
+<p>This section examines some typical examples where customization is needed, and illustrates which Content Pipeline components must be changed.</p>
+<h3 id="supporting-a-new-file-format">Supporting a New File Format</h3>
+<p>In this example, a nonstandard file format contains information that can be represented by a standard Content DOM type.</p>
+<p><img src="../images/CP_CustomImporter.png" alt="Custom Importer DOM"></p>
+<p>As illustrated, only a custom Content Importer that can read the nonstandard file format and output a Content DOM object (in this case, a <strong>TextureContent</strong> object) is required. The remainder of the Content Pipeline process can be performed by a standard Content Processor and Content Loader.</p>
+<h3 id="creating-special-purpose-data-from-standard-objects">Creating Special-Purpose Data from Standard Objects</h3>
+<p>For this example, a texture object that represents a map of normalized vectors derived from the original texture object is created.</p>
+<p><img src="../images/CP_CustomImporter.png" alt="Sprite Importer DOM"></p>
+<p>Since the texture is contained in a standard format for the game asset, a standard Content Importer can be used to create the <strong>TextureContent</strong> object. A custom Content Processor (<strong>NormalMapProcessor</strong>) creates the special-purpose data, but uses the standard <strong>TextureContent</strong> class to contain the result so that it can be loaded by the standard Content Loader.</p>
+<h2 id="supporting-custom-data-from-a-nonstandard-game-asset">Supporting Custom Data from a Nonstandard Game Asset</h2>
+<p>Illustrated in this example is a nonstandard game asset file containing data that does not correspond to any standard data types.</p>
+<p><img src="../images/CP_CustomData.png" alt="Custom Importer DOM"></p>
+<p>To read the nonstandard game asset file, a custom Content Importer is required that outputs a <strong>CustomContent</strong> object. Since the output of the Content Importer is a custom class, a custom Content Processor also is needed, and the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.ContentManager.html">ContentManager.Load</a> method must be extended to support the custom data object.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="CP_Content_Advanced.html">Adding New Content Types</a></li>
+<li><a href="CP_Overview.html">What Is Content?</a></li>
+<li><a href="CP_Architecture.html">What is the Content Pipeline?</a></li>
+</ul>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_Customizing.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="How to create a Localized Game? | MonoGame ">
+
+    <title>How to create a Localized Game? | MonoGame </title>
+<meta name="description" content="A localized game is one in which the UI displays alternative sets of text that are appropriate to the language and culture of the gamer.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_Localize_Content.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="How to create a Localized Game? | MonoGame ">
+    <meta name="og:description" content="A localized game is one in which the UI displays alternative sets of text that are appropriate to the language and culture of the gamer.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_Localize_Content.html">
+    <meta name="twitter:title" content="How to create a Localized Game? | MonoGame ">
+    <meta name="twitter:description" content="A localized game is one in which the UI displays alternative sets of text that are appropriate to the language and culture of the gamer.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_Localize_Content.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+
+<p>This tutorial demonstrates methods that allow a game to display differing UI text according to the platform's current culture setting stored in <a href="http://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx">CultureInfo</a>. It also demonstrates how to extend the Content Pipeline so that the minimum number of additionally required font characters are included in the game executable for the localized text.</p>
+<p>For more detailed information about both globalization and localization issues for Windows Phone, see <a href="http://go.microsoft.com/fwlink/?LinkId=254839">Globalization and Localization for Windows Phone</a> in the Windows Phone documentation.</p>
+<ul>
+<li><a href="#creating-resource-files">Creating Resource Files</a></li>
+<li><a href="#extending-the-content-pipeline">Extending the Content Pipeline</a></li>
+<li><a href="#associating-localization-data-and-processors-with-fonts">Associating Localization Data and Processors With Fonts</a></li>
+<li><a href="#using-localized-strings-in-the-game">Using Localized Strings in the Game</a></li>
+</ul>
+<h2 id="creating-resource-files">Creating Resource Files</h2>
+<p>A localized game should maintain its resources in resource (.resx) files in the game's code project. The game should maintain at least one resource file for every language/culture it is to support. Each resource file defines identifiers for each localizable UI string in the game, with a localized version of that string for the intended language/culture. In this way, localization can be maintained independently from coding.</p>
+<h3 id="to-create-resource-files">To create resource files</h3>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the code project node, select <strong>Add</strong>, and then click <strong>New Item</strong>.</p>
+</li>
+<li><p>In the <strong>Add New Item</strong> dialog box, select the resources file, and rename it as appropriate, for example, Strings.resx.</p>
+<p>This file will contain the resources for the default language for the application.</p>
+</li>
+<li><p>Identify strings in your application and add them to the resource file.</p>
+<p>Each string has a name, a value, and an optional comment. The name must be unique so make it as descriptive as possible. The value is the string to be displayed in the application to the user. Adding a comment is useful, especially in large resource files as a reminder of the purpose of the string and later as information for the translator to understand the correct context.</p>
+<p><strong>Figure 1.  An example of English language strings for the Strings.resx resource file</strong></p>
+<p><img src="../images/CP_HowTo_Localize_Strings.png" alt="English language strings"></p>
+</li>
+<li><p>Add a new resource file to your project for each language/culture the application will support.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Each resource file must follow the naming convention:</p>
+<p><em>name of the resource file for the default language</em>.<em>culture name</em></p>
+<p>An example of this format is MyStrings.fr.resx, where the culture name—fr in this instance—is derived from the <a href="http://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx">CultureInfo</a> class.</p>
+</blockquote>
+<p>As shown in the next figure, the strings defined for the resource file must have the same set of identifying names as defined in the default resource file.</p>
+<p><strong>Figure 2.   An example of French language strings for the resource file Strings.fr.resx</strong></p>
+<p><img src="../images/CP_HowTo_Localize_Strings_fr.png" alt="French language strings"></p>
+<p><strong>Figure 3.  An example of strings in the Japanese language resource file Strings.ja.resx</strong></p>
+<p><img src="../images/CP_HowTo_Localize_Strings_ja.png" alt="Japanese language strings"></p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Universal Windows Applications Specific Information</p>
+<p>Universal Windows Applications (UWP) do not use <code>resx</code> files. These have been replace with <code>resw</code> files, the format is slightly different but the process is the same as <code>resx</code>. It does however mean you need to maintain two copies of the language files when targeting UWP and other platforms.</p>
+</blockquote>
+<h2 id="extending-the-content-pipeline">Extending the Content Pipeline</h2>
+<p>To accommodate a localized game, you need to create a new Content Pipeline Library Extension project to process the resource files and fonts.</p>
+<p>The new content library extension must extend the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription.html">FontDescription</a> class to support a list of the resource files that later will be included in the .spritefont file.</p>
+<p>You also will need to create a new content processor that extends <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.FontDescriptionProcessor.html">FontDescriptionProcessor</a> to process the resource file list, and to include the required characters in the built game executable.</p>
+<h3 id="to-create-a-content-pipeline-extension-library-project">To create a Content Pipeline Extension Library project</h3>
+<ol>
+<li>On the File menu, click New Project.</li>
+<li>Select the Content Pipeline Extension Library (4.0) project type.</li>
+<li>In the Name box, type the name for the new library project.</li>
+<li>You might name the project LocalizationPipeline for example.</li>
+<li>Click OK to create and load the new project.</li>
+</ol>
+<h3 id="to-extend-the-fontdescriptor-class">To extend the FontDescriptor class</h3>
+<p>You will add a new file to contain the new class.</p>
+<ol>
+<li><p>In Solution Explorer, right-click the newly created Content Pipeline Library Extension project, select Add, click New Item, and then select Class.</p>
+<p>Assign the new file a name such as LocalizedFontDescription.cs.</p>
+</li>
+<li><p>In the new class file, declare a new class (for example, LocalizedFontDescription) that derives from <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription.html">FontDescription</a>.</p>
+<pre><code class="lang-csharp">class LocalizedFontDescription : FontDescription
+</code></pre>
+</li>
+<li><p>Within the class, define a new ResourceFiles property.</p>
+<p>This action results in recognition of a ResourceFiles element in the .spritefont XML file, which will contain the list of resource files.</p>
+<pre><code class="lang-csharp">[ContentSerializer(Optional = true, CollectionItemName = &quot;Resx&quot;)]
+public List&lt;string&gt; ResourceFiles
+{
+    get { return resourceFiles; }
+}
+
+List&lt;string&gt; resourceFiles = new List&lt;string&gt;();
+</code></pre>
+</li>
+</ol>
+<h3 id="to-extend-the-fontdescriptionprocessor-class">To extend the FontDescriptionProcessor class</h3>
+<p>A new file to contain the new FontDescriptionProcessor class will be added.</p>
+<ol>
+<li><p>In Solution Explorer, right-click the content pipeline extension project, select Add, click New Item, and then select Class.</p>
+<p>Assign the new file a name, such as LocalizedFontProcessor.cs.</p>
+</li>
+<li><p>In the new class file, declare a new class (for example, LocalizedFontProcessor) that derives from <a href="https://monogame.net/api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessor-2.html">ContentProcessor</a>, and specifies the new LocalizedFontDescription class as input.</p>
+<pre><code class="lang-csharp">[ContentProcessor]
+class LocalizedFontProcessor : ContentProcessor&lt;LocalizedFontDescription, SpriteFontContent&gt;
+</code></pre>
+<p>Within the class, override the <strong>Process</strong> method with the new LocalizedFontDescription class as input.</p>
+<pre><code class="lang-csharp">public override SpriteFontContent Process(LocalizedFontDescription input, ContentProcessorContext context)
+</code></pre>
+</li>
+<li><p>In the new <strong>Process</strong> method, step through the ResourceFiles property of the LocalizedFontDescription object to load each declared resource file.</p>
+<pre><code class="lang-csharp">foreach (string resourceFile in input.ResourceFiles)
+{
+    string absolutePath = Path.GetFullPath(resourceFile);
+
+    // Make sure the .resx file really does exist.
+    if (!File.Exists(absolutePath))
+    {
+        throw new InvalidContentException(&quot;Can't find &quot; + absolutePath);
+    }
+
+    // Load the .resx data.
+    XmlDocument xmlDocument = new XmlDocument();
+
+    xmlDocument.Load(absolutePath);
+</code></pre>
+</li>
+<li><p>For each resource file, scan each string and add found characters to the LocalizedFontDescription object.</p>
+<pre><code class="lang-csharp">// Scan each string from the .resx file.
+foreach (XmlNode xmlNode in xmlDocument.SelectNodes(&quot;root/data/value&quot;))
+{
+    string resourceString = xmlNode.InnerText;
+
+    // Scan each character of the string.
+    foreach (char usedCharacter in resourceString)
+    {
+        input.Characters.Add(usedCharacter);
+    }
+}
+</code></pre>
+</li>
+<li><p>Using <strong>AddDependency</strong>, mark that the font should be rebuilt if the resource file changes.</p>
+<pre><code class="lang-csharp">context.AddDependency(absolutePath);
+</code></pre>
+</li>
+<li><p>Use the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription.html">FontDescription</a> class to build the font.</p>
+</li>
+</ol>
+<h2 id="associating-localization-data-and-processors-with-fonts">Associating Localization Data and Processors With Fonts</h2>
+<p>Now that project data is divided into resource files, and has a custom content processor to consume it, the parts need to be bound together to help them work. This is accomplished by providing extended information in a <code>.spritefont</code> file, and binding the file to the custom content processor.</p>
+<h3 id="to-extend-the-spritefont-file">To extend the .spritefont file</h3>
+<p>Create a new <code>.spritefont</code> file.</p>
+<ol>
+<li><p>In <strong>Pipeline Tool</strong>, right-click the content project node, select <strong>Add</strong>, and then click <strong>New Item</strong>.</p>
+</li>
+<li><p>In the <strong>Add New Item</strong> dialog box, select &quot;Localized Sprite Font,&quot; and then in the <strong>Name</strong> box, enter a name (for example, <code>Font.spritefont</code>) for the new file.</p>
+</li>
+<li><p>Click <strong>Add</strong> to create the new file. This will create a new Localized Sprite Font which is already setup to work with localized resource files.</p>
+</li>
+<li><p>Right Click on the new file and select Open or Open With to open it for editing.</p>
+</li>
+<li><p>Change the asset type declaration to reference the previously created extended FontDescriptor class.</p>
+<pre><code class="lang-xml">&lt;Asset Type=&quot;LocalizationPipeline.LocalizedFontDescription&quot;&gt;
+</code></pre>
+</li>
+<li><p>Add a block within <code>&lt;ResourceFiles&gt;</code> tags that lists each resource file using the <code>&lt;Resx&gt;</code> elements.
+The example tags below specify resource files for the default language, as well as for Danish (da), French (fr), Japanese (ja), and Korean (ko).</p>
+<pre><code class="lang-xml">&lt;ResourceFiles&gt;
+    &lt;Resx&gt;..\\Strings.resx&lt;/Resx&gt;
+    &lt;Resx&gt;..\\Strings.da.resx&lt;/Resx&gt;
+    &lt;Resx&gt;..\\Strings.fr.resx&lt;/Resx&gt;
+    &lt;Resx&gt;`..\\Strings.ja.resx&lt;/Resx&gt;
+    &lt;Resx&gt;`..\\Strings.ko.resx&lt;/Resx&gt;
+&lt;/ResourceFiles&gt;
+</code></pre>
+</li>
+<li><p>Save the file.</p>
+</li>
+</ol>
+<h2 id="using-localized-strings-in-the-game">Using Localized Strings in the Game</h2>
+<p>The localized strings will be available in your game as a class with the same name as the base file name of the resource file for the default language (for example, Strings).</p>
+<p>Setting the <strong>Culture</strong> property of this class from the <a href="http://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.currentculture.aspx">CultureInfo.CurrentCulture</a> property will cause the correct language version of the localized strings to be loaded according to the platform's current culture setting.</p>
+<pre><code class="lang-csharp">    Strings.Culture = CultureInfo.CurrentCulture;
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="HowTo_Extend_Processor.html">Extending a Standard Content Processor</a></li>
+<li><a href="../../whatis/Content_Pipeline/CP_Content_Advanced.md">Adding New Content Types</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_Localize_Content.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="What Is a Sprite? | MonoGame ">
+
+    <title>What Is a Sprite? | MonoGame </title>
+<meta name="description" content="The definition for Sprites in MonoGame!">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/graphics/WhatIs_Sprite.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="What Is a Sprite? | MonoGame ">
+    <meta name="og:description" content="The definition for Sprites in MonoGame!">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/graphics/WhatIs_Sprite.html">
+    <meta name="twitter:title" content="What Is a Sprite? | MonoGame ">
+    <meta name="twitter:description" content="The definition for Sprites in MonoGame!">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/graphics/WhatIs_Sprite.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="what-is-a-sprite">What Is a Sprite?</h1>
+
+<p>Sprites are 2D bitmaps that are drawn directly to a render target without using the pipeline for transformations, lighting or effects. Sprites are commonly used to display information such as health bars, number of lives, or text such as scores. Some games, especially older games, are composed entirely of sprites.</p>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#sprite-origin">Sprite Origin</a></li>
+<li><a href="#sprite-depth">Sprite Depth</a></li>
+<li><a href="#sampling-textures">Sampling Textures</a></li>
+<li><a href="#sprite-scaling">Sprite Scaling</a></li>
+<li><a href="#sprite-transformation-matrices">Sprite Transformation Matrices</a></li>
+<li><a href="#sprite-fonts">Sprite Fonts</a></li>
+<li><a href="#sprite-batching">Sprite Batching</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>Sprites are positioned on the screen by coordinates. The width and height of the screen is the same as the back buffer. The x-axis represents the screen width and the y-axis represents the screen height. The y-axis is measured from the top of the screen and increases as you move <em>down</em> the screen, and the x-axis is measured from left to right. For example, when the graphics back buffer is 800×600, 0,0 is the upper left of the screen, and 800,600 is the lower right of the screen.</p>
+<p>To draw a sprite, create a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> object, initialize it by calling <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__">Begin</a>, and then call <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> for each sprite. The bitmap data for a sprite is taken from a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture2D</a> object. The texture may contain alpha channel information to make part of the texture transparent or semi-transparent. You can tint, rotate, or scale sprites by using <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a>. This method also gives you the option of drawing only part of the texture on the screen. After you draw a sprite, call <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_End">End</a> before calling <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html#Microsoft_Xna_Framework_Graphics_GraphicsDevice_Present">Present</a>.</p>
+<h2 id="sprite-origin">Sprite Origin</h2>
+<p>When you draw a sprite, the sprite <em>origin</em> is an important concept. The origin is a specific point on the sprite, which is by default the upper-left corner of the sprite, or (0,0). <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> draws the origin of the sprite at the screen location you specify. For example, if you draw a 50×50 pixel sprite at location (400,200) without specifying an origin, the upper left of the sprite will be on pixel (400,200). If you use the center of the 50×50 sprite as the origin (25,25), to draw the sprite in the same position you must add the origin coordinates to the position. In this case, the position is (425,225) and the origin is (25,25).</p>
+<p>When rotating a sprite, the method uses the origin as the center of the rotation. In these cases, it is common to use the center of the sprite as the origin when calculating where to draw the sprite on the screen.</p>
+<h2 id="sprite-depth">Sprite Depth</h2>
+<p>Sprites also have a concept of <em>depth</em> which is a floating-point number between 0 and 1. Sprites drawn at a depth of 0 are drawn in front of sprites which have a depth of greater than 0; sprites drawn at a depth of 1 are covered by sprites drawn at a depth less than 1.</p>
+<h2 id="sampling-textures">Sampling Textures</h2>
+<p>A sprite is based on a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture2D</a> object—in other words, a bitmap. Use <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> to draw the entire texture or a portion of the texture. To draw a portion of the texture, use the <strong>sourceRectangle</strong> parameter to specify which <em>texels</em>, or texture pixel, to draw. A 32×32 texture has 1024 texels, specified as x and y values similar to how screen coordinates are specified. Specifying a <strong>sourceRectangle</strong> of (0, 0, 16, 16) would select the upper-left quadrant of a 32×32 texture.</p>
+<h2 id="sprite-scaling">Sprite Scaling</h2>
+<p><a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> provides three options for scaling a sprite: using a uniform scaling parameter, a nonuniform scaling parameter, or a source and destination rectangle. The uniform scaling parameter is a floating-point number that multiplies the sprite size through both the x- and y-axes. This will shrink or expand the sprite along each axis equally, maintaining the original ratio between the sprite width and height.</p>
+<p>To scale the x- and y-axes independently, <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> accepts a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Vector2.html">Vector2</a> value as a scalar. This <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Vector2.html">Vector2</a> specifies nonuniform scaling: x- and y-axes are scaled independently according to the <code>X</code> and <code>Y</code> fields of the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Vector2.html">Vector2</a>.</p>
+<p><a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> also accepts a source and destination rectangle. The destination rectangle is specified in screen coordinates, while the source rectangle is specified in texels. <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> takes the pixels on the texture specified in <strong>sourceRectangle</strong> and scales them independently along the x- and y-axes until they fit the screen coordinates specified by <strong>destinationRectangle</strong>.</p>
+<h2 id="sprite-transformation-matrices">Sprite Transformation Matrices</h2>
+<p>You can also specify a transformation matrix that the batch can apply to each sprite before drawing. The transformation matrix can be any combination of translation, rotation, or scaling matrices multiplied together into a single matrix. This matrix is combined with the sprite position, rotation, scaling, and depth parameters supplied to <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a>. Because the matrix also applies to depth, any z-coordinate transformation that makes the sprite depth greater than 1.0 or less than 0.0 will cause the sprite to disappear.</p>
+<p>See <a href="../../howto/graphics/HowTo_Rotate_Sprite_Group.html">Rotating a Group of Sprites</a> for an example of matrix rotation and <a href="../../howto/graphics/HowTo_Scale_Sprites_Matrix.html">Scaling Sprites Based On Screen Size</a> for an example of matrix scaling.</p>
+<h2 id="sprite-fonts">Sprite Fonts</h2>
+<p>Use a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> to draw text. The <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_DrawString_Microsoft_Xna_Framework_Graphics_SpriteFont_System_String_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_">DrawString</a> method will draw text on screen with position, color, rotation, origin, and scaling. <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_DrawString_Microsoft_Xna_Framework_Graphics_SpriteFont_System_String_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_">DrawString</a> also requires a special type of texture encapsulated by the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteFont.html">SpriteFont</a> class. A <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteFont.html">SpriteFont</a> is created by the content pipeline when you add a Sprite Font file to your project. The sprite font file has information such as the name and point size of the font, and which Unicode characters to include in the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteFont.html">SpriteFont</a> texture. At run time, a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteFont.html">SpriteFont</a> is loaded with <a href="/api/Microsoft.Xna.Framework.Content.ContentManager.html#Microsoft_Xna_Framework_Content_ContentManager_Load__1_System_String_">ContentManager.Load</a> just like a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture2D</a> object.</p>
+<p>See <a href="../content_pipeline/CP_SpriteFontSchema.html">Sprite Font XML Schema Reference</a> for a list of Sprite Font tags. You can use the content pipeline to determine your character regions automatically. For more information, see <a href="../../howto/content_pipeline/HowTo_Extend_Processor.html">How to: Extend the Font Description Processor to Support Additional Characters</a>.</p>
+<p>The following redistributable fonts are installed by XNA Game Studio. For information about redistribution rights, see the text in the end user license agreement.</p>
+<ul>
+<li>Andyb.ttf</li>
+<li>JingJing.ttf</li>
+<li>Kooten.ttf</li>
+<li>Linds.ttf</li>
+<li>Miramo.ttf</li>
+<li>Miramob.ttf</li>
+<li>Moire-Bold.ttf</li>
+<li>Moire-ExtraBold.ttf</li>
+<li>Moire-Light.ttf</li>
+<li>Moire-Regular.ttf</li>
+<li>MotorwerkOblique.ttf</li>
+<li>NGO_____.ttf</li>
+<li>NGOB____.ttf</li>
+<li>OcraExt.ttf</li>
+<li>Peric.ttf</li>
+<li>Pericl.ttf</li>
+<li>Pesca.ttf</li>
+<li>Pescab.ttf</li>
+<li>QuartMS.ttf</li>
+<li>SegoeKeycaps.ttf</li>
+<li>Segoepr.ttf</li>
+<li>Segoeprb.ttf</li>
+<li>SegoeUIMono-Bold.ttf</li>
+<li>SegoeUIMono-Regular.ttf</li>
+<li>Wscsnbd.ttf</li>
+<li>Wscsnbdit.ttf</li>
+<li>Wscsnit.ttf</li>
+<li>Wscsnrg.ttf</li>
+</ul>
+<h2 id="sprite-batching">Sprite Batching</h2>
+<p>In normal drawing, the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> object does not change any render states or draw any sprites until you call <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_End">End</a>. This is known as <em>Deferred</em> mode. In Deferred mode, <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> saves the information from each <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> call until you call <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_End">End</a>.</p>
+<p>If you call <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__">Begin</a>, specifying <code>SpriteSortMode.Immediate</code>, it triggers <em>Immediate</em> mode. In Immediate mode, the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> immediately changes the graphics device render states to begin drawing sprites. Thereafter, each call to <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> immediately draws the sprite using the current device settings.</p>
+<p>In Immediate mode, once you call <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__">Begin</a> on one <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> instance, do not call it on any other <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> instance until you call <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_End">End</a> for the first <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a>.</p>
+<p>Deferred mode is slower than Immediate mode, but it allows multiple instances of <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> to accept <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__">Begin</a> and <a href="/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html#Microsoft_Xna_Framework_Graphics_SpriteBatch_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Draw</a> calls without interfering with each other.</p>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/graphics/WhatIs_Sprite.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

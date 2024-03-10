@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Adding Basic Code | MonoGame ">
+
+    <title>Adding Basic Code | MonoGame </title>
+<meta name="description" content="Learn how to add basic logic to your game.">
+
+    <meta name="og:url" content="https://monogame.net/articles/getting_started/5_adding_basic_code.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="Adding Basic Code | MonoGame ">
+    <meta name="og:description" content="Learn how to add basic logic to your game.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/getting_started/5_adding_basic_code.html">
+    <meta name="twitter:title" content="Adding Basic Code | MonoGame ">
+    <meta name="twitter:description" content="Learn how to add basic logic to your game.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../public/main.css">
+    <meta name="docfx:navrel" content="../../toc.html">
+    <meta name="docfx:tocrel" content="../toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/getting_started/5_adding_basic_code.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="adding-basic-code">Adding Basic Code</h1>
+
+<p>This tutorial will go over adding basic logic to your game, continuing from where <a href="4_adding_content.html">Adding Content</a> left off.</p>
+<hr>
+<h2 id="positioning-the-content">Positioning the content</h2>
+<p>First, you need to add few new variables in the Game1.cs class file: one for position and one for speed.</p>
+<pre><code class="lang-csharp">public class Game1 : Game
+{
+    Texture2D ballTexture;
+    Vector2 ballPosition;
+    float ballSpeed;
+</code></pre>
+<p>Next, you need to initialize them. Find the <strong>Initialize</strong> method and add the following lines.</p>
+<pre><code class="lang-csharp">// TODO: Add your initialization logic here
+ballPosition = new Vector2(_graphics.PreferredBackBufferWidth / 2,
+_graphics.PreferredBackBufferHeight / 2);
+ballSpeed = 100f;
+
+base.Initialize();
+</code></pre>
+<p>With this, you are setting the ball's starting position to the center of the screen based on the dimensions of the screen determined by the current <strong>BackBufferWidth</strong> and <strong>BackBufferHeight</strong> that was obtained from the Graphics Device (the current resolution the game is running at).</p>
+<p>Lastly, change the Draw method to draw the ball at the correct position.  Find the <strong>Draw</strong> method and update the <strong>spriteBatch.Draw</strong> call to:</p>
+<pre><code class="lang-csharp">_spriteBatch.Draw(ballTexture, ballPosition, Color.White);
+</code></pre>
+<p>Now run the game.</p>
+<p><img src="images/4_ball_not_center.png" alt="Draw Ball 1"></p>
+<p>As you can see, the ball is not quite centered yet. That is because the default origin of a texture is its top-left corner, or (0, 0) relative to the texture, so the ball texture is drawn with its top-left corner exactly centered, rather than its actual center. You can specify a different origin when drawing, as shown in the following code snippet. The new origin takes into account the height and width of the image when drawing:</p>
+<pre><code class="lang-csharp">_spriteBatch.Draw(
+    ballTexture,
+    ballPosition,
+    null,
+    Color.White,
+    0f,
+    new Vector2(ballTexture.Width / 2, ballTexture.Height / 2),
+    Vector2.One,
+    SpriteEffects.None,
+    0f
+);
+</code></pre>
+<p>This change adds a few extra parameters to the spriteBatch.Draw call, but do not worry about that for now. This new code sets the actual center (width / 2 and height / 2) of the image as its origin (drawing point).</p>
+<p>Now the image will get drawn to the center of the screen.</p>
+<p><img src="images/4_ball_center.png" alt="Draw Ball 2"></p>
+<hr>
+<h2 id="getting-user-input">Getting user input</h2>
+<p>Time to set up some movement. Find the <strong>Update</strong> method in the Game1.cs class file and add:</p>
+<pre><code class="lang-csharp">// TODO: Add your update logic here
+var kstate = Keyboard.GetState();
+
+if (kstate.IsKeyDown(Keys.Up))
+{
+    ballPosition.Y -= ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+}
+
+if (kstate.IsKeyDown(Keys.Down))
+{
+    ballPosition.Y += ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+}
+
+if (kstate.IsKeyDown(Keys.Left))
+{
+    ballPosition.X -= ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+}
+
+if (kstate.IsKeyDown(Keys.Right))
+{
+    ballPosition.X += ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+}
+
+base.Update(gameTime);
+</code></pre>
+<p>The following is a line-by-line analysis of the above code.</p>
+<pre><code class="lang-csharp">var kstate = Keyboard.GetState();
+</code></pre>
+<p>This code fetches the current keyboard state ('Keyboard.GetState()') and stores it into a variable called <strong>kstate</strong>.</p>
+<pre><code class="lang-csharp">if (kstate.IsKeyDown(Keys.Up))
+</code></pre>
+<p>This line checks to see if the Up Arrow key is pressed.</p>
+<pre><code class="lang-csharp">    ballPosition.Y -= ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+</code></pre>
+<p>If the <strong>Up Arrow</strong> key is pressed, the ball moves using the value you assigned to <strong>ballSpeed</strong>. The reason why <strong>ballSpeed</strong> is multiplied by <strong>gameTime.ElapsedGameTime.TotalSeconds</strong> is because, when not using fixed time step, the time between Update calls varies. To account for this, the ballSpeed is multiplied by the amount of time that has passed since the last Update call. The result is that the ball appears to move at the same speed regardless of what framerate the game happens to be running at.</p>
+<blockquote>
+<p>Try experimenting with what happens if you do not multiply the <strong>ballSpeed</strong> by <strong>gameTime.ElapsedGameTime.TotalSeconds</strong>, to see the difference it makes.</p>
+</blockquote>
+<p>The rest of the lines of code do the same thing but for the Down, Left and Right Arrow keys, and down, left, and right movement, respectively.</p>
+<p>If you run the game, you should be able to move the ball with the arrow keys.</p>
+<p>You will probably notice that the ball is not confined to the window. You can fix that by setting bounds onto the ballPosition after it has already been moved to ensure it cannot go further than the width or height of the screen.</p>
+<pre><code class="lang-csharp">if (kstate.IsKeyDown(Keys.Right))
+{
+    ballPosition.X += ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+}
+
+if (ballPosition.X &gt; _graphics.PreferredBackBufferWidth - ballTexture.Width / 2)
+{
+    ballPosition.X = _graphics.PreferredBackBufferWidth - ballTexture.Width / 2;
+}
+else if (ballPosition.X &lt; ballTexture.Width / 2)
+{
+    ballPosition.X = ballTexture.Width / 2;
+}
+
+if (ballPosition.Y &gt; _graphics.PreferredBackBufferHeight - ballTexture.Height / 2)
+{
+    ballPosition.Y = _graphics.PreferredBackBufferHeight - ballTexture.Height / 2;
+}
+else if (ballPosition.Y &lt; ballTexture.Height / 2)
+{
+    ballPosition.Y = ballTexture.Height / 2;
+}
+
+base.Update(gameTime);
+</code></pre>
+<p>Now run the game to test for yourself that the ball cannot go beyond the window bounds any more.</p>
+<p>Happy Coding ^^</p>
+<h2 id="further-reading">Further Reading</h2>
+<p>Check out the <a href="../tutorials.html">Tutorials section</a> for many more helpful guides and tutorials on building games with MonoGame.  We have an expansive library of helpful content, all provided by other MonoGame developers in the community.</p>
+<p>Additionally, be sure to check out the official <a href="../samples.html">MonoGame Samples</a> page for fully built sample projects built with MonoGame and targeting our most common platforms.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/getting_started/5_adding_basic_code.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

@@ -1,0 +1,1565 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Class DeflateStream | MonoGame ">
+
+    <title>Class DeflateStream | MonoGame </title>
+<meta name="description" content="A class for compressing and decompressing streams using the Deflate algorithm.">
+
+    <meta name="og:url" content="https://monogame.net/api/MonoGame.Framework.Utilities.Deflate.DeflateStream.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="Class DeflateStream | MonoGame ">
+    <meta name="og:description" content="A class for compressing and decompressing streams using the Deflate algorithm.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/api/MonoGame.Framework.Utilities.Deflate.DeflateStream.html">
+    <meta name="twitter:title" content="Class DeflateStream | MonoGame ">
+    <meta name="twitter:description" content="A class for compressing and decompressing streams using the Deflate algorithm.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../public/docfx.min.css">
+    <link rel="stylesheet" href="../public/main.css">
+    <meta name="docfx:navrel" content="../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/MonoGame/MonoGame/new/feature/docsmigration/apiSpec/new?filename=MonoGame_Framework_Utilities_Deflate_DeflateStream.md&amp;value=---%0Auid%3A%20MonoGame.Framework.Utilities.Deflate.DeflateStream%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream">
+
+
+
+  <h1 id="MonoGame_Framework_Utilities_Deflate_DeflateStream" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream" class="text-break">
+Class DeflateStream  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="MonoGame.html">MonoGame</a>.<a class="xref" href="MonoGame.Framework.html">Framework</a>.<a class="xref" href="MonoGame.Framework.Utilities.html">Utilities</a>.<a class="xref" href="MonoGame.Framework.Utilities.Deflate.html">Deflate</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>MonoGame.Framework.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A class for compressing and decompressing streams using the Deflate algorithm.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DeflateStream : Stream, IAsyncDisposable, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject">MarshalByRefObject</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></div>
+      <div><span class="xref">DeflateStream</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.null">Stream.Null</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.beginread">Stream.BeginRead(byte[], int, int, AsyncCallback, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.beginwrite">Stream.BeginWrite(byte[], int, int, AsyncCallback, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.close">Stream.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copyto#system-io-stream-copyto(system-io-stream)">Stream.CopyTo(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copyto#system-io-stream-copyto(system-io-stream-system-int32)">Stream.CopyTo(Stream, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream)">Stream.CopyToAsync(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream-system-int32)">Stream.CopyToAsync(Stream, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream-system-int32-system-threading-cancellationtoken)">Stream.CopyToAsync(Stream, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream-system-threading-cancellationtoken)">Stream.CopyToAsync(Stream, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.createwaithandle">Stream.CreateWaitHandle()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.dispose#system-io-stream-dispose">Stream.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.disposeasync">Stream.DisposeAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.endread">Stream.EndRead(IAsyncResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.endwrite">Stream.EndWrite(IAsyncResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.flushasync#system-io-stream-flushasync">Stream.FlushAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.flushasync#system-io-stream-flushasync(system-threading-cancellationtoken)">Stream.FlushAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.objectinvariant">Stream.ObjectInvariant()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.read#system-io-stream-read(system-span((system-byte)))">Stream.Read(Span&lt;byte&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readasync#system-io-stream-readasync(system-byte()-system-int32-system-int32)">Stream.ReadAsync(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readasync#system-io-stream-readasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">Stream.ReadAsync(byte[], int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readasync#system-io-stream-readasync(system-memory((system-byte))-system-threading-cancellationtoken)">Stream.ReadAsync(Memory&lt;byte&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readbyte">Stream.ReadByte()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.synchronized">Stream.Synchronized(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.validatebufferarguments">Stream.ValidateBufferArguments(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.validatecopytoarguments">Stream.ValidateCopyToArguments(Stream, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.write#system-io-stream-write(system-readonlyspan((system-byte)))">Stream.Write(ReadOnlySpan&lt;byte&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writeasync#system-io-stream-writeasync(system-byte()-system-int32-system-int32)">Stream.WriteAsync(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writeasync#system-io-stream-writeasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">Stream.WriteAsync(byte[], int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writeasync#system-io-stream-writeasync(system-readonlymemory((system-byte))-system-threading-cancellationtoken)">Stream.WriteAsync(ReadOnlyMemory&lt;byte&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writebyte">Stream.WriteByte(byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.cantimeout">Stream.CanTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readtimeout">Stream.ReadTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writetimeout">Stream.WriteTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getlifetimeservice">MarshalByRefObject.GetLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice">MarshalByRefObject.InitializeLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.memberwiseclone">MarshalByRefObject.MemberwiseClone(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>
+  The DeflateStream is a <a href="http://en.wikipedia.org/wiki/Decorator_pattern">Decorator</a> on a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a>.  It adds DEFLATE compression or decompression to any
+  stream.
+</p>
+<p>
+  Using this stream, applications can compress or decompress data via stream
+  <code>Read</code> and <code>Write</code> operations.  Either compresssion or decompression
+  can occur through either reading or writing. The compression format used is
+  DEFLATE, which is documented in <a href="http://www.ietf.org/rfc/rfc1951.txt">IETF RFC 1951</a>, "DEFLATE
+  Compressed Data Format Specification version 1.3.".
+</p>
+<p>
+  This class is similar to <a class="xref" href="MonoGame.Framework.Utilities.Deflate.ZlibStream.html">ZlibStream</a>, except that
+  <code>ZlibStream</code> adds the <a href="http://www.ietf.org/rfc/rfc1950.txt">RFC
+  1950 - ZLIB</a> framing bytes to a compressed stream when compressing, or
+  expects the RFC1950 framing bytes when decompressing. The <code>DeflateStream</code>
+  does not.
+</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor(System.IO.Stream,MonoGame.Framework.Utilities.Deflate.CompressionMode)">
+  DeflateStream(Stream, CompressionMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a DeflateStream using the specified CompressionMode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DeflateStream(Stream stream, CompressionMode mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream which will be read or written.</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionMode.html">CompressionMode</a></dt>
+    <dd><p>Indicates whether the DeflateStream will compress or decompress.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode__examples">Examples</h4>
+  <p>This example uses a DeflateStream to compress data from a file, and writes
+the compressed data to another file.</p>
+<pre><code class="lang-csharp">using (System.IO.Stream input = System.IO.File.OpenRead(fileToCompress))
+{
+    using (var raw = System.IO.File.Create(fileToCompress + ".deflated"))
+    {
+        using (Stream compressor = new DeflateStream(raw, CompressionMode.Compress))
+        {
+            byte[] buffer = new byte[WORKING_BUFFER_SIZE];
+            int n;
+            while ((n= input.Read(buffer, 0, buffer.Length)) != 0)
+            {
+                compressor.Write(buffer, 0, n);
+            }
+        }
+    }
+}</code></pre>
+<pre><code class="lang-csharp">Using input As Stream = File.OpenRead(fileToCompress)
+    Using raw As FileStream = File.Create(fileToCompress &amp; ".deflated")
+        Using compressor As Stream = New DeflateStream(raw, CompressionMode.Compress)
+            Dim buffer As Byte() = New Byte(4096) {}
+            Dim n As Integer = -1
+            Do While (n &lt;&gt; 0)
+                If (n &gt; 0) Then
+                    compressor.Write(buffer, 0, n)
+                End If
+                n = input.Read(buffer, 0, buffer.Length)
+            Loop
+        End Using
+    End Using
+End Using</code></pre>
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>When mode is <code>CompressionMode.Compress</code>, the DeflateStream will use
+the default compression level. The &quot;captive&quot; stream will be closed when
+the DeflateStream is closed.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_MonoGame_Framework_Utilities_Deflate_CompressionLevel_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor(System.IO.Stream,MonoGame.Framework.Utilities.Deflate.CompressionMode,MonoGame.Framework.Utilities.Deflate.CompressionLevel)">
+  DeflateStream(Stream, CompressionMode, CompressionLevel)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a DeflateStream using the specified CompressionMode and the specified CompressionLevel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DeflateStream(Stream stream, CompressionMode mode, CompressionLevel level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream to be read or written while deflating or inflating.</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionMode.html">CompressionMode</a></dt>
+    <dd><p>Indicates whether the <code>DeflateStream</code> will compress or decompress.</p>
+</dd>
+    <dt><code>level</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd><p>A tuning knob to trade speed for effectiveness.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_MonoGame_Framework_Utilities_Deflate_CompressionLevel__examples">Examples</h4>
+  <p>This example uses a DeflateStream to compress data from a file, and writes
+the compressed data to another file.</p>
+<pre><code class="lang-csharp">using (System.IO.Stream input = System.IO.File.OpenRead(fileToCompress))
+{
+    using (var raw = System.IO.File.Create(fileToCompress + ".deflated"))
+    {
+        using (Stream compressor = new DeflateStream(raw,
+                                                     CompressionMode.Compress,
+                                                     CompressionLevel.BestCompression))
+        {
+            byte[] buffer = new byte[WORKING_BUFFER_SIZE];
+            int n= -1;
+            while (n != 0)
+            {
+                if (n &gt; 0)
+                    compressor.Write(buffer, 0, n);
+                n= input.Read(buffer, 0, buffer.Length);
+            }
+        }
+    }
+}</code></pre>
+<pre><code class="lang-csharp">Using input As Stream = File.OpenRead(fileToCompress)
+    Using raw As FileStream = File.Create(fileToCompress &amp; ".deflated")
+        Using compressor As Stream = New DeflateStream(raw, CompressionMode.Compress, CompressionLevel.BestCompression)
+            Dim buffer As Byte() = New Byte(4096) {}
+            Dim n As Integer = -1
+            Do While (n &lt;&gt; 0)
+                If (n &gt; 0) Then
+                    compressor.Write(buffer, 0, n)
+                End If
+                n = input.Read(buffer, 0, buffer.Length)
+            Loop
+        End Using
+    End Using
+End Using</code></pre>
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_MonoGame_Framework_Utilities_Deflate_CompressionLevel__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+  When mode is <code>CompressionMode.Decompress</code>, the level parameter is
+  ignored.  The "captive" stream will be closed when the DeflateStream is
+  closed.
+</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Boolean_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor(System.IO.Stream,MonoGame.Framework.Utilities.Deflate.CompressionMode,MonoGame.Framework.Utilities.Deflate.CompressionLevel,System.Boolean)">
+  DeflateStream(Stream, CompressionMode, CompressionLevel, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a <code>DeflateStream</code> using the specified <code>CompressionMode</code>
+and the specified <code>CompressionLevel</code>, and explicitly specify whether
+the stream should be left open after Deflation or Inflation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DeflateStream(Stream stream, CompressionMode mode, CompressionLevel level, bool leaveOpen)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream which will be read or written.</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionMode.html">CompressionMode</a></dt>
+    <dd><p>Indicates whether the DeflateStream will compress or decompress.</p>
+</dd>
+    <dt><code>level</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd><p>A tuning knob to trade speed for effectiveness.</p>
+</dd>
+    <dt><code>leaveOpen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the application would like the stream to remain open after inflation/deflation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Boolean__examples">Examples</h4>
+  <p>This example shows how to use a <code>DeflateStream</code> to compress data from
+a file, and store the compressed data into another file.</p>
+<pre><code class="lang-csharp">using (var output = System.IO.File.Create(fileToCompress + ".deflated"))
+{
+    using (System.IO.Stream input = System.IO.File.OpenRead(fileToCompress))
+    {
+        using (Stream compressor = new DeflateStream(output, CompressionMode.Compress, CompressionLevel.BestCompression, true))
+        {
+            byte[] buffer = new byte[WORKING_BUFFER_SIZE];
+            int n= -1;
+            while (n != 0)
+            {
+                if (n &gt; 0)
+                    compressor.Write(buffer, 0, n);
+                n= input.Read(buffer, 0, buffer.Length);
+            }
+        }
+    }
+    // can write additional data to the output stream here
+}</code></pre>
+<pre><code class="lang-csharp">Using output As FileStream = File.Create(fileToCompress &amp; ".deflated")
+    Using input As Stream = File.OpenRead(fileToCompress)
+        Using compressor As Stream = New DeflateStream(output, CompressionMode.Compress, CompressionLevel.BestCompression, True)
+            Dim buffer As Byte() = New Byte(4096) {}
+            Dim n As Integer = -1
+            Do While (n &lt;&gt; 0)
+                If (n &gt; 0) Then
+                    compressor.Write(buffer, 0, n)
+                End If
+                n = input.Read(buffer, 0, buffer.Length)
+            Loop
+        End Using
+    End Using
+    ' can write additional data to the output stream here.
+End Using</code></pre>
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+  When mode is <code>CompressionMode.Decompress</code>, the level parameter is ignored.
+</p>
+<p>
+  This constructor allows the application to request that the captive stream
+  remain open after the deflation or inflation occurs.  By default, after
+  <code>Close()</code> is called on the stream, the captive stream is also
+  closed. In some cases this is not desired, for example if the stream is a
+  <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> that will be re-read after
+  compression.  Specify true for the <code class="paramref">leaveOpen</code> parameter
+  to leave the stream open.
+</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_System_Boolean_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.#ctor(System.IO.Stream,MonoGame.Framework.Utilities.Deflate.CompressionMode,System.Boolean)">
+  DeflateStream(Stream, CompressionMode, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L230"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a <code>DeflateStream</code> using the specified
+<code>CompressionMode</code>, and explicitly specify whether the
+stream should be left open after Deflation or Inflation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DeflateStream(Stream stream, CompressionMode mode, bool leaveOpen)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream which will be read or written. This is called the
+&quot;captive&quot; stream in other places in this documentation.</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionMode.html">CompressionMode</a></dt>
+    <dd><p>Indicates whether the <code>DeflateStream</code> will compress or decompress.</p>
+</dd>
+    <dt><code>leaveOpen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the application would like the stream to
+remain open after inflation/deflation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream__ctor_System_IO_Stream_MonoGame_Framework_Utilities_Deflate_CompressionMode_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+  This constructor allows the application to request that the captive stream
+  remain open after the deflation or inflation occurs.  By default, after
+  <code>Close()</code> is called on the stream, the captive stream is also
+  closed. In some cases this is not desired, for example if the stream is a
+  memory stream that will be re-read after compression.  Specify true for
+  the <code class="paramref">leaveOpen</code> parameter to leave the stream open.
+</p>
+<p>
+  The <code>DeflateStream</code> will use the default compression level.
+</p>
+<p>
+  See the other overloads of this constructor for example code.
+</p>
+</div>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_BufferSize_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.BufferSize*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_BufferSize" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.BufferSize">
+  BufferSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L347"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The size of the working buffer for the compression codec.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BufferSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_BufferSize_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+  The working buffer is used for all stream operations.  The default size is
+  1024 bytes.  The minimum size is 128 bytes. You may get better performance
+  with a larger buffer.  Then again, you might not.  You would have to test
+  it.
+</p>
+<p>
+  Set this before the first call to <code>Read()</code> or <code>Write()</code> on the
+  stream. If you try to set it afterwards, it will throw.
+</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanRead_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CanRead*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanRead" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CanRead">
+  CanRead
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L455"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the stream can be read.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanRead { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanRead_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The return value depends on whether the captive stream supports reading.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanSeek_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CanSeek*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanSeek" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CanSeek">
+  CanSeek
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L470"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the stream supports Seek operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanSeek { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanSeek_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Always returns false.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanWrite_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CanWrite*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanWrite" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CanWrite">
+  CanWrite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L482"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the stream can be written.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanWrite { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CanWrite_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The return value depends on whether the captive stream supports writing.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_FlushMode_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.FlushMode*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_FlushMode" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.FlushMode">
+  FlushMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This property sets the flush behavior on the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual FlushType FlushMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MonoGame.Framework.Utilities.Deflate.FlushType.html">FlushType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_FlushMode_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See the ZLIB documentation for the meaning of the flush behavior.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Length_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Length*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Length" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L503"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reading this property always throws a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Length { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Position_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Position*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Position" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Position">
+  Position
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L519"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The position of the stream pointer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Position { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Position_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Setting this property always throws a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a>. Reading will return the total bytes
+written out, if used in writing, or the total bytes read in, if used in
+reading.  The count may refer to compressed bytes or uncompressed bytes,
+depending on how you've used the stream.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Strategy_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Strategy*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Strategy" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Strategy">
+  Strategy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L372"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The ZLIB strategy to be used during compression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressionStrategy Strategy { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionStrategy.html">CompressionStrategy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Strategy_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>By tweaking this parameter, you may be able to optimize the compression for
+data with particular characteristics.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_TotalIn_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.TotalIn*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_TotalIn" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.TotalIn">
+  TotalIn
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L386"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the total number of bytes input so far.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long TotalIn { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_TotalOut_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.TotalOut*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_TotalOut" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.TotalOut">
+  TotalOut
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L395"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the total number of bytes output so far.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long TotalOut { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressBuffer_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CompressBuffer*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressBuffer_System_Byte___" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CompressBuffer(System.Byte[])">
+  CompressBuffer(byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L673"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compress a byte array into a new byte array using DEFLATE.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] CompressBuffer(byte[] b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>b</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>A buffer to compress.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The data in compressed form</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressBuffer_System_Byte____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Uncompress it with <a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressBuffer_System_Byte___">UncompressBuffer(byte[])</a>.</p>
+</div>
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressString_System_String_">CompressString(string)</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressBuffer_System_Byte___">UncompressBuffer(byte[])</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.GZipStream.html#MonoGame_Framework_Utilities_Deflate_GZipStream_CompressBuffer_System_Byte___">CompressBuffer</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[])</div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.ZlibStream.html#MonoGame_Framework_Utilities_Deflate_ZlibStream_CompressBuffer_System_Byte___">CompressBuffer</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[])</div>
+    </dd>
+  </dl>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressString_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CompressString*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressString_System_String_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.CompressString(System.String)">
+  CompressString(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L643"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compress a string into a byte array using DEFLATE (RFC 1951).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] CompressString(string s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string to compress. The string will first be encoded
+using UTF8, then compressed.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The string in compressed form</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressString_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Uncompress it with <a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressString_System_Byte___">UncompressString(byte[])</a>.</p>
+</div>
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressString_System_Byte___">UncompressString(byte[])</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressBuffer_System_Byte___">CompressBuffer(byte[])</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.GZipStream.html#MonoGame_Framework_Utilities_Deflate_GZipStream_CompressString_System_String_">CompressString</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)</div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.ZlibStream.html#MonoGame_Framework_Utilities_Deflate_ZlibStream_CompressString_System_String_">CompressString</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)</div>
+    </dd>
+  </dl>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Dispose_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Dispose*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Dispose_System_Boolean_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Dispose(System.Boolean)">
+  Dispose(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L430"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Dispose the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the Dispose method was invoked by user code.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Dispose_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+  This may or may not result in a <code>Close()</code> call on the captive
+  stream.  See the constructors that have a <code>leaveOpen</code> parameter
+  for more information.
+</p>
+<p>
+  Application code won't call this code directly.  This method may be
+  invoked in two distinct scenarios.  If disposing == true, the method
+  has been called directly or indirectly by a user's code, for example
+  via the public Dispose() method. In this case, both managed and
+  unmanaged resources can be referenced and disposed.  If disposing ==
+  false, the method has been called by the runtime from inside the
+  object finalizer and this method should not reference other objects;
+  in that case only unmanaged resources must be referenced or
+  disposed.
+</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Flush_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Flush*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Flush" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Flush">
+  Flush()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L494"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Flush the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Flush()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Read_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Read*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Read_System_Byte___System_Int32_System_Int32_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Read(System.Byte[],System.Int32,System.Int32)">
+  Read(byte[], int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L558"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Read data from the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Read(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The buffer into which the read data should be placed.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the offset within that data array to put the first byte read.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the number of bytes to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the number of bytes actually read</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Read_System_Byte___System_Int32_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+  If you wish to use the <code>DeflateStream</code> to compress data while
+  reading, you can create a <code>DeflateStream</code> with
+  <code>CompressionMode.Compress</code>, providing an uncompressed data stream.
+  Then call Read() on that <code>DeflateStream</code>, and the data read will be
+  compressed as you read.  If you wish to use the <code>DeflateStream</code> to
+  decompress data while reading, you can create a <code>DeflateStream</code> with
+  <code>CompressionMode.Decompress</code>, providing a readable compressed data
+  stream.  Then call Read() on that <code>DeflateStream</code>, and the data read
+  will be decompressed as you read.
+</p>
+<p>
+  A <code>DeflateStream</code> can be used for <code>Read()</code> or <code>Write()</code>, but not both.
+</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Seek_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Seek*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Seek_System_Int64_System_IO_SeekOrigin_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Seek(System.Int64,System.IO.SeekOrigin)">
+  Seek(long, SeekOrigin)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L571"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calling this method always throws a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Seek(long offset, SeekOrigin origin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>this is irrelevant, since it will always throw!</p>
+</dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.seekorigin">SeekOrigin</a></dt>
+    <dd><p>this is irrelevant, since it will always throw!</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>irrelevant!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_SetLength_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.SetLength*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_SetLength_System_Int64_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.SetLength(System.Int64)">
+  SetLength(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L580"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calling this method always throws a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetLength(long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>this is irrelevant, since it will always throw!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressBuffer_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.UncompressBuffer*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressBuffer_System_Byte___" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.UncompressBuffer(System.Byte[])">
+  UncompressBuffer(byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L726"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Uncompress a DEFLATE'd byte array into a byte array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] UncompressBuffer(byte[] compressed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>compressed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>A buffer containing data that has been compressed with DEFLATE.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The data in uncompressed form</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressBuffer_System_Byte___">CompressBuffer(byte[])</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressString_System_Byte___">UncompressString(byte[])</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.GZipStream.html#MonoGame_Framework_Utilities_Deflate_GZipStream_UncompressBuffer_System_Byte___">UncompressBuffer</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[])</div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.ZlibStream.html#MonoGame_Framework_Utilities_Deflate_ZlibStream_UncompressBuffer_System_Byte___">UncompressBuffer</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[])</div>
+    </dd>
+  </dl>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressString_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.UncompressString*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressString_System_Byte___" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.UncompressString(System.Byte[])">
+  UncompressString(byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L700"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Uncompress a DEFLATE'd byte array into a single string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string UncompressString(byte[] compressed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>compressed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>A buffer containing DEFLATE-compressed data.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The uncompressed string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_CompressString_System_String_">CompressString(string)</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.DeflateStream.html#MonoGame_Framework_Utilities_Deflate_DeflateStream_UncompressBuffer_System_Byte___">UncompressBuffer(byte[])</a></div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.GZipStream.html#MonoGame_Framework_Utilities_Deflate_GZipStream_UncompressString_System_Byte___">UncompressString</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[])</div>
+    <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.ZlibStream.html#MonoGame_Framework_Utilities_Deflate_ZlibStream_UncompressString_System_Byte___">UncompressString</a>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[])</div>
+    </dd>
+  </dl>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Write_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Write*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Write_System_Byte___System_Int32_System_Int32_" data-uid="MonoGame.Framework.Utilities.Deflate.DeflateStream.Write(System.Byte[],System.Int32,System.Int32)">
+  Write(byte[], int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L614"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Write data to the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Write(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The buffer holding data to write to the stream.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the offset within that data array to find the first byte to write.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the number of bytes to write.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_DeflateStream_Write_System_Byte___System_Int32_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+  If you wish to use the <code>DeflateStream</code> to compress data while
+  writing, you can create a <code>DeflateStream</code> with
+  <code>CompressionMode.Compress</code>, and a writable output stream.  Then call
+  <code>Write()</code> on that <code>DeflateStream</code>, providing uncompressed data
+  as input.  The data sent to the output stream will be the compressed form
+  of the data written.  If you wish to use the <code>DeflateStream</code> to
+  decompress data while writing, you can create a <code>DeflateStream</code> with
+  <code>CompressionMode.Decompress</code>, and a writable output stream.  Then
+  call <code>Write()</code> on that stream, providing previously compressed
+  data. The data sent to the output stream will be the decompressed form of
+  the data written.
+</p>
+<p>
+  A <code>DeflateStream</code> can be used for <code>Read()</code> or <code>Write()</code>,
+  but not both.
+</p>
+</div>
+
+
+
+
+  <h2 id="seealso">See Also</h2>
+  <div class="seealso">
+      <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.ZlibStream.html">ZlibStream</a></div>
+      <div><a class="xref" href="MonoGame.Framework.Utilities.Deflate.GZipStream.html">GZipStream</a></div>
+  </div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/DeflateStream.cs/#L66" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

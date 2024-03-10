@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="title" content="Showcase | MonoGame"/>
+<meta name="description" content="One framework for creating powerful cross-platform games"/>
+
+
+<title>Showcase | MonoGame</title>
+
+
+<meta name="og:url" content="https://monogame.net/showcase/nintendo-switch/"/>
+<meta name="og:type" content="website"/>
+<meta name="og:title" content="Showcase | MonoGame"/>
+<meta name="og:description" content="One framework for creating powerful cross-platform games"/>
+<meta name="og:image" content="https://monogame.net/images/social_embed_image.png"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:domain" content="https://monogame.net"/>
+<meta property="twitter:url" content="https://monogame.net/showcase/nintendo-switch/"/>
+<meta name="twitter:title" content="Showcase | MonoGame"/>
+<meta name="twitter:description" content="One framework for creating powerful cross-platform games"/>
+<meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png"/>
+
+
+<link rel="icon" href="https://monogame.net/favicon.png"/>
+
+
+<link rel="alternate" type="application/atom+xml" title="MonoGame Blog"  href="/blog/feed.xml" />
+
+
+<link rel="stylesheet" href="/bundle.css"/>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-38431038-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-38431038-1');
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"/>
+<script type="text/javascript" src="/js/themeSwitcher.js"></script>
+
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body shadow sticky-md-top" aria-label="Navigation Bar">
+    <div class="container-xl">
+        <a class="navbar-brand" href="/" title="Return to Home">
+            <img class="mg-logo svg" style="height: 36px; display: inline-block;" alt="MonoGame Logo">
+        </a>
+        <button
+            class="btn btn-lg d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#topNavBar"
+            aria-controls="topNavBar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/documentation/">
+                            Documentation
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/community/">
+                            Community
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/showcase/">
+                            Showcase
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/blog/">
+                            Blog
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bounties/">
+                            Bounties
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about/">
+                            About
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/donate/">
+                            Donate
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="dropdown bd-mode-toggle">
+    <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)">
+        <i id="active-theme-icon" class="bi bi-circle-half"></i>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                <i class="bi bi-sun"></i>&nbsp;Light
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                <i class="bi bi-moon"></i>&nbsp;Dark
+            </button>
+        </li>
+        <li>
+            <button
+                type="button"
+                class="dropdown-item d-flex align-items-center active"
+                data-bs-theme-value="auto"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i>&nbsp;Auto
+            </button>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+        
+    <section class="container-xxl my-5">
+        <h1 id="monogame-showcase" class="fw-bold"><a href="#monogame-showcase">MonoGame Showcase</a></h1>
+        <p>
+            There have been 1000s of games, libraries, and tools made using MonoGame over the years.
+            We have gathered a taste of those titles here from the big hits to the small hidden gems.
+        </p>
+        <p>
+            If you are a developer and would like us to add your game, library, or tool to this list,
+            please submit a GitHub Issue using the <a href="https://github.com/MonoGame/monogame.github.io/issues/new?assignees=&labels=showcase&projects=&template=01_Showcase_Submission.yml">Showcase Submission template</a>
+        </p>
+    </section>
+
+    
+    <section class="container-xxl my-5">
+        <h3 class="fw-bold">Categories</h3>
+        <p>Select a category below to filter the results</p>
+        <div class="d-flex flex-row flex-wrap gap-3 mb-1">
+            
+                <a href="/showcase/"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    all
+                </a>
+            
+                <a href="/showcase/2d"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    2D
+                </a>
+            
+                <a href="/showcase/3d"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    3D
+                </a>
+            
+                <a href="/showcase/android"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Android
+                </a>
+            
+                <a href="/showcase/console"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Console
+                </a>
+            
+                <a href="/showcase/desktop"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Desktop
+                </a>
+            
+                <a href="/showcase/featured"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Featured
+                </a>
+            
+                <a href="/showcase/library"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Library
+                </a>
+            
+                <a href="/showcase/linux"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Linux
+                </a>
+            
+                <a href="/showcase/mac"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Mac
+                </a>
+            
+                <a href="/showcase/mobile"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Mobile
+                </a>
+            
+                <a href="/showcase/nintendo-switch"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Nintendo Switch
+                </a>
+            
+                <a href="/showcase/playstation-4"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Playstation 4
+                </a>
+            
+                <a href="/showcase/playstation-5"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Playstation 5
+                </a>
+            
+                <a href="/showcase/playstation-vita"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Playstation Vita
+                </a>
+            
+                <a href="/showcase/windows"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Windows
+                </a>
+            
+                <a href="/showcase/windows-phone"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Windows Phone
+                </a>
+            
+                <a href="/showcase/xbox-one"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    Xbox One
+                </a>
+            
+                <a href="/showcase/ios"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    iOS
+                </a>
+            
+        </div>
+    </section>
+
+
+    <section class="container-xxl mb-5">
+        <div id="showcase-gallery" class="mg-item-grid">
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="https://www.streets4rage.com/" title="Streets of Rage 4">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/sor4-screenshot.jpg');
+                                        image-rendering: auto">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/sor4-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://pumpkin-games.net/paladin.php" title="Paladin">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/paladin-screenshot.jpg');
+                                        image-rendering: auto">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/paladin-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://flinthook.com/" title="Flinthook">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/fhook-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/fhook-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://mercenarykings.com/" title="Mercenary Kings">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/mkings-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/mkings-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="https://danandgarygames.com/superdaryldeluxe" title="Super Daryl Deluxe">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/daryl-screenshot.jpg');
+                                        image-rendering: auto">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/daryl-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.chasmgame.com/" title="Chasm">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/chasm-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/chasm-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.celestegame.com/" title="Celeste">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/celeste-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/celeste-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.neurovoider.com/" title="Neurovoider">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/neurovoider-screenshot.jpg');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/neurovoider-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.axiomverge.com/" title="Axiom Verge">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/axiom-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/axiom-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.towerfall-game.com/" title="Towerfall">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/towerfall-screenshot.jpg');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/towerfall-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.stardewvalley.net/" title="Stardew Valley">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/stardew-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/stardew-logo4.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.bootdiskrevolution.com/" title="Bleed 2">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/bleed2-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/bleed2-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="http://www.bootdiskrevolution.com/bleed/" title="Bleed">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/bleed-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/bleed-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="https://staysafe.yellowcakegames.com/" title="Stay Safe">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/stay-safe-screenshot.png');
+                                        image-rendering: auto">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/stay-safe-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+                
+            
+                
+                    <a class="mg-no-link hide-external-icon showcase-item" href="https://www.indiesruption.com/games/vlad-circus" title="Vlad Circus: Descend into Madness">
+                        <div class="mg-card mg-box-shadow d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/showcase-header/vlad-circus-screenshot.png');
+                                        image-rendering: pixelated">
+                            </div>
+                            <div class="mg-card-thumbnail-overlay"
+                                style="background-image: url('/images/showcase-header/vlad-circus-logo.png');"></div>
+                        </div>
+                    </a>
+                
+            
+        </div>
+    </section>
+
+        <section class="container-xxl">
+    <footer class="border-top my-5 pt-5">
+        <div class="row justify-content-between">
+            <div class="col-6 col-lg-3 mb-3">
+                <h5>MonoGame</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="/articles/" class="p-0">Documentation</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/api/" class="p-0">API Reference</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/showcase/" class="p-0">Showcase</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/about/" class="p-0">About</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3 mb-3">
+                <h5>Get Involved</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a
+                            href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md"
+                            class="p-0">Documentation</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                            Issues</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3 mb-3">
+                <h5>Public Relations</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="/blog/" class="p-0">Blog</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="https://community.monogame.net" class="p-0">Community</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/presskit/" class="p-0">Press Kit</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3 mb-3">
+                <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a></h1>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+            <div>
+                Copyright © 2009-2024 MonoGame Foundation, Inc. <br/> Designed with
+                <span class="text-danger">❤</span>
+                by
+                <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+            </div>
+            <div class="d-flex justify-content-between gap-3">
+                
+                    <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                        <i class="bi bi-p-circle-fill"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                        <i class="bi bi-discord"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                        <i class="bi bi-reddit"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="Blog RSS Feed">
+                        <i class="bi bi-rss-fill"></i>
+                    </a>
+                
+            </div>
+        </div>
+    </footer>
+</section>
+
+        <script type="text/javascript" src="/js/bundle.js"></script>
+        
+    <script type="text/javascript" src="/js/showcaseRandomizer.js"></script>
+
+    </body>
+</html>

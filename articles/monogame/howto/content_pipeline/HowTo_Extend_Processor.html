@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="How To Extend a Standard Content Processor? | MonoGame ">
+
+    <title>How To Extend a Standard Content Processor? | MonoGame </title>
+<meta name="description" content="Describes how MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_Extend_Processor.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="How To Extend a Standard Content Processor? | MonoGame ">
+    <meta name="og:description" content="Describes how MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_Extend_Processor.html">
+    <meta name="twitter:title" content="How To Extend a Standard Content Processor? | MonoGame ">
+    <meta name="twitter:description" content="Describes how MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_Extend_Processor.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+
+<p>MonoGame lets you modify or extend the behavior of any standard Content Pipeline processor that ships with the product. See <a href="../../whatis/Content_Pipeline/CP_StdImpsProcs.md">Standard Content Importers and Content Processors</a> for a description of standard processors.</p>
+<p>Because there are so many asset variants supported by different digital content creation (DCC) tools, it is often useful to be able to modify how one of the standard processors operates. The following examples illustrate some of the kinds of things you might want to do.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>The following code samples are provided only for demonstration. Most of the functionality described is already available by using parameters on a standard processor.</p>
+</blockquote>
+<h2 id="adding-a-scaling-operation-to-a-processor">Adding a Scaling Operation to a Processor</h2>
+<p>There are many reasons why you might want to modify the existing functionality of a standard processor. Here is one example. If your source assets and your game are at different scales, you may want the processor to scale each model automatically at build time. You can implement such automatic scaling by overriding the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">Process</a> method of the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">ModelProcessor</a> class, which generates a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.Model.html">Model</a>. In the override, you first scale the entire scene, and then invoke the base class functionality to process as usual.</p>
+<p>The following code illustrates this technique:</p>
+<pre><code class="lang-csharp">    [ContentProcessor]
+    class ScalingModelProcessor : ModelProcessor
+    {
+        public override ModelContent Process(
+            NodeContent input, ContentProcessorContext context )
+        {
+            MeshHelper.TransformScene( input, Matrix.CreateScale( 10.0f ) );
+            return base.Process( input, context );
+        }
+    }
+</code></pre>
+<h2 id="generating-additional-data">Generating Additional Data</h2>
+<p>In some cases, you may want to add information to a game asset that a standard processor would not. For example, if a custom effect you want to apply requires tangent or binormal data, you can extend the standard model processor to build this additional data into the asset. To do this, you override the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">Process</a> method of the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">ModelProcessor</a> class. In the override, navigate the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.html">NodeContent</a> hierarchy of the game asset, and call <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper.html">CalculateTangentFrames</a> for each <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshContent.html">MeshContent</a> object you find.</p>
+<p>The following code shows how to do this:</p>
+<pre><code class="lang-csharp">    [ContentProcessor]
+    class ModelProcessorWithTangents : ModelProcessor
+    {
+        public override ModelContent Process( NodeContent input, ContentProcessorContext context )
+        {
+            GenerateTangentFramesRecursive( input );
+            return base.Process( input, context );
+        }
+
+        private void GenerateTangentFramesRecursive( NodeContent node )
+        {
+            MeshContent mesh = node as MeshContent;
+            if (mesh != null)
+            {
+                MeshHelper.CalculateTangentFrames( mesh, VertexChannelNames.TextureCoordinate( 0 ), 
+                    VertexChannelNames.Tangent( 0 ), VertexChannelNames.Binormal( 0 ) );
+            }
+
+            foreach (NodeContent child in node.Children)
+            {
+                GenerateTangentFramesRecursive( child );
+            }
+        }
+    }
+</code></pre>
+<h2 id="changing-the-processors-called-for-child-objects">Changing the Processors Called for Child Objects</h2>
+<p>Another useful technique is to override a standard processor, and to change how child objects are processed just by changing the processors they use.</p>
+<p>Consider, for example, the hierarchy of calls through which textures in a model are processed:</p>
+<ul>
+<li>The standard <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">ModelProcessor.Process</a> method is called to process a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.html">NodeContent</a> object that represents the root of a scene.</li>
+<li><code>ModelProcessor.Process</code> in turn calls the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.ModelProcessor.html">ModelProcessor.ConvertMaterial</a> method once for every <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MaterialContent.html">MaterialContent</a> object used in the scene.</li>
+<li><code>ModelProcessor.ConvertMaterial</code> in turn invokes the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.MaterialProcessor.html">MaterialProcessor.Process</a> method on the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MaterialContent.html">MaterialContent</a> object passed to it.</li>
+<li><code>MaterialProcessor.Process</code> in turn calls the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.MaterialProcessor.html">MaterialProcessor.BuildTexture</a> method once for each texture in the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MaterialContent.html#Microsoft_Xna_Framework_Content_Pipeline_Graphics_MaterialContent_Textures">MaterialContent.Textures</a> collection in the <code>MaterialContent</code> object passed to it.</li>
+<li><code>MaterialProcessor.BuildTexture</code> in turn invokes the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.TextureProcessor.html">ModelTextureProcessor.Process</a> method on the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.TextureContent.html">TextureContent</a> object passed to it.</li>
+</ul>
+<p>One reason you may want to change how this works is that the <code>ModelTextureProcessor.Process</code> method applies texture compression to all textures it processes. This could be DXT1, DXT5, PVRTC, ETC1, RGBA4444 or ATITC depending on target your platform. If textures in your game assets are compressed already, you may want to avoid a second compression.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>Not all platforms support all types of texture compression. For example DXT1/5 are generally only supported on Desktop graphics cards and some NVidia mobile graphics cards. PVRTC is only supported on iOS and some Android devices with PowerVR graphics cards, and ATITC is only supported on ATI graphics cards. Using the <code>Compressed</code> setting for <code>TextureCompression</code> for the Texture Processor will let the Pipeline pick the best compression for your target platform.</p>
+</blockquote>
+<h3 id="to-prevent-compression-of-textures-during-processing">To prevent compression of textures during processing</h3>
+<p>Here is how to prevent compression from being applied to model textures during processing.</p>
+<ol>
+<li>Create an override of the standard <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.MaterialProcessor.html">MaterialProcessor.BuildTexture</a> method, and invoke the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.TextureProcessor.html">TextureProcessor.Process</a> method, which does no compression, instead of <code>ModelTextureProcessor.Process</code>.</li>
+<li>Create an override of <code>ModelProcessor.ConvertMaterial</code> that invokes your override of <code>MaterialProcessor.BuildTexture</code> instead of the standard one.</li>
+</ol>
+<p>The first of these overrides could be coded as:</p>
+<pre><code class="lang-csharp">    [ContentProcessor]
+    class NoCompressionMaterialProcessor : MaterialProcessor
+    {
+        protected override ExternalReference&lt;TextureContent&gt; BuildTexture( 
+            string textureName, ExternalReference&lt;TextureContent&gt; texture, ContentProcessorContext context )
+        {
+            return context.BuildAsset&lt;TextureContent, TextureContent&gt;( texture, &quot;TextureProcessor&quot; );
+        }
+    }
+</code></pre>
+<p>There are several things to note about this code.</p>
+<ul>
+<li>An <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.html">ExternalReference</a> is an asset object that is shared between multiple classes, such as a diffuse texture used by more than one material. When such an asset is specified, the Content Manager loads only one copy of the <code>ExternalReference</code> at run time and builds it only once, no matter how many references there are to it.</li>
+<li>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessorContext.html">ContentProcessorContext</a><a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessorContext.html">BuildAsset</a> method lets you invoke a processor by name to build the content in an object.</li>
+<li>Although <em>textureName</em>, the first argument to <code>BuildTexture</code>, is ignored in the override above, you could use it if you wanted to process textures differently depending on normal maps or other criteria.</li>
+</ul>
+<p>Given the processor created by your first override above, you could code the second override:</p>
+<pre><code class="lang-csharp">    [ContentProcessor]
+    class NoCompressionModelProcessor : ModelProcessor
+    {
+        protected override MaterialContent ConvertMaterial(
+            MaterialContent material, ContentProcessorContext context )
+        {
+            return context.Convert&lt;MaterialContent, MaterialContent&gt;(
+                material, &quot;NoCompressionMaterialProcessor&quot; );
+        }
+    }
+</code></pre>
+<p>Because this override is processing <code>MaterialContent</code> objects in memory rather than <code>ExternalReference</code> objects, it uses the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessorContext.html">ContentProcessorContext.Convert</a> function instead of <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.ContentProcessorContext.html">BuildAsset</a> to invoke the processor created by your first override.</p>
+<p>After building and installing your new <code>NoCompressionModelProcessor</code> (see <a href="../../whatis/Content_Pipeline/CP_AddCustomProcImp.md">Adding a Custom Importer</a>), you can assign it to any models whose textures are already compressed and no further compression is applied.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../../whatis/Content_Pipeline/CP_Content_Advanced.md">Adding New Content Types</a></li>
+<li><a href="../../whatis/Content_Pipeline/CP_Overview.md">What Is Content?</a></li>
+<li><a href="../../whatis/Content_Pipeline/CP_Architecture.md">What is the Content Pipeline?</a></li>
+<li><a href="../../whatis/Content_Pipeline/CP_StdImpsProcs.md">Standard Content Importers and Content Processors</a></li>
+<li><a href="../../whatis/Content_Pipeline/CP_AddCustomProcImp.md">Adding a Custom Importer</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_Extend_Processor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

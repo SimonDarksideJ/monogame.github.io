@@ -1,0 +1,1625 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Class ZlibCodec | MonoGame ">
+
+    <title>Class ZlibCodec | MonoGame </title>
+<meta name="description" content="Encoder and Decoder for ZLIB and DEFLATE (IETF RFC1950 and RFC1951).">
+
+    <meta name="og:url" content="https://monogame.net/api/MonoGame.Framework.Utilities.Deflate.ZlibCodec.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="Class ZlibCodec | MonoGame ">
+    <meta name="og:description" content="Encoder and Decoder for ZLIB and DEFLATE (IETF RFC1950 and RFC1951).">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/api/MonoGame.Framework.Utilities.Deflate.ZlibCodec.html">
+    <meta name="twitter:title" content="Class ZlibCodec | MonoGame ">
+    <meta name="twitter:description" content="Encoder and Decoder for ZLIB and DEFLATE (IETF RFC1950 and RFC1951).">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../public/docfx.min.css">
+    <link rel="stylesheet" href="../public/main.css">
+    <meta name="docfx:navrel" content="../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/MonoGame/MonoGame/new/feature/docsmigration/apiSpec/new?filename=MonoGame_Framework_Utilities_Deflate_ZlibCodec.md&amp;value=---%0Auid%3A%20MonoGame.Framework.Utilities.Deflate.ZlibCodec%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec">
+
+
+
+  <h1 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec" class="text-break">
+Class ZlibCodec  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="MonoGame.html">MonoGame</a>.<a class="xref" href="MonoGame.Framework.html">Framework</a>.<a class="xref" href="MonoGame.Framework.Utilities.html">Utilities</a>.<a class="xref" href="MonoGame.Framework.Utilities.Deflate.html">Deflate</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>MonoGame.Framework.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Encoder and Decoder for ZLIB and DEFLATE (IETF RFC1950 and RFC1951).</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ZlibCodec</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ZlibCodec</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class compresses and decompresses data according to the Deflate algorithm
+and optionally, the ZLIB format, as documented in <a href="http://www.ietf.org/rfc/rfc1950.txt">RFC 1950 - ZLIB</a> and <a href="http://www.ietf.org/rfc/rfc1951.txt">RFC 1951 - DEFLATE</a>.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec__ctor_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.#ctor*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec__ctor" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.#ctor">
+  ZlibCodec()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a ZlibCodec.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZlibCodec()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec__ctor_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If you use this default constructor, you will later have to explicitly call
+InitializeInflate() or InitializeDeflate() before using the ZlibCodec to compress
+or decompress.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec__ctor_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.#ctor*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec__ctor_MonoGame_Framework_Utilities_Deflate_CompressionMode_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.#ctor(MonoGame.Framework.Utilities.Deflate.CompressionMode)">
+  ZlibCodec(CompressionMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a ZlibCodec that either compresses or decompresses.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZlibCodec(CompressionMode mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>mode</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionMode.html">CompressionMode</a></dt>
+    <dd><p>Indicates whether the codec should compress (deflate) or decompress (inflate).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_AvailableBytesIn" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.AvailableBytesIn">
+  AvailableBytesIn
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The number of bytes available in the InputBuffer, starting at NextIn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AvailableBytesIn</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_AvailableBytesIn_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Generally you should set this to InputBuffer.Length before the first Inflate() or Deflate() call.
+The class will update this number as calls to Inflate/Deflate are made.</p>
+</div>
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_AvailableBytesOut" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.AvailableBytesOut">
+  AvailableBytesOut
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The number of bytes available in the OutputBuffer, starting at NextOut.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AvailableBytesOut</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_AvailableBytesOut_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Generally you should set this to OutputBuffer.Length before the first Inflate() or Deflate() call.
+The class will update this number as calls to Inflate/Deflate are made.</p>
+</div>
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_CompressLevel" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.CompressLevel">
+  CompressLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The compression level to use in this codec.  Useful only in compression mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressionLevel CompressLevel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InputBuffer" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InputBuffer">
+  InputBuffer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The buffer from which data is taken.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] InputBuffer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Message" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Message">
+  Message
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>used for diagnostics, when something goes wrong!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Message</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_NextIn" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.NextIn">
+  NextIn
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An index into the InputBuffer array, indicating where to start reading.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NextIn</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_NextOut" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.NextOut">
+  NextOut
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An index into the OutputBuffer array, indicating where to start writing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NextOut</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_OutputBuffer" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.OutputBuffer">
+  OutputBuffer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Buffer to store output data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] OutputBuffer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Strategy" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Strategy">
+  Strategy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The compression strategy to use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressionStrategy Strategy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionStrategy.html">CompressionStrategy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Strategy_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is only effective in compression.  The theory offered by ZLIB is that different
+strategies could potentially produce significant differences in compression behavior
+for different data sets.  Unfortunately I don't have any good recommendations for how
+to set it differently.  When I tested changing the strategy I got minimally different
+compression performance. It's best to leave this property alone if you don't have a
+good feel for it.  Or, you may want to produce a test harness that runs through the
+different strategy options and evaluates them on different file types. If you do that,
+let me know your results.</p>
+</div>
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_TotalBytesIn" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.TotalBytesIn">
+  TotalBytesIn
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Total number of bytes read so far, through all calls to Inflate()/Deflate().</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TotalBytesIn</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_TotalBytesOut" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.TotalBytesOut">
+  TotalBytesOut
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Total number of bytes written to the output so far, through all calls to Inflate()/Deflate().</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TotalBytesOut</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_WindowBits" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.WindowBits">
+  WindowBits
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The number of Window Bits to use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int WindowBits</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_WindowBits_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This gauges the size of the sliding window, and hence the
+compression effectiveness as well as memory consumption. It's best to just leave this
+setting alone if you don't know what it is.  The maximum value is 15 bits, which implies
+a 32k window.</p>
+</div>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Adler32_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Adler32*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Adler32" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Adler32">
+  Adler32
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The Adler32 checksum on the data transferred through the codec so far. You probably don't need to look at this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Adler32 { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Deflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Deflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Deflate_MonoGame_Framework_Utilities_Deflate_FlushType_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Deflate(MonoGame.Framework.Utilities.Deflate.FlushType)">
+  Deflate(FlushType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L579"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deflate one batch of data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Deflate(FlushType flush)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>flush</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.FlushType.html">FlushType</a></dt>
+    <dd><p>whether to flush all data as you deflate. Generally you will want to
+use Z_NO_FLUSH here, in a series of calls to Deflate(), and then call EndDeflate() to
+flush everything.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Deflate_MonoGame_Framework_Utilities_Deflate_FlushType__examples">Examples</h4>
+  <pre><code class="lang-csharp">private void DeflateBuffer(CompressionLevel level)
+{
+    int bufferSize = 1024;
+    byte[] buffer = new byte[bufferSize];
+    ZlibCodec compressor = new ZlibCodec();
+
+    Console.WriteLine("\n============================================");
+    Console.WriteLine("Size of Buffer to Deflate: {0} bytes.", UncompressedBytes.Length);
+    MemoryStream ms = new MemoryStream();
+
+    int rc = compressor.InitializeDeflate(level);
+
+    compressor.InputBuffer = UncompressedBytes;
+    compressor.NextIn = 0;
+    compressor.AvailableBytesIn = UncompressedBytes.Length;
+
+    compressor.OutputBuffer = buffer;
+
+    // pass 1: deflate 
+    do
+    {
+        compressor.NextOut = 0;
+        compressor.AvailableBytesOut = buffer.Length;
+        rc = compressor.Deflate(FlushType.None);
+
+        if (rc != ZlibConstants.Z_OK &amp;&amp; rc != ZlibConstants.Z_STREAM_END)
+            throw new Exception("deflating: " + compressor.Message);
+
+        ms.Write(compressor.OutputBuffer, 0, buffer.Length - compressor.AvailableBytesOut);
+    }
+    while (compressor.AvailableBytesIn &gt; 0 || compressor.AvailableBytesOut == 0);
+
+    // pass 2: finish and flush
+    do
+    {
+        compressor.NextOut = 0;
+        compressor.AvailableBytesOut = buffer.Length;
+        rc = compressor.Deflate(FlushType.Finish);
+
+        if (rc != ZlibConstants.Z_STREAM_END &amp;&amp; rc != ZlibConstants.Z_OK)
+            throw new Exception("deflating: " + compressor.Message);
+
+        if (buffer.Length - compressor.AvailableBytesOut &gt; 0)
+            ms.Write(buffer, 0, buffer.Length - compressor.AvailableBytesOut);
+    }
+    while (compressor.AvailableBytesIn &gt; 0 || compressor.AvailableBytesOut == 0);
+
+    compressor.EndDeflate();
+
+    ms.Seek(0, SeekOrigin.Begin);
+    CompressedBytes = new byte[compressor.TotalBytesOut];
+    ms.Read(CompressedBytes, 0, CompressedBytes.Length);
+}</code></pre>
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Deflate_MonoGame_Framework_Utilities_Deflate_FlushType__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>You must have set InputBuffer and OutputBuffer before calling this method.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_EndDeflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.EndDeflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_EndDeflate" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.EndDeflate">
+  EndDeflate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L593"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>End a deflation session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int EndDeflate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_EndDeflate_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Call this after making a series of one or more calls to Deflate(). All buffers are flushed.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_EndInflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.EndInflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_EndInflate" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.EndInflate">
+  EndInflate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L366"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ends an inflation session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int EndInflate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if everything goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_EndInflate_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Call this after successively calling Inflate().  This will cause all buffers to be flushed.
+After calling this you cannot call Inflate() without a intervening call to one of the
+InitializeInflate() overloads.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Inflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Inflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Inflate_MonoGame_Framework_Utilities_Deflate_FlushType_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.Inflate(MonoGame.Framework.Utilities.Deflate.FlushType)">
+  Inflate(FlushType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L349"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inflate the data in the InputBuffer, placing the result in the OutputBuffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Inflate(FlushType flush)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>flush</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.FlushType.html">FlushType</a></dt>
+    <dd><p>The flush to use when inflating.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if everything goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Inflate_MonoGame_Framework_Utilities_Deflate_FlushType__examples">Examples</h4>
+  <pre><code class="lang-csharp">private void InflateBuffer()
+{
+    int bufferSize = 1024;
+    byte[] buffer = new byte[bufferSize];
+    ZlibCodec decompressor = new ZlibCodec();
+
+    Console.WriteLine("\n============================================");
+    Console.WriteLine("Size of Buffer to Inflate: {0} bytes.", CompressedBytes.Length);
+    MemoryStream ms = new MemoryStream(DecompressedBytes);
+
+    int rc = decompressor.InitializeInflate();
+
+    decompressor.InputBuffer = CompressedBytes;
+    decompressor.NextIn = 0;
+    decompressor.AvailableBytesIn = CompressedBytes.Length;
+
+    decompressor.OutputBuffer = buffer;
+
+    // pass 1: inflate 
+    do
+    {
+        decompressor.NextOut = 0;
+        decompressor.AvailableBytesOut = buffer.Length;
+        rc = decompressor.Inflate(FlushType.None);
+
+        if (rc != ZlibConstants.Z_OK &amp;&amp; rc != ZlibConstants.Z_STREAM_END)
+            throw new Exception("inflating: " + decompressor.Message);
+
+        ms.Write(decompressor.OutputBuffer, 0, buffer.Length - decompressor.AvailableBytesOut);
+    }
+    while (decompressor.AvailableBytesIn &gt; 0 || decompressor.AvailableBytesOut == 0);
+
+    // pass 2: finish and flush
+    do
+    {
+        decompressor.NextOut = 0;
+        decompressor.AvailableBytesOut = buffer.Length;
+        rc = decompressor.Inflate(FlushType.Finish);
+
+        if (rc != ZlibConstants.Z_STREAM_END &amp;&amp; rc != ZlibConstants.Z_OK)
+            throw new Exception("inflating: " + decompressor.Message);
+
+        if (buffer.Length - decompressor.AvailableBytesOut &gt; 0)
+            ms.Write(buffer, 0, buffer.Length - decompressor.AvailableBytesOut);
+    }
+    while (decompressor.AvailableBytesIn &gt; 0 || decompressor.AvailableBytesOut == 0);
+
+    decompressor.EndInflate();
+}</code></pre>
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_Inflate_MonoGame_Framework_Utilities_Deflate_FlushType__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>You must have set InputBuffer and OutputBuffer, NextIn and NextOut, and AvailableBytesIn and
+AvailableBytesOut  before calling this method.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate">
+  InitializeDeflate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L426"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the ZlibCodec for deflation operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeDeflate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well. You generally don't need to check the return code.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_examples">Examples</h4>
+  <pre><code class="lang-csharp">int bufferSize = 40000;
+byte[] CompressedBytes = new byte[bufferSize];
+byte[] DecompressedBytes = new byte[bufferSize];
+
+ZlibCodec compressor = new ZlibCodec();
+
+compressor.InitializeDeflate(CompressionLevel.Default);
+
+compressor.InputBuffer = System.Text.ASCIIEncoding.ASCII.GetBytes(TextToCompress);
+compressor.NextIn = 0;
+compressor.AvailableBytesIn = compressor.InputBuffer.Length;
+
+compressor.OutputBuffer = CompressedBytes;
+compressor.NextOut = 0;
+compressor.AvailableBytesOut = CompressedBytes.Length;
+
+while (compressor.TotalBytesIn != TextToCompress.Length &amp;&amp; compressor.TotalBytesOut &lt; bufferSize)
+{
+  compressor.Deflate(FlushType.None);
+}
+
+while (true)
+{
+  int rc= compressor.Deflate(FlushType.Finish);
+  if (rc == ZlibConstants.Z_STREAM_END) break;
+}
+
+compressor.EndDeflate();</code></pre>
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The codec will use the MAX window bits and the default level of compression.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_MonoGame_Framework_Utilities_Deflate_CompressionLevel_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate(MonoGame.Framework.Utilities.Deflate.CompressionLevel)">
+  InitializeDeflate(CompressionLevel)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L440"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeDeflate(CompressionLevel level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd><p>The compression level for the codec.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_MonoGame_Framework_Utilities_Deflate_CompressionLevel__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The codec will use the maximum window bits (15) and the specified
+CompressionLevel.  It will emit a ZLIB stream as it compresses.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Boolean_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate(MonoGame.Framework.Utilities.Deflate.CompressionLevel,System.Boolean)">
+  InitializeDeflate(CompressionLevel, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L461"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel,
+and the explicit flag governing whether to emit an RFC1950 header byte pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeDeflate(CompressionLevel level, bool wantRfc1950Header)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd><p>The compression level for the codec.</p>
+</dd>
+    <dt><code>wantRfc1950Header</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>whether to emit an initial RFC1950 byte pair in the compressed stream.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The codec will use the maximum window bits (15) and the specified CompressionLevel.
+If you want to generate a zlib stream, you should specify true for
+wantRfc1950Header. In this case, the library will emit a ZLIB
+header, as defined in <a href="http://www.ietf.org/rfc/rfc1950.txt">RFC
+1950</a>, in the compressed stream.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Int32_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate(MonoGame.Framework.Utilities.Deflate.CompressionLevel,System.Int32)">
+  InitializeDeflate(CompressionLevel, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L478"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel,
+and the specified number of window bits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeDeflate(CompressionLevel level, int bits)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd><p>The compression level for the codec.</p>
+</dd>
+    <dt><code>bits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the number of window bits to use.  If you don't know what this means, don't use this method.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The codec will use the specified number of window bits and the specified CompressionLevel.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeDeflate_MonoGame_Framework_Utilities_Deflate_CompressionLevel_System_Int32_System_Boolean_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeDeflate(MonoGame.Framework.Utilities.Deflate.CompressionLevel,System.Int32,System.Boolean)">
+  InitializeDeflate(CompressionLevel, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L495"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the ZlibCodec for deflation operation, using the specified
+CompressionLevel, the specified number of window bits, and the explicit flag
+governing whether to emit an RFC1950 header byte pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeDeflate(CompressionLevel level, int bits, bool wantRfc1950Header)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd><p>The compression level for the codec.</p>
+</dd>
+    <dt><code>bits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>the number of window bits to use.  If you don't know what this means, don't use this method.</p>
+</dd>
+    <dt><code>wantRfc1950Header</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>whether to emit an initial RFC1950 byte pair in the compressed stream.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate">
+  InitializeInflate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the inflation state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeInflate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if everything goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>It is not necessary to call this before using the ZlibCodec to inflate data;
+It is implicitly called when you call the constructor.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_System_Boolean_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate(System.Boolean)">
+  InitializeInflate(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the inflation state with an explicit flag to
+govern the handling of RFC1950 header bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeInflate(bool expectRfc1950Header)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>expectRfc1950Header</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>whether to expect an RFC1950 header byte
+pair when reading the stream of data to be inflated.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if everything goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>By default, the ZLIB header defined in <a href="http://www.ietf.org/rfc/rfc1950.txt">RFC 1950</a> is expected.  If
+you want to read a zlib stream you should specify true for
+expectRfc1950Header.  If you have a deflate stream, you will want to specify
+false. It is only necessary to invoke this initializer explicitly if you
+want to specify false.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_System_Int32_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate(System.Int32)">
+  InitializeInflate(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L253"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the ZlibCodec for inflation, with the specified number of window bits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeInflate(int windowBits)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>windowBits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of window bits to use. If you need to ask what that is,
+then you shouldn't be calling this initializer.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_System_Int32_System_Boolean_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.InitializeInflate(System.Int32,System.Boolean)">
+  InitializeInflate(int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L278"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialize the inflation state with an explicit flag to govern the handling of
+RFC1950 header bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitializeInflate(int windowBits, bool expectRfc1950Header)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>windowBits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of window bits to use. If you need to ask what that is,
+then you shouldn't be calling this initializer.</p>
+</dd>
+    <dt><code>expectRfc1950Header</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>whether to expect an RFC1950 header byte pair when reading
+the stream of data to be inflated.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if everything goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_InitializeInflate_System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If you want to read a zlib stream you should specify true for
+expectRfc1950Header. In this case, the library will expect to find a ZLIB
+header, as defined in <a href="http://www.ietf.org/rfc/rfc1950.txt">RFC
+1950</a>, in the compressed stream.  If you will be reading a DEFLATE or
+GZIP stream, which does not have such a header, you will want to specify
+false.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_ResetDeflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.ResetDeflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_ResetDeflate" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.ResetDeflate">
+  ResetDeflate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L612"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reset a codec for another deflation session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetDeflate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_ResetDeflate_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Call this to reset the deflation state.  For example if a thread is deflating
+non-consecutive blocks, you can call Reset() after the Deflate(Sync) of the first
+block and before the next Deflate(None) of the second block.</p>
+</div>
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_SetDeflateParams_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.SetDeflateParams*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_SetDeflateParams_MonoGame_Framework_Utilities_Deflate_CompressionLevel_MonoGame_Framework_Utilities_Deflate_CompressionStrategy_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.SetDeflateParams(MonoGame.Framework.Utilities.Deflate.CompressionLevel,MonoGame.Framework.Utilities.Deflate.CompressionStrategy)">
+  SetDeflateParams(CompressionLevel, CompressionStrategy)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L626"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the CompressionStrategy and CompressionLevel for a deflation session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SetDeflateParams(CompressionLevel level, CompressionStrategy strategy)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionLevel.html">CompressionLevel</a></dt>
+    <dd><p>the level of compression to use.</p>
+</dd>
+    <dt><code>strategy</code> <a class="xref" href="MonoGame.Framework.Utilities.Deflate.CompressionStrategy.html">CompressionStrategy</a></dt>
+    <dd><p>the strategy to use for compression.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_SetDictionary_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.SetDictionary*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_SetDictionary_System_Byte___" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.SetDictionary(System.Byte[])">
+  SetDictionary(byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L639"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the dictionary to be used for either Inflation or Deflation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SetDictionary(byte[] dictionary)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dictionary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The dictionary bytes to use.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if all goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_SyncInflate_" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.SyncInflate*"></a>
+
+  <h3 id="MonoGame_Framework_Utilities_Deflate_ZlibCodec_SyncInflate" data-uid="MonoGame.Framework.Utilities.Deflate.ZlibCodec.SyncInflate">
+  SyncInflate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L379"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>I don't know what this does!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SyncInflate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Z_OK if everything goes well.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MonoGame/MonoGame/blob/feature/docsmigration/MonoGame.Framework/Utilities/Deflate/ZlibCodec.cs/#L82" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

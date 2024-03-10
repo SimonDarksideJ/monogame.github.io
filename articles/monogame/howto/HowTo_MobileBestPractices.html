@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="How to apply Best Practices for MonoGame Games | MonoGame ">
+
+    <title>How to apply Best Practices for MonoGame Games | MonoGame </title>
+<meta name="description" content="The practices discussed here will help you have the most success possible with your MonoGame game.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/howto/HowTo_MobileBestPractices.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="How to apply Best Practices for MonoGame Games | MonoGame ">
+    <meta name="og:description" content="The practices discussed here will help you have the most success possible with your MonoGame game.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/howto/HowTo_MobileBestPractices.html">
+    <meta name="twitter:title" content="How to apply Best Practices for MonoGame Games | MonoGame ">
+    <meta name="twitter:description" content="The practices discussed here will help you have the most success possible with your MonoGame game.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/HowTo_MobileBestPractices.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="best-practices-for-monogame-games">Best Practices for MonoGame Games</h1>
+
+<p>The practices discussed here will help you have the most success possible with your MonoGame game.</p>
+<p>This overview covers the following topics.</p>
+<ul>
+<li><a href="#polish-your-game">Polish Your Game</a></li>
+<li><a href="#build-intuitive-and-fun-controls">Build Intuitive and Fun Controls</a></li>
+<li><a href="#support-changing-screen-orientation">Support Changing Screen Orientation</a></li>
+<li><a href="#audio-tips">Audio Tips</a></li>
+<li><a href="#respond-correctly-to-back-button-use">Respond Correctly to Back Button Use</a></li>
+<li><a href="#diligently-save-game-state">Diligently Save Game State</a></li>
+</ul>
+<h2 id="polish-your-game">Polish Your Game</h2>
+<p>It is difficult to over emphasize how important polish is for a successful game. The best game ideas and the most stable code do not compare to a game with an extra level of polish. Polish can be defined as putting in the extra effort to make your game look and feel its best. It also is:</p>
+<ul>
+<li>The difference between a basic menu with buttons that just work and the same menu with polish. It may take time to add a small flourish of animation for each button press, sound effect, and styled buttons to a menu, but doing so makes a big difference.</li>
+<li>Smooth menu operation and intuitive controls.</li>
+<li>Smooth transitions among screens, modes, and levels.</li>
+</ul>
+<h2 id="build-intuitive-and-fun-controls">Build Intuitive and Fun Controls</h2>
+<p>Avoid simulating traditional controls such as thumbsticks in MonoGame games. That type of control takes away useful space from the gameplay area and is not platform friendly. Use gestures for user input. Games that are engaging and naturally fun have controls that are natural to the platform.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Touch</td>
+<td>Touch control systems will feel natural to MonoGame users. Design games from the beginning to take full advantage of the touch screen. The touch screen is the primary way users interact with their phone, and users expect to interact with games in the same way.</td>
+</tr>
+<tr>
+<td>Back Button</td>
+<td>Although there are other buttons on the device, only the <strong>Back</strong> button is available to the game. Use the <strong>Back</strong> button for pausing and exiting the game.</td>
+</tr>
+<tr>
+<td>Gestures</td>
+<td>Design your gameplay to use touch gestures in natural ways. For example: allowing players to draw paths on the screen to direct gameplay, or allowing for group selection by stretching an on-screen rectangle around play pieces. Consider allowing navigation by dragging the landscape, and allowing users to rotate by touching and rotating two fingers.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="support-changing-screen-orientation">Support Changing Screen Orientation</h2>
+<p>MonoGame supports three screen orientation views: portrait, landscape left, and landscape right. Portrait view is the default view for applications. The <strong>Start</strong> button is always presented in portrait view. In portrait view, the page is oriented vertically with the steering buttons displayed at the bottom of the phone.</p>
+<p>In both landscape views, the <strong>Status Bar</strong> and <strong>Application Bar</strong> remain on the side of the screen that has the <strong>Power</strong> and <strong>Start</strong> buttons. Landscape left has the <strong>Status Bar</strong> on the left, and landscape right has the <strong>Status Bar</strong> on the right.</p>
+<p>Routinely check current screen orientation and enable gameplay regardless of how the phone is held.</p>
+<p>For more detailed information on screen rotation see <a href="HowTo_AutomaticRotation.html">Automatic Rotation and Scaling</a>.</p>
+<h2 id="audio-tips">Audio Tips</h2>
+<p>Audio can enrich an application and add needed polish. Playing audio should also dependent on user preference. Consider these tips when building audio into your game:</p>
+<ul>
+<li>Play sound effects at an average volume to avoid forcing the player to adjust the devices volume during the game.</li>
+<li>Allow sound effects and background music to be turned on and off by users.</li>
+<li>Play directional sounds that reflect a location of the originating element on the screen.</li>
+</ul>
+<p>For more detailed information on audio see <a href="../whatis/WhatIs_Audio.html">Creating and Playing Sounds</a>.</p>
+<h2 id="respond-correctly-to-back-button-use">Respond Correctly to Back Button Use</h2>
+<p>Games must respond to use of the <strong>Back</strong> button, or &quot;esc&quot; on Windows. MonoGame consistently uses <strong>Back</strong> to move backward through the UI. Games must implement this behavior as follows:</p>
+<ul>
+<li><p>During gameplay, the game can do one of the following:</p>
+<ul>
+<li>Present a contextual pause menu (dialog). Pressing the <strong>Back</strong> button again while in the pause menu closes the menu and resumes the game.</li>
+<li>Navigate the user to the prior menu screen. Pressing the <strong>Back</strong> button again should continue to return the user to the previous menu or page.</li>
+</ul>
+</li>
+<li><p>Outside of gameplay, such as within the game's menu system, pressing <strong>Back</strong> must return to the previous menu or page.</p>
+</li>
+<li><p>At the game’s initial (start) screen, pressing <strong>Back</strong> must exit the game.</p>
+</li>
+</ul>
+<p>It is a good practice in case the player exits the game to automatically save the game state while the pause menu is shown.</p>
+<h2 id="diligently-save-game-state">Diligently Save Game State</h2>
+<p>On MonoGame, a game might be exited at any time. An incoming call may interrupt gameplay, or the user might quit the game by using the <strong>Home</strong> or <strong>Search</strong> buttons to use other applications. We recommend saving game state whenever possible to protect the user's time investment in the game. We also recommend that you make a distinction between the automatically saved game state and the user's explicitly saved games. Automatically saved games should be viewed as a backup in case the game ends unexpectedly, but should not replace the user's ability to save the game at a chosen time or place.</p>
+<p>If you implement automatic game saving, check for an automatically saved state when the game launches. If found, let the user choose to resume the game from the automatically saved state or from a specific manually saved game, if present. During the save process, we also recommend that you display a visual cue warning users not to press the <strong>Search</strong> or <strong>Home</strong> button because the action could cause the game to exit before the save is complete.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="https://monogame.net/articles/getting_started/index.html">Creating a your first MonoGame Game</a>
+<a href="graphics/HowTo_AspectRatio.html">Setting Aspect ratios for your game</a><br>
+<a href="HowTo_SaveData.html">Saving data using MonoGame</a></p>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/HowTo_MobileBestPractices.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

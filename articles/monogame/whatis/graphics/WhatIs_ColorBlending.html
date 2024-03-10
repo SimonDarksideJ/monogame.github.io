@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="What Is Color Blending? | MonoGame ">
+
+    <title>What Is Color Blending? | MonoGame </title>
+<meta name="description" content="The definition for Color Blending for MonoGame!">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/graphics/WhatIs_ColorBlending.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="What Is Color Blending? | MonoGame ">
+    <meta name="og:description" content="The definition for Color Blending for MonoGame!">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/graphics/WhatIs_ColorBlending.html">
+    <meta name="twitter:title" content="What Is Color Blending? | MonoGame ">
+    <meta name="twitter:description" content="The definition for Color Blending for MonoGame!">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/graphics/WhatIs_ColorBlending.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="what-is-color-blending">What Is Color Blending?</h1>
+
+<p>Color blending mixes two colors together to produce a third color.</p>
+<p>The first color is called the source color which is the new color being added. The second color is called the destination color which is the color that already exists (in a render target, for example). Each color has a separate blend factor that determines how much of each color is combined into the final product. Once the source and destination colors have been multiplied by their blend factors, the results are combined according to the specified blend function. The normal blend function is simple addition.</p>
+<p>The blend formula looks like this:</p>
+<pre><code class="lang-text">(source * sourceBlendFactor) blendFunction (destination*destinationBlendFactor)
+</code></pre>
+<p>The source blend factor is specified by the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorSourceBlend">ColorSourceBlend</a> property, and the destination blend factor is specified by the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorDestinationBlend">ColorDestinationBlend</a> property. The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorBlendFunction">ColorBlendFunction</a> property specifies the blend function to use, normally  <a href="/api/Microsoft.Xna.Framework.Graphics.BlendFunction.html">BlendFunction.Add</a>. In that case the formula reduces to this:</p>
+<pre><code class="lang-text">(source * sourceBlendFactor) + (destination * destinationBlendFactor)  
+</code></pre>
+<p>When no blending is done, a source pixel overwrites a destination pixel. When blending, you can create a lot of special effects using the blending properties:</p>
+<ul>
+<li>Blend type</li>
+<li>Blend settings</li>
+</ul>
+<h2 id="alpha-blending">Alpha Blending</h2>
+<p>(<em>source</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.SourceAlpha</a>) + (<em>destination</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.InvSourceAlpha</a>)</p>
+<h2 id="additive-blending">Additive Blending</h2>
+<p>(<em>source</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.One</a>) + (<em>destination</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.One</a>)</p>
+<h2 id="multiplicative-blending">Multiplicative Blending</h2>
+<p>(<em>source</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.Zero</a>) + (<em>destination</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.SourceColor</a>)</p>
+<h2 id="2x-multiplicative-blending">2X Multiplicative Blending</h2>
+<p>(<em>source</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.DestinationColor</a>) + (<em>destination</em> × <a href="/api/Microsoft.Xna.Framework.Graphics.Blend.html">Blend.SourceColor</a>)</p>
+<p><strong>Figure 1.  This picture illustrates four common blend modes. From left to right: Alpha blending, Additive blending, Multiplicative blending, and 2X Multiplicative blending. The top image in each column is the source image and below, it's effect when added to the destination.</strong></p>
+<p><img src="../images/blends.jpg" alt="This picture illustrates four common blend modes"></p>
+<p>Alpha blending uses the alpha channel of the source color to create a transparency effect so that the destination color appears through the source color. For example, if you clear your backbuffer to <a href="/api/Microsoft.Xna.Framework.Color.html">Color.Gray</a>, it will be colored (0.5,0.5,0.5,1). If you then take a white color with a partial alpha value (1,1,1,0.4), the result will be 60 percent of the destination color and 40 percent of the source: (0.5 x 0.6) + (1 x 0.4). The resulting color will be (0.7,0.7,0.7, 1). The alpha values are multiplied as well - (.6 x 1) + .4 gives us an alpha value of 1.</p>
+<p>When drawing a sprite using the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html">SpriteBatch</a> class, choose <a href="/api/Microsoft.Xna.Framework.Graphics.BlendState.html">BlendState.AlphaBlend</a> to configure alpha blending.</p>
+<p>By default, the alpha channel is blended along with the red, green, and blue channels using the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorSourceBlend">ColorSourceBlend</a> and <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_ColorDestinationBlend">ColorDestinationBlend</a> properties. You can choose to customize the blending for just the alpha channel by using the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_AlphaSourceBlend">AlphaSourceBlend</a> and <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.BlendState.html#Microsoft_Xna_Framework_Graphics_BlendState_AlphaDestinationBlend">AlphaDestinationBlend</a> properties.</p>
+<h2 id="see-also">See Also</h2>
+<h3 id="concepts">Concepts</h3>
+<p><a href="WhatIs_Sprite.html">What Is a Sprite?</a><br>
+<a href="WhatIs_3DRendering.html">3D Pipeline Basics</a></p>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/graphics/WhatIs_ColorBlending.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

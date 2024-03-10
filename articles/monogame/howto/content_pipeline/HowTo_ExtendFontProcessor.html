@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="How to Extend the Font Description Processor to Support Additional Characters? | MonoGame ">
+
+    <title>How to Extend the Font Description Processor to Support Additional Characters? | MonoGame </title>
+<meta name="description" content="Describes the process of developing a custom content processor needed to add additional characters to a FontDescription object based on the text that is required by the game.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_ExtendFontProcessor.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="How to Extend the Font Description Processor to Support Additional Characters? | MonoGame ">
+    <meta name="og:description" content="Describes the process of developing a custom content processor needed to add additional characters to a FontDescription object based on the text that is required by the game.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/howto/content_pipeline/HowTo_ExtendFontProcessor.html">
+    <meta name="twitter:title" content="How to Extend the Font Description Processor to Support Additional Characters? | MonoGame ">
+    <meta name="twitter:description" content="Describes the process of developing a custom content processor needed to add additional characters to a FontDescription object based on the text that is required by the game.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_ExtendFontProcessor.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+
+<p>In a font description (.spritefont) file, the <code>&lt;CharacterRegions&gt;</code> area can be used to add additional characters to a font description. This enables you to use a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteFont.html">SpriteFont</a> to render an additional range of characters.</p>
+<p>For some languages, this approach is not ideal. For example, Chinese and Japanese both have many thousands of characters. Adding the full range of characters to <code>&lt;CharacterRegions&gt;</code> dramatically increases the size of the font asset and the time required to build the font asset. A better solution adds individual characters whenever the specific characters are needed. You can create a custom content processor to implement this solution.</p>
+<p>In this example, a file called <em>messages.txt</em> contains all the text rendered by the game. The custom processor adds all the characters contained in the text in this file to a <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription.html">FontDescription</a>. Then it processes the object in the standard way using the base <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.FontDescriptionProcessor.html">FontDescriptionProcessor</a> functionality. All the characters in messages.txt will then be available to the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteFont.html">SpriteFont</a> object at run time.</p>
+<h2 id="using-the-font-description-processor">Using the Font Description Processor</h2>
+<h3 id="to-specify-the-character-regions-and-messages-to-process">To specify the character regions and messages to process</h3>
+<ol>
+<li><p>To add a new Sprite Font called DefaultFont to a game project, go to Solution Explorer, right-click the nested Content node, click <strong>Add</strong>, and then click <strong>New Item</strong>.</p>
+</li>
+<li><p>To add the new sprite font to the game, select the <strong>Sprite Font</strong> template, and then click <strong>Add</strong>.</p>
+</li>
+<li><p>Modify this file to use an existing font and any additional characteristics you prefer.</p>
+<p>For more information, see <a href="../../whatis/Content_Pipeline/CP_SpriteFontSchema.md">Sprite Font XML Schema Reference</a>.</p>
+</li>
+<li><p>Add a file named messages.txt to the game project.</p>
+</li>
+<li><p>Right-click on the game project node in Solution Explorer, click <strong>Add</strong>, and then click <strong>New Item</strong>.</p>
+</li>
+<li><p>Select the <strong>Text File</strong> template, enter <strong>messages.txt</strong> for the file name, and then click <strong>Add</strong> to add the text file to the game.</p>
+</li>
+<li><p>In the new text file, enter any messages that will be printed by the font described in the Sprite Font file.</p>
+<blockquote>
+<p>We will use the method <a href="http://msdn.microsoft.com/en-us/library/ms143369.aspx">File.ReadAllText</a> to read the text in this file. This method requires a carriage return (&quot;\r&quot;) or line feed (&quot;\n&quot;) after the last string, so be sure to follow the last line of text in the file with a carriage return or line feed.</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="to-create-the-new-content-processor-project">To create the new content processor project</h3>
+<p>The Content Pipeline is part of the build process, and it is separate from your game code. Therefore, you need to create a new assembly that contains the code developed in this topic. Creating this new assembly project is the first step in developing a new processor.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>It is assumed that you have an existing game project that you will modify. For the purposes of this example, the game project is called &quot;FontGame.&quot;</p>
+</blockquote>
+<ol>
+<li><p>To add the new processor project to the game solution, go to Solution Explorer, right-click the <strong>Solution</strong> node, click <strong>Add</strong>, and then click <strong>New Project</strong>.</p>
+</li>
+<li><p>In the dialog box, select the template <strong>Content Pipeline Extension Library (4.0)</strong>, enter &quot;FontProcessor&quot; in the <strong>Name</strong> field, and then click <strong>OK</strong>. The new project automatically contains references to the XNA Framework run-time and design-time Content Pipeline assemblies.</p>
+</li>
+</ol>
+<h3 id="to-extend-the-font-processor">To extend the font processor</h3>
+<ol>
+<li><p>Add the following lines of code, after the last <code>using</code> statement:</p>
+<pre><code class="lang-csharp">using System.IO;
+using System.ComponentModel;
+</code></pre>
+</li>
+<li><p>In ContentProcessor1.cs, remove the placeholder code that assigns the processor input (<code>TInput</code>) and output (<code>TOutput</code>) types. It will not be needed.</p>
+</li>
+<li><p>Using attributes, add a processor parameter to the beginning of the class declaration.</p>
+<p>This parameter stores the name of the text file that stores the messages displayed by the game.</p>
+<pre><code class="lang-csharp">[DefaultValue(&quot;messages.txt&quot;)]
+[DisplayName(&quot;Message File&quot;)]
+[Description(&quot;The characters in this file will be automatically added to the font.&quot;)]
+public string MessageFile
+{
+    get { return messageFile; }
+    set { messageFile = value; }
+}
+private string messageFile = &quot;messages.txt&quot;;
+</code></pre>
+</li>
+<li><p>Change the derivation of ContentProcessor1 from <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.html">ContentProcessor</a> to <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.FontDescriptionProcessor.html">FontDescriptionProcessor</a>.</p>
+</li>
+<li><p>Modify the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.FontTextureProcessor.html">Process</a> method override to match the following code:</p>
+<pre><code class="lang-csharp">public override SpriteFontContent Process(FontDescription input, ContentProcessorContext context)
+</code></pre>
+<p>This modification replaces the template parameter and return types with the proper types needed for the extended font processor.</p>
+</li>
+<li><p>Register a Content Pipeline dependency on messages.txt.</p>
+<p>This dependency tells the Content Pipeline that if messages.txt changes, the font must be rebuilt.</p>
+<pre><code class="lang-csharp">string fullPath = Path.GetFullPath(MessageFile);
+
+context.AddDependency(fullPath);
+</code></pre>
+</li>
+<li><p>Read the contents of the file, and add each letter to the input font one by one. Note that the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.FontDescription.html">Characters</a> collection keeps track of duplicates automatically. It is not necessary for the user to make sure that each letter is added only once. The <strong>Characters</strong> collection will contain only one instance of each character, no matter how many times <strong>Add</strong> has been called.</p>
+<pre><code class="lang-csharp">string letters = File.ReadAllText(fullPath, System.Text.Encoding.UTF8);
+
+foreach (char c in letters)
+{
+    input.Characters.Add(c);
+}
+</code></pre>
+<p>In this example, messages.txt has been saved with Unicode UTF-8 encoding, which is why this encoding format is specified in the call to <a href="http://msdn.microsoft.com/en-us/library/ms143369.aspx">File.ReadAllText</a>. The default file encoding format for text files that have been added to a Visual Studio project is Western European (Windows) encoding, corresponding to code page 1252. If your text file uses the default encoding, specify the character encoding as follows:</p>
+<p>string letters = File.ReadAllText( fullPath, System.Text.Encoding.GetEncoding( 1252
+) );</p>
+</li>
+<li><p>Call the existing <strong>Process</strong> method of the base <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Processors.FontDescriptionProcessor.html">FontDescriptionProcessor</a> to build the font with the newly requested characters.</p>
+<pre><code class="lang-csharp">return base.Process(input, context);
+</code></pre>
+</li>
+</ol>
+<h3 id="to-associate-the-custom-font-processor-with-the-sprite-font">To associate the custom font processor with the sprite font</h3>
+<ol>
+<li><p>Compile the solution to build <strong>MyFontProcessor</strong>.</p>
+<p>Now you need to add your custom font processor as an available content processor for the game.</p>
+</li>
+<li><p>From <strong>Solution Explorer</strong>, right-click the <strong>Content</strong> node, and then click <strong>Add Reference</strong>.</p>
+</li>
+<li><p>From the <strong>Projects</strong> tab, select your content extension project (<strong>FontProcessor</strong>) node, and click <strong>OK</strong>.</p>
+<p>To ensure that the processor project is always up to date when the main game is built, you need to create a project dependency.</p>
+</li>
+<li><p>In Solution Explorer, right-click the game project (<strong>FontGame</strong>) node, and then click <strong>Project Dependencies</strong>.</p>
+</li>
+<li><p>Select the check box next to <strong>FontProcessor</strong>, and then click <strong>OK</strong> to add a new dependency so that <strong>FontGame</strong> depends on <strong>FontProcessor</strong>.</p>
+</li>
+<li><p>Change the content processor for the .spritefont file from <strong>Sprite Font Description - XNA Framework</strong> to the newly created processor.</p>
+</li>
+<li><p>Select the .spritefont file, and then in the <strong>Properties</strong> window, choose your custom processor from the drop-down list associated with the <strong>ContentProcessor</strong> field.</p>
+</li>
+</ol>
+<p>When you build the solution, the new processor adds the characters in the messages.txt file to the list of characters available to the <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Graphics.SpriteFont.html">SpriteFont</a>.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>To debug a Content Pipeline importer or processor, add the following line to the processor code to launch the debugger.</p>
+<pre><code class="lang-csharp">System.Diagnostics.Debugger.Launch();
+</code></pre>
+</blockquote>
+<h2 id="see-also">See Also</h2>
+<p><a href="HowTo_Extend_Processor.html">Extending a Standard Content Processor</a>
+<a href="../../whatis/Content_Pipeline/CP_Content_Advanced.md">Adding New Content Types</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/howto/content_pipeline/HowTo_ExtendFontProcessor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

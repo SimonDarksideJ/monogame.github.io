@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="What Is a Profile? | MonoGame ">
+
+    <title>What Is a Profile? | MonoGame </title>
+<meta name="description" content="The definition for a Graphics Profile for MonoGame!">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/WhatIs_Profile.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="What Is a Profile? | MonoGame ">
+    <meta name="og:description" content="The definition for a Graphics Profile for MonoGame!">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/WhatIs_Profile.html">
+    <meta name="twitter:title" content="What Is a Profile? | MonoGame ">
+    <meta name="twitter:description" content="The definition for a Graphics Profile for MonoGame!">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/WhatIs_Profile.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="what-is-a-profile">What Is a Profile?</h1>
+
+<p>A profile is a feature set that is implemented in hardware. The Reach profile implements High Level Shader Language (HLSL) Shader Model 2.0 and the HiDef profile implements HLSL Shader Model 3.0.</p>
+<p>The Reach profile is the only profile available for mobile game development. Nevertheless, this topic provides background information about the purpose of MonoGame profiles and the differences between the Reach and HiDef profiles.</p>
+<p>To simplify multiplatform development, MonoGame creates a profile. A profile is platform independent so you do not need to query for capability bits. The APIs for accessing the features implemented in hardware are consistent across platforms so that game code written for one platform will compile and run on another platform with little or no changes. A game will not run if a hardware device does not meet the profile requirements.</p>
+<p>You can set the profile at design time by using the Monogame property page in Microsoft Visual Studio or you can set a profile at runtime by using the <a class="xref" href="../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html#Microsoft_Xna_Framework_GraphicsDeviceManager_GraphicsProfile">GraphicsProfile</a> property. For more information, see <a href="http://web.archive.org/web/20120102231201/http://blogs.msdn.com/b/shawnhar/archive/2010/07/19/selecting-reach-vs-hidef.aspx">Selecting Reach vs. HiDef</a>.</p>
+<p>There are two profiles, HiDef and Reach: the former for fully featured, high-powered hardware, and the latter for less featured, available-everywhere hardware. Reach is designed to broadly cover all platforms and has a limited set of graphic features and capabilities implemented in hardware. This profile is designed to support the widest variety of devices, more specifically Windows-based computers, mobiles and consoles. Reach dramatically speeds up writing multiplatform games because you can design and debug game code on one platform knowing that it will run on other platforms. Performance is dependent on the hardware available for each platform.</p>
+<p>The HiDef profile is designed for the highest performance and largest available set of graphic features. Use the HiDef profile to target hardware with more enhanced graphic capabilities such as an consoles and Windows-based computers with at least a DirectX 10 GPU. More specifically, the HiDef profile requires a GPU with console-level capabilities such as multiple render targets (MRT), floating-point surface formats, and per-vertex texture fetching. These are optional capabilities in DirectX 9 hardware, but all are required to support HiDef. Since DirectX 9 graphic cards are not required to support these features, it is easier to say that the HiDef profile requires at least a DirectX 10-capable GPU. A HiDef game will run on a DirectX 9 card if it implements the named DirectX 10 features.</p>
+<p>If you try to run a HiDef game on a device such as a mobile device) that does not support HiDef, an exception is thrown at runtime. Additionally, if you try to access HiDef features from a game built for a Reach profile, the runtime throws an exception. To find out which profile your target hardware supports, call <a href="/api/Microsoft.Xna.Framework.Graphics.GraphicsAdapter.html#Microsoft_Xna_Framework_Graphics_GraphicsAdapter_IsProfileSupported_Microsoft_Xna_Framework_Graphics_GraphicsProfile_">GraphicsAdapter.IsProfileSupported Method</a>.</p>
+<h2 id="reach-vs-hidef-comparison">Reach vs. HiDef Comparison</h2>
+<p>Differences between the Reach and HiDef profiles are presented next. For more detail, see the sections following the table.</p>
+<table>
+<thead>
+<tr>
+<th>Profiles</th>
+<th>Reach</th>
+<th>HiDef</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Platforms</td>
+<td>Mobile, Consoles, and any computer running Windows with a DirectX 9 GPU that supports at least Shader Model 2.0.</td>
+<td>Consoles, and any Windows-based PC with at least a DirectX 10 (or equivalent) GPU. See the paragraph above for more detail.</td>
+<td></td>
+</tr>
+<tr>
+<td>Shader Model</td>
+<td>2.0</td>
+<td>3.0</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum texture size</td>
+<td>2,048</td>
+<td>4,096</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum cube map size</td>
+<td>512</td>
+<td>4,096</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum volume texture size</td>
+<td>Volume textures are not supported.</td>
+<td>256</td>
+<td></td>
+</tr>
+<tr>
+<td>Nonpower of two textures</td>
+<td>Yes with limitations: no wrap addressing mode, no mipmaps, no DXT compression on nonpower of two textures.</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Nonpower of two cube maps</td>
+<td>No</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Nonpower of two volume textures</td>
+<td>Volume textures are not supported.</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum number of primitives per draw call</td>
+<td>65,535</td>
+<td>1,048,575</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum number of vertex streams</td>
+<td>16</td>
+<td>16</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum vertex stream stride</td>
+<td>25</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td>Index buffer formats</td>
+<td>16 bit</td>
+<td>16 and 32 bit</td>
+<td></td>
+</tr>
+<tr>
+<td>Vertex element formats</td>
+<td>Color, Byte4, Single, Vector2, Vector3, Vector4, Short2, Short4, NormalizedShort2, NormalizedShort4</td>
+<td>All of the Reach vertex element formats, as well as HalfVector2 and HalfVector4.</td>
+<td></td>
+</tr>
+<tr>
+<td>Texture formats</td>
+<td>Color, Bgr565, Bgra5551, Bgra4444, NormalizedByte2, NormalizedByte4, Dxt1, Dxt3, Dxt5</td>
+<td>All of the Reach texture formats, as well as Alpha8, Rg32, Rgba64, Rgba1010102, Single, Vector2, Vector4, HalfSingle, HalfVector2, HalfVector4. Floating point texture formats do not support filtering.</td>
+<td></td>
+</tr>
+<tr>
+<td>Vertex texture formats</td>
+<td>Vertex texturing is not supported.</td>
+<td>Single, Vector2, Vector4, HalfSingle, HalfVector2, HalfVector4</td>
+<td></td>
+</tr>
+<tr>
+<td>Render target formats</td>
+<td>Call <strong>QueryRenderTargetFormat</strong> to find out what is supported.</td>
+<td>Call <strong>QueryRenderTargetFormat</strong> to find out what is supported.</td>
+<td></td>
+</tr>
+<tr>
+<td>Multiple render targets</td>
+<td>No</td>
+<td>Up to four. All must have the same bit depth. Alpha blending and independent write masks per render target are supported.</td>
+<td></td>
+</tr>
+<tr>
+<td>Occlusion queries</td>
+<td>No</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Separate alpha blend</td>
+<td>No</td>
+<td>Yes</td>
+<td>S</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shader-model">Shader Model</h2>
+<p>The Reach profile supports HLSL Shader Model 2.0 and the configurable effects for all platforms. Some mobile platforms do not support custom shaders.</p>
+<p>The HiDef profile supports HLSL Shader Model 3.0. Consoles and desktop also support custom shader extensions such as vertex fetching (vfetch).</p>
+<h2 id="textures">Textures</h2>
+<p>Texture size limitations are listed in the table comparing the two profiles. These numbers are the maximum width or height of a texture that can be consumed by the profile. HiDef supports larger textures and volume textures.</p>
+<p>HiDef supports the following features without limitations; Reach supports the following features only for power-of-two textures:</p>
+<ul>
+<li>The <strong>wrap</strong> texture addressing mode</li>
+<li>Mipmaps</li>
+<li>DXT compression</li>
+</ul>
+<h2 id="formats">Formats</h2>
+<p>There are a wide variety of render target formats. Call <a href="/api/Microsoft.Xna.Framework.Graphics.GraphicsAdapter.html#Microsoft_Xna_Framework_Graphics_GraphicsAdapter_QueryRenderTargetFormat_Microsoft_Xna_Framework_Graphics_GraphicsProfile_Microsoft_Xna_Framework_Graphics_SurfaceFormat_Microsoft_Xna_Framework_Graphics_DepthFormat_System_Int32_Microsoft_Xna_Framework_Graphics_SurfaceFormat__Microsoft_Xna_Framework_Graphics_DepthFormat__System_Int32__">GraphicsAdapter.QueryRenderTargetFormat Method</a> to find out what is supported for your hardware. The runtime also has a built-in fallback mechanism if the format you request is unavailable. The format parameters used when creating render targets and back buffers are now named &quot;preferredFormat&quot; instead of &quot;format.&quot; The runtime will try to create a resource with the exact format passed in, and will fallback to the closest possible match (based on similar bit depth, number of channels, and so on) if that format is unavailable. For example, if you run a Reach game on a Windows Phone device using a 16-bit render target format and then run the game on some consoles that do not support 16-bit render targets, the runtime will switch the render-target format to a <a class="xref" href="../../../api/Microsoft.Xna.Framework.Color.html">Color</a> format.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>XNA introduced the Reach profile for Consoles, Windows, and mobile, and the HiDef profile for Consoles and Windows devices. The HiDef profile includes a strict superset of the functionality in the Reach profile, which means that HiDef implements all Reach functionality and more. If you run a Reach game on a HiDef platform, the framework will enforce Reach rules. Use this to your advantage when you develop a multiplatform game. You can design and debug on the most powerful hardware with the knowledge that the game will compile and run on the other less powerful platforms when you are ready to test your game. The runtime will throw an exception if you try to set the profile to HiDef on hardware that does not support HiDef, or if you are running a Reach profile game that tries to access HiDef features.</p>
+<h2 id="cited-works">Cited Works</h2>
+<p>&quot;Selecting Reach vs. HiDef.&quot; Shawn Hargreaves Blog. July 2010. <a href="http://web.archive.org/web/20120102231201/http://blogs.msdn.com/b/shawnhar/archive/2010/07/19/selecting-reach-vs-hidef.aspx">http://web.archive.org/web/20120102231201/http://blogs.msdn.com/b/shawnhar/archive/2010/07/19/selecting-reach-vs-hidef.aspx</a> (Last accessed August 2, 2010)</p>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/WhatIs_Profile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

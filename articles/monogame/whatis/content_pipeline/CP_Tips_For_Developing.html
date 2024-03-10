@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="What are Tips for Developing Custom Importers and Processors? | MonoGame ">
+
+    <title>What are Tips for Developing Custom Importers and Processors? | MonoGame </title>
+<meta name="description" content="The information provided here should help when you develop Content Pipeline extensions.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_Tips_For_Developing.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="What are Tips for Developing Custom Importers and Processors? | MonoGame ">
+    <meta name="og:description" content="The information provided here should help when you develop Content Pipeline extensions.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/content_pipeline/CP_Tips_For_Developing.html">
+    <meta name="twitter:title" content="What are Tips for Developing Custom Importers and Processors? | MonoGame ">
+    <meta name="twitter:description" content="The information provided here should help when you develop Content Pipeline extensions.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_Tips_For_Developing.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tips-for-developing-custom-importers-and-processors">Tips for Developing Custom Importers and Processors</h1>
+
+<p>The information provided should help when you develop Content Pipeline extensions.</p>
+<h2 id="importing-basic-graphics-objects">Importing Basic Graphics Objects</h2>
+<p>The following information should help you import basic graphics objects.</p>
+<ul>
+<li><p>Make your coordinate system right-handed.</p>
+<p>From the standpoint of the observer, the positive x-axis points to the right, the positive y-axis points up, and the positive z-axis points toward you (out from the screen).</p>
+</li>
+<li><p>Create triangles that have a clockwise winding order.</p>
+<p>The default culling mode removes triangles that have a counterclockwise winding order.</p>
+</li>
+<li><p>Call <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper.html#Microsoft_Xna_Framework_Content_Pipeline_Graphics_MeshHelper_SwapWindingOrder_Microsoft_Xna_Framework_Content_Pipeline_Graphics_MeshContent_">MeshHelper.SwapWindingOrder</a> to change the winding order of a triangle.</p>
+</li>
+<li><p>Set the scale for graphical objects to 1 unit = 1 meter.</p>
+</li>
+<li><p>Call <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper.html#Microsoft_Xna_Framework_Content_Pipeline_Graphics_MeshHelper_TransformScene_Microsoft_Xna_Framework_Content_Pipeline_Graphics_NodeContent_Microsoft_Xna_Framework_Matrix_">MeshHelper.TransformScene</a> to change the scale of an object.</p>
+</li>
+</ul>
+<h2 id="taking-advantage-of-content-pipeline-mesh-classes">Taking Advantage of Content Pipeline Mesh Classes</h2>
+<p>There are several properties and classes that are particularly useful when using <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.html">NodeContent</a> objects to represent a 3D scene or mesh.</p>
+<ul>
+<li><p>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.html#Microsoft_Xna_Framework_Content_Pipeline_Graphics_NodeContent_Children">NodeContent.Children</a> property represents hierarchical information.</p>
+</li>
+<li><p>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.html#Microsoft_Xna_Framework_Content_Pipeline_Graphics_NodeContent_Transform">NodeContent.Transform</a> property contains the local transform of the 3D object.</p>
+</li>
+<li><p>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshContent.html">Pipeline.Graphics.MeshContent</a> class (a subclass of <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.NodeContent.html">Pipeline.Graphics.NodeContent</a>) is used to represent meshes.</p>
+</li>
+</ul>
+<p>The Content Pipeline provides two classes that make it easier to create and work with <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshContent.html">Pipeline.Graphics.MeshContent</a> objects.</p>
+<ul>
+<li><p>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshBuilder.html">Pipeline.Graphics.MeshBuilder</a> class creates new <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshContent.html">Pipeline.Graphics.MeshContent</a> objects, when necessary.</p>
+</li>
+<li><p>The <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshHelper.html">Pipeline.Graphics.MeshHelper</a> class implements useful operations on existing <a class="xref" href="../../../../api/Microsoft.Xna.Framework.Content.Pipeline.Graphics.MeshContent.html">Pipeline.Graphics.MeshContent</a> objects.</p>
+</li>
+</ul>
+<h2 id="debugging-custom-importers-and-processors">Debugging Custom Importers and Processors</h2>
+<p>In a manner similar to projects that create a DLL, Content Pipeline extension projects cannot be directly run or debugged. After completing a few simple steps, however, you can debug any custom importer and processor used by your game. The following procedure details these steps.</p>
+<blockquote>
+<p><strong>Tip</strong></p>
+<p>The Start External program control (located on the Debug page of a project's property pages) is unavailable in the Microsoft Visual C# Express Edition development environment.</p>
+</blockquote>
+<h3 id="to-debug-a-custom-importer-or-processor">To debug a custom importer or processor</h3>
+<ol>
+<li><p>Load an existing MonoGame Content Pipeline extension project (later referred to as ProjCP) containing the custom importers or processors to be debugged.</p>
+</li>
+<li><p>Create a separate test game project (later referred to as &quot;ProjG&quot;).</p>
+</li>
+<li><p>In the <strong>References</strong> node of ProjG's nested content project, add a project-to-project reference to ProjCP.</p>
+</li>
+<li><p>Add one or two appropriate items of test content to ProjG, and ensure they are set to use the importer or processor (in ProjCP) you wish to debug.</p>
+</li>
+<li><p>Open the property pages for ProjCP.</p>
+</li>
+<li><p>Click the <strong>Debug</strong> tab, and then select <strong>Start external program</strong>.</p>
+</li>
+<li><p>Enter the path to the local version of MSBuild.exe.</p>
+<p>For example, C:\WINDOWS\Microsoft.NET\Framework\v3.5\msbuild.exe.</p>
+</li>
+<li><p>For the <strong>Command line arguments</strong> control, enter the path to ProjG's nested content project.</p>
+<p>If this path contains spaces, quote the entire path.</p>
+</li>
+<li><p>Set any required breakpoints in the importer or processor code in ProjCP.</p>
+</li>
+<li><p>Build and debug ProjCP.</p>
+</li>
+</ol>
+<p>Debugging ProjCP causes MSBuild to compile your test content while running under the debugger. This enables you to hit your breakpoints in ProjCP and to step through your code.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="CP_Overview.html">What Is Content?</a></li>
+<li><a href="CP_Architecture.html">What is the Content Pipeline?</a></li>
+<li><a href="../../howto/Content_Pipeline/HowTo_Extend_Processor.md">Extending a Standard Content Processor</a></li>
+<li><a href="CP_Content_Advanced.html">Adding New Content Types</a></li>
+</ul>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/content_pipeline/CP_Tips_For_Developing.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

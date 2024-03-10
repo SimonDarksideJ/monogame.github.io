@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="What is the Game Loop | MonoGame ">
+
+    <title>What is the Game Loop | MonoGame </title>
+<meta name="description" content="The MonoGame Framework Game class implements a game loop, which provides not only the window which displays your game, but also provides overloadable methods that your game implements to facilitate communication between your game and the operating system. This topic provides an overview of the basic functionality provided by the game loop.">
+
+    <meta name="og:url" content="https://monogame.net/articles/monogame/whatis/WhatIs_TheGameLoop.html"><meta name="og:type" content="website">
+    <meta name="og:title" content="What is the Game Loop | MonoGame ">
+    <meta name="og:description" content="The MonoGame Framework Game class implements a game loop, which provides not only the window which displays your game, but also provides overloadable methods that your game implements to facilitate communication between your game and the operating system. This topic provides an overview of the basic functionality provided by the game loop.">
+    <meta name="og:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="monogame.net">
+    <meta property="twitter:url" content="https://monogame.net/articles/monogame/whatis/WhatIs_TheGameLoop.html">
+    <meta name="twitter:title" content="What is the Game Loop | MonoGame ">
+    <meta name="twitter:description" content="The MonoGame Framework Game class implements a game loop, which provides not only the window which displays your game, but also provides overloadable methods that your game implements to facilitate communication between your game and the operating system. This topic provides an overview of the basic functionality provided by the game loop.">
+    <meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png">
+
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../../../public/docfx.min.css">
+    <link rel="stylesheet" href="../../../public/main.css">
+    <meta name="docfx:navrel" content="../../../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+
+
+
+
+<meta name="docfx:docurl" content="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/WhatIs_TheGameLoop.md/#L1">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">    
+
+  </head>
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+  <script>
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+        <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+            <div class="container-xxl mx-auto flex-nowrap">
+                <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="mg-logo svg" style="height: 36px; display: inline-block;" alt="">
+            
+                </a>
+                <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-three-dots"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navpanel">
+                <div id="navbar">
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="initializing-a-game">Initializing a Game</h1>
+
+<p>The MonoGame Framework <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> class implements a game loop, which provides not only the window which displays your game, but also provides overloadable methods that your game implements to facilitate communication between your game and the operating system. This topic provides an overview of the basic functionality provided by the game loop.</p>
+<ul>
+<li><a href="#making-a-new-game">Making a New Game</a></li>
+<li><a href="#game-loop-timing">Game Loop Timing</a></li>
+<li><a href="#fixed-step-game-loops">Game Components</a></li>
+<li><a href="#game-services">Game Services</a></li>
+<li><a href="#game-components-consuming-game-services">Game Components Consuming Game Services</a></li>
+</ul>
+<h2 id="making-a-new-game">Making a New Game</h2>
+<p>The first step in creating a new game is to make a class that derives from <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a>. The new class needs to override the following methods:</p>
+<ul>
+<li>Initialize - which is the method is responsible for game setup before the first frame of the game.</li>
+<li>Update - which is the method is responsible for handling game logic.</li>
+<li>Draw - which is the method responsible for drawing content to the screen.</li>
+</ul>
+<h2 id="game-loop-timing">Game Loop Timing</h2>
+<p>A <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> is either fixed step or variable step, defaulting to fixed step. The type of step determines how often <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Update</a> will be called and affects how you need to represent time-based procedures such as movement and animation.</p>
+<h2 id="fixed-step-game-loops">Fixed-Step Game Loops</h2>
+<p>A fixed-step <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> tries to call its <strong>Update</strong> method on the fixed interval specified in <strong>TargetElapsedTime</strong>. Setting <strong>Game.IsFixedTimeStep</strong> to <strong>true</strong> causes a <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> to use a fixed-step game loop. A new MonoGame project uses a fixed-step game loop with a default <strong>TargetElapsedTime</strong> of 1/60th of a second.</p>
+<p>In a fixed-step game loop, <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> calls <strong>Update</strong> once the <strong>TargetElapsedTime</strong> has elapsed. After <strong>Update</strong> is called, if it is not time to call <strong>Update</strong> again, the <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> calls <strong>Draw</strong>. After <strong>Draw</strong> is called, if it is not time to call <strong>Update</strong> again, <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> idles until it is time to call <strong>UpdateS</strong>.</p>
+<p>If <strong>Update</strong> takes too long to process, <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> sets <strong>IsRunningSlowly</strong> to <strong>true</strong> and calls <strong>Update</strong> again, without calling <strong>Draw</strong> in between. When an update runs longer than the <strong>TargetElapsedTime</strong>, <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> responds by calling <strong>Update</strong> extra times and dropping the frames associated with those updates to catch up. This ensures that <strong>Update</strong> will have been called the expected number of times when the game loop catches up from a slowdown. You can check the value of <strong>IsRunningSlowly</strong> in your <strong>Update</strong> if you want to detect dropped frames and shorten your <strong>Update</strong> processing to compensate. You can reset the elapsed times by calling <strong>ResetElapsedTime</strong>.</p>
+<p>When your game pauses in the debugger, <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> will not make extra calls to <strong>Update</strong> when the game resumes.</p>
+<h3 id="variable-step-game-loops">Variable-Step Game Loops</h3>
+<p>A variable-step game calls its <strong>Update</strong> and <strong>Draw</strong> methods in a continuous loop without regard to the <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">TargetElapsedTime</a>. Setting <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game.IsFixedTimeStep</a> to <strong>false</strong> causes a <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> to use a variable-step game loop.</p>
+<h3 id="animation-and-timing">Animation and Timing</h3>
+<p>For operations that require precise timing, such as animation, the type of game loop your game uses (fixed-step or variable-step) is important.</p>
+<p>Using a fixed step allows game logic to use the <strong>TargetElapsedTime</strong> as its basic unit of time and assume that <strong>Update</strong> will be called at that interval. Using a variable step requires the game logic and animation code to be based on <strong>ElapsedGameTime</strong> to ensure smooth gameplay. Because the <strong>Update</strong> method is called immediately after the previous frame is drawn, the time between calls to <strong>Update</strong> can vary. Without taking the time between calls into account, the game would seem to speed up and slow down. The time elapsed between calls to the <strong>Update</strong> method is available in the <strong>Update</strong> method's <em>gameTime</em> parameter. You can reset the elapsed times by calling <strong>ResetElapsedTime</strong>.</p>
+<p>When using a variable-step game loop, you should express rates—such as the distance a sprite moves—in game units per millisecond (ms). The amount a sprite moves in any given update can then be calculated as the rate of the sprite times the elapsed time. Using this approach to calculate the distance the sprite moved ensures that the sprite will move consistently if the speed of the game or computer varies.</p>
+<h2 id="game-components">Game Components</h2>
+<p>Game components provide a modular way of adding functionality to a game. You create a game component by deriving the new component either from the <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameComponent.html">GameComponent</a> class, or, if the component loads and draws graphics content, from the <a class="xref" href="../../../api/Microsoft.Xna.Framework.DrawableGameComponent.html">DrawableGameComponent</a> class. You then add game logic and rendering code to the game component by overriding <strong>GameComponent.Update</strong>, <strong>DrawableGameComponent.Draw</strong> and <strong>GameComponent.Initialize</strong>. A game component is registered with a game by passing the component to <strong>Game.Components.Add</strong>. A registered component will have its initialize, update, and draw methods called from the <strong>Game.Initialize</strong>, <strong>Game.Update</strong>, and <strong>Game.Draw</strong> methods, respectively.</p>
+<h2 id="game-services">Game Services</h2>
+<p>Game services are a mechanism for maintaining loose coupling between objects that need to interact with each other. Services work through a mediator—in this case, <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html#Microsoft_Xna_Framework_Game_Services">Game.Services</a>. Service providers register with <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html#Microsoft_Xna_Framework_Game_Services">Game.Services</a>, and service consumers request services from <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html#Microsoft_Xna_Framework_Game_Services">Game.Services</a>. This arrangement allows an object that requires a service to request the service without knowing the name of the service provider.</p>
+<p>Game services are defined by an interface. A class specifies the services it provides by implementing interfaces and registering the services with <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html#Microsoft_Xna_Framework_Game_Services">Game.Services</a>. A service is registered by calling <strong>Game.Services.AddService</strong> specifying the type of service being implemented and a reference to the object providing the service. For example, to register an object that provides a service represented by the interface IMyService, you would use the following code.</p>
+<pre><code class="lang-csharp">    Services.AddService( typeof( IMyService ), myobject );
+</code></pre>
+<p>Once a service is registered, the object providing the service can be retrieved by <strong>Game.Services.GetService</strong> and specifying the desired service. For example, to retrieve <a class="xref" href="../../../api/Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService.html">IGraphicsDeviceService</a>, you would use the following code.</p>
+<pre><code class="lang-csharp">    IGraphicsDeviceService graphicsservice = (IGraphicsDeviceService)Services.GetService( typeof(IGraphicsDeviceService) );
+</code></pre>
+<h2 id="game-components-consuming-game-services">Game Components Consuming Game Services</h2>
+<p>The <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameComponent.html">GameComponent</a> class provides the <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameComponent.html#Microsoft_Xna_Framework_GameComponent_Game">Game</a> property so a <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameComponent.html">GameComponent</a> can determine what <a class="xref" href="../../../api/Microsoft.Xna.Framework.Game.html">Game</a> it is attached to. With the <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameComponent.html#Microsoft_Xna_Framework_GameComponent_Game">Game</a> property, a <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameComponent.html">GameComponent</a> can call <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameServiceContainer.html">Game.Services.GetService</a> to find a provider of a particular service. For example, a <a class="xref" href="../../../api/Microsoft.Xna.Framework.GameComponent.html">GameComponent</a> would find the <a class="xref" href="../../../api/Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService.html">IGraphicsDeviceService</a> provider by using the following code.</p>
+<pre><code class="lang-csharp">    IGraphicsDeviceService graphicsservice = (IGraphicsDeviceService)Game.Services.GetService( typeof( IGraphicsDeviceService ) );
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<p><a href="../howto/graphics/HowTo_FullScreen.html">Creating a Full-Screen Game</a></p>
+<p>Demonstrates how to start a game in full-screen mode.</p>
+<p><a href="../howto/HowTo_PlayerResize.html">Resizing a Game</a></p>
+<p>Demonstrates how to resize an active game window.</p>
+<p><a href="../howto/graphics/HowTo_AspectRatio.html">Restricting Aspect Ratio on a Graphics Device</a></p>
+<p>Demonstrates how to create a custom <a class="xref" href="../../../api/Microsoft.Xna.Framework.GraphicsDeviceManager.html">GraphicsDeviceManager</a> that only selects graphics devices with widescreen aspect ratios in full-screen mode.</p>
+<p><a href="../howto/HowTo_AutomaticRotation.html">Automatic Rotation and Scaling</a></p>
+<p>Describes rotation and scaling in the MonoGame Framework on Mobile Platforms.</p>
+<hr>
+<p>© 2012 Microsoft Corporation. All rights reserved.</p>
+<p>© 2023 The MonoGame Foundation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/SimonDarksideJ/monogame.github.io/blob/feature/docsmigration/documentation/articles/monogame/whatis/WhatIs_TheGameLoop.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+      <section class="container-xxl">
+          <footer class="border-top my-5 pt-5">
+              <div class="row justify-content-between">
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>MonoGame</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/articles/" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/api/" class="p-0">API Reference</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/showcase/" class="p-0">Showcase</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/about/" class="p-0">About</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Get Involved</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md" class="p-0">Documentation</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                                  Issues</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h5>Public Relations</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2">
+                              <a href="/blog/" class="p-0">Blog</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="https://community.monogame.net" class="p-0">Community</a>
+                          </li>
+                          <li class="nav-item mb-2">
+                              <a href="/presskit/" class="p-0">Press Kit</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-6 col-lg-3 mb-3">
+                      <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a>
+                  </h3></div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+                  <div>
+                      Copyright © 2009-2024 MonoGame Foundation, Inc. <br> Designed with
+                      <span class="text-danger">❤</span>
+                      by
+                      <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+                  </div>
+                  <div class="d-flex justify-content-between gap-3">
+                      <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                          <i class="bi bi-github"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                          <i class="bi bi-p-circle-fill"></i>
+                      </a>                    
+                      <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                          <i class="bi bi-discord"></i>
+                      </a>    
+                      <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                          <i class="bi bi-youtube"></i>
+                      </a>  
+                      <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                          <i class="bi bi-reddit"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                          <i class="bi bi-facebook"></i>
+                      </a>
+                      <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                          <i class="bi bi-twitter"></i>
+                      </a>     
+                      <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="MonoGame Blog">
+                          <i class="bi bi-rss-fill"></i>
+                      </a>                                                   
+                  </div>
+              </div>
+          </footer>
+      </section>
+  </body>
+</html>

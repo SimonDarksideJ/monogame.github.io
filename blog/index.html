@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="title" content="Blog | MonoGame"/>
+<meta name="description" content="One framework for creating powerful cross-platform games"/>
+
+
+<title>Blog | MonoGame</title>
+
+
+<meta name="og:url" content="https://monogame.net/blog/"/>
+<meta name="og:type" content="website"/>
+<meta name="og:title" content="Blog | MonoGame"/>
+<meta name="og:description" content="One framework for creating powerful cross-platform games"/>
+<meta name="og:image" content="https://monogame.net/images/social_embed_image.png"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:domain" content="https://monogame.net"/>
+<meta property="twitter:url" content="https://monogame.net/blog/"/>
+<meta name="twitter:title" content="Blog | MonoGame"/>
+<meta name="twitter:description" content="One framework for creating powerful cross-platform games"/>
+<meta name="twitter:image" content="https://monogame.net/images/social_embed_image.png"/>
+
+
+<link rel="icon" href="https://monogame.net/favicon.png"/>
+
+
+<link rel="alternate" type="application/atom+xml" title="MonoGame Blog"  href="/blog/feed.xml" />
+
+
+<link rel="stylesheet" href="/bundle.css"/>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-38431038-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-38431038-1');
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"/>
+<script type="text/javascript" src="/js/themeSwitcher.js"></script>
+
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body shadow sticky-md-top" aria-label="Navigation Bar">
+    <div class="container-xl">
+        <a class="navbar-brand" href="/" title="Return to Home">
+            <img class="mg-logo svg" style="height: 36px; display: inline-block;" alt="MonoGame Logo">
+        </a>
+        <button
+            class="btn btn-lg d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#topNavBar"
+            aria-controls="topNavBar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/documentation/">
+                            Documentation
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/community/">
+                            Community
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/showcase/">
+                            Showcase
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/blog/">
+                            Blog
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/bounties/">
+                            Bounties
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about/">
+                            About
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link " href="/donate/">
+                            Donate
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="dropdown bd-mode-toggle">
+    <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)">
+        <i id="active-theme-icon" class="bi bi-circle-half"></i>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                <i class="bi bi-sun"></i>&nbsp;Light
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                <i class="bi bi-moon"></i>&nbsp;Dark
+            </button>
+        </li>
+        <li>
+            <button
+                type="button"
+                class="dropdown-item d-flex align-items-center active"
+                data-bs-theme-value="auto"
+                aria-pressed="true">
+                <i class="bi bi-circle-half"></i>&nbsp;Auto
+            </button>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+        
+    <section class="container-xxl my-5">
+        <h1 id="monogame-blog" class="fw-bold"><a href="#monogame-blog">MonoGame Blog</a></h1>
+    </section>
+    
+    <section class="container-xxl my-5">
+        <h3 class="fw-bold">Categories</h3>
+        <p>Select a category below to filter the results</p>
+        <div class="d-flex flex-row flex-wrap gap-3 mb-1">
+            
+                <a href="/blog/"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                           active">
+                    all
+                </a>
+            
+                <a href="/blog/foundation"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    foundation
+                </a>
+            
+                <a href="/blog/website"
+                   type="button"
+                   class="btn
+                          mg-outline-button
+                          d-flex
+                          justify-content-center
+                          text-capitalize
+                          fw-bold
+                          ">
+                    website
+                </a>
+            
+        </div>
+    </section>
+
+
+    <section class="container-xxl mb-5">
+        <div class="mg-item-grid">
+            
+                
+                    <a class="mg-no-link" href="/blog/2024-01-10-meeting/">
+                        <div class="mg-card mg-box-shadow h-100 d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/blog/cover/monogame_foundation.png');"
+                                 href="/blog/2024-01-10-meeting/"></div>
+                            <div class="mg-card-body">
+                                <small>
+                                    MonoGame Foundation -- Jan 10, 2024
+                                </small>
+                                <div class="mg-card-title">Board Meeting Minutes</div>
+                                <div class="mg-card-excerpt mb-3" title="The kick-off for 2024 has spurred new energy into the team, with a renewed focus on making the most use of the funds we have been donated by all parties involved, ensuring that spends are both sustainable and responsible.  Acknowledging all the hard work thus far, the team are reassured by the community feedback on the progress so far and the demand to deliver more.">
+                                    <p>The kick-off for 2024 has spurred new energy into the team, with a renewed focus on making the most use of the funds we have been donated by all parties involved, ensuring that spends are both sustainable and responsible.  Acknowledging all the hard work thus far, the team are reassured by the community feedback on the progress so far and the demand to deliver more.</p>
+                                </div>
+                                Click to read more...
+                            </div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link" href="/blog/2023-12-29-website-refresh/">
+                        <div class="mg-card mg-box-shadow h-100 d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/blog/cover/monogame_foundation.png');"
+                                 href="/blog/2023-12-29-website-refresh/"></div>
+                            <div class="mg-card-body">
+                                <small>
+                                    Christopher Whitley (Aristurtle) -- Dec 29, 2023
+                                </small>
+                                <div class="mg-card-title">Website Refresh</div>
+                                <div class="mg-card-excerpt mb-3" title="Several new changes have been made to the website in this proof of concept by changing to 11ty to allow for a more proper website design than the restrictions in place when using DocFX.  In this post, I&#39;d like to go over these changes with you and, hopefully, get some feedback from community members">
+                                    <p>Several new changes have been made to the website in this proof of concept by changing to 11ty to allow for a more proper website design than the restrictions in place when using DocFX.  In this post, I&#39;d like to go over these changes with you and, hopefully, get some feedback from community members</p>
+                                </div>
+                                Click to read more...
+                            </div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link" href="/blog/2023-11-22-meeting/">
+                        <div class="mg-card mg-box-shadow h-100 d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/blog/cover/monogame_foundation.png');"
+                                 href="/blog/2023-11-22-meeting/"></div>
+                            <div class="mg-card-body">
+                                <small>
+                                    MonoGame Foundation -- Nov 29, 2023
+                                </small>
+                                <div class="mg-card-title">Board Meeting Minutes</div>
+                                <div class="mg-card-excerpt mb-3" title="This has been a heavy week for discussions, debates and some real outcomes that will directly benefit all MonoGame Developers.  The foundation has really listened to the community and driven the key priorities needed to move MonoGame forward in the immediate future, with definitive roadmap for ongoing development">
+                                    <p>This has been a heavy week for discussions, debates and some real outcomes that will directly benefit all MonoGame Developers.  The foundation has really listened to the community and driven the key priorities needed to move MonoGame forward in the immediate future, with definitive roadmap for ongoing development</p>
+                                </div>
+                                Click to read more...
+                            </div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link" href="/blog/2023-11-15-meeting/">
+                        <div class="mg-card mg-box-shadow h-100 d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/blog/cover/monogame_foundation.png');"
+                                 href="/blog/2023-11-15-meeting/"></div>
+                            <div class="mg-card-body">
+                                <small>
+                                    MonoGame Foundation -- Nov 16, 2023
+                                </small>
+                                <div class="mg-card-title">Board Meeting Minutes</div>
+                                <div class="mg-card-excerpt mb-3" title="The second MonoGame Foundation meeting was a great success, getting accounts, funding and the general organization structure defined, as well as outlining the immediate plans for MonoGame improvement.">
+                                    <p>The second MonoGame Foundation meeting was a great success, getting accounts, funding and the general organization structure defined, as well as outlining the immediate plans for MonoGame improvement.</p>
+                                </div>
+                                Click to read more...
+                            </div>
+                        </div>
+                    </a>
+                
+            
+                
+                    <a class="mg-no-link" href="/blog/2023-10-24-meeting/">
+                        <div class="mg-card mg-box-shadow h-100 d-flex flex-column">
+                            <div class="mg-card-thumbnail"
+                                 style="background-image: url('/images/blog/cover/monogame_foundation.png');"
+                                 href="/blog/2023-10-24-meeting/"></div>
+                            <div class="mg-card-body">
+                                <small>
+                                    MonoGame Foundation -- Oct 24, 2023
+                                </small>
+                                <div class="mg-card-title">Board Meeting Minutes</div>
+                                <div class="mg-card-excerpt mb-3" title="The first official MonoGame Foundation meeting was a great success, setting out the core principles under which the foundation will be run.">
+                                    <p>The first official MonoGame Foundation meeting was a great success, setting out the core principles under which the foundation will be run.</p>
+                                </div>
+                                Click to read more...
+                            </div>
+                        </div>
+                    </a>
+                
+            
+        </div>
+    </section>
+
+        <section class="container-xxl">
+    <footer class="border-top my-5 pt-5">
+        <div class="row justify-content-between">
+            <div class="col-6 col-lg-3 mb-3">
+                <h5>MonoGame</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="/articles/" class="p-0">Documentation</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/api/" class="p-0">API Reference</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/showcase/" class="p-0">Showcase</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/about/" class="p-0">About</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/foundation/" class="p-0">Foundation Bylaws</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3 mb-3">
+                <h5>Get Involved</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="https://github.com/MonoGame/MonoGame" class="p-0">Source Code</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a
+                            href="https://github.com/MonoGame/monogame.github.io/blob/main/CONTRIBUTING.md"
+                            class="p-0">Documentation</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="https://github.com/MonoGame/MonoGame/issues/new/choose" class="p-0">Report
+                            Issues</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="https://www.patreon.com/MonoGame" class="p-0">Patreon</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3 mb-3">
+                <h5>Public Relations</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="/blog/" class="p-0">Blog</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="https://community.monogame.net" class="p-0">Community</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="/presskit/" class="p-0">Press Kit</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3 mb-3">
+                <h3 class="fw-bold"><a href="/about/#contact-us">Contact Us</a></h1>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 py-4 my-4">
+            <div>
+                Copyright © 2009-2024 MonoGame Foundation, Inc. <br/> Designed with
+                <span class="text-danger">❤</span>
+                by
+                <a href="https://github.com/MonoGame/monogame.github.io/graphs/contributors">MonoGame Community</a>
+            </div>
+            <div class="d-flex justify-content-between gap-3">
+                
+                    <a class="mg-social-link hide-external-icon" href="https://github.com/monogame/monogame" title="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.patreon.com/MonoGame" title="Patreon">
+                        <i class="bi bi-p-circle-fill"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://discord.gg/monogame" title="Discord">
+                        <i class="bi bi-discord"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.youtube.com/MonoGame" title="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.reddit.com/r/monogame/" title="Reddit">
+                        <i class="bi bi-reddit"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://www.facebook.com/monogamecommunity" title="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://twitter.com/MonoGameTeam" title="Twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                
+                    <a class="mg-social-link hide-external-icon" href="https://monogame.net/blog/feed.xml" title="Blog RSS Feed">
+                        <i class="bi bi-rss-fill"></i>
+                    </a>
+                
+            </div>
+        </div>
+    </footer>
+</section>
+
+        <script type="text/javascript" src="/js/bundle.js"></script>
+        
+    </body>
+</html>
